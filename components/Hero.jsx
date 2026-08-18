@@ -1,14 +1,4 @@
-"use client";
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Our Story", href: "/our-story" },
-  { label: "What We Do", href: "/what-we-do" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Blogs", href: "/blogs" },
-];
 
 const PILLS = [
   { label: "Digital Physical Systems", className: "top-[5%] right-[40%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
@@ -19,54 +9,8 @@ const PILLS = [
   { label: "Creative Technology", className: "top-[78%] left-[34%]", anim: "float-b", dur: "9s", delay: "0.3s", border: "border-sky-400/50", glow: "0 0 18px -4px rgba(56,189,248,.40)" },
 ];
 
-export default function Hero({ active = "Home" }) {
-  const [open, setOpen] = useState(false);
+export default function Hero() {
   return (
-    <div className="relative  bg-[#08060f]">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="mx-auto flex  items-center justify-between px-6 py-7 lg:px-28">
-          {/* Logo */}
-          <Link href="/" className="shrink-0">
-            <Image
-              src="/assets/image 2.png"
-              alt="Skyron"
-              width={160}
-              height={45}
-              priority
-              className="h-7 w-auto lg:h-16"
-            />
-          </Link>
-
-          {/* Desktop links */}
-          <div className="hidden items-center gap-9 lg:flex">
-            {NAV_LINKS.map((link) => {
-              const isActive = link.label === active;
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`text-sm transition-colors ${isActive
-                    ? "font-semibold uppercase tracking-wider text-white"
-                    : "font-medium text-white/70 hover:text-white"
-                    }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-
-            <Link
-              href="/contact"
-              // className="rounded-full bg-linear-to-r from-[#22d3ee] via-[#a855f7] to-[#e849c4] p-[2px] transition-shadow duration-300 hover:shadow-[0_0_20px_-2px_rgba(168,85,247,0.7)]"
-              className="gradient-border rounded-full p-0.5"
-            >
-              <span className="block rounded-full bg-[#08060f] px-7 py-1 text-sm font-medium text-white">
-                Contact
-              </span>
-            </Link>
-          </div>
-        </nav>
-      </header>
       <section className="relative min-h-screen  overflow-hidden bg-[#08060f] pl-6 lg:pl-22">
         {/* Ambient glow */}
         <div
@@ -120,10 +64,10 @@ export default function Hero({ active = "Home" }) {
                 playsInline
                 className="h-full w-full object-cover object-[100%_50%] scale-120 mix-blend-screen"
               >
-                <source src="assets/new bg.mp4" type="video/mp4" />
+                <source src="assets/new-bg.mp4" type="video/mp4" />
               </video>
               {/* top + bottom falloff */}
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-[#08060f]/80 via-transparent to-[#08060f]/80 from-0% via-35% to-100%" />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_18%,transparent_65%,#08060f_100%)]" />
 
               {/* left falloff — heavier, since that edge sits against the copy */}
               <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f]/90 via-transparent to-transparent from-0% via-10%" />
@@ -152,6 +96,5 @@ export default function Hero({ active = "Home" }) {
           </div>
         </div>
       </section>
-    </div>
   );
 }
