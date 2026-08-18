@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-logo: var(--font-orbitron), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #08060f;
+  color: #ffffff;
+}
+
+/* Keyboard focus stays visible on the dark palette */
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin-border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.gradient-border {
+  background: conic-gradient(from var(--border-angle),
+      #22d3ee,
+      #a855f7,
+      #e849c4,
+      #22d3ee);
+  animation: spin-border 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-border {
+    animation: none;
+  }
+}
+
+/* pills animation */
+@keyframes float-a {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(6px, -12px, 0); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(-8px, -9px, 0); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  33%      { transform: translate3d(5px, -7px, 0); }
+  66%      { transform: translate3d(-4px, -13px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill-float { animation: none !important; }
+}
