@@ -1,24 +1,24 @@
 const ACCENTS = {
   violet: {
-    number: "text-violet-500",
+    number: "bg-linear-to-br from-violet-300 via-violet-500 to-violet-700",
     rule: "from-transparent via-violet-500 to-transparent",
     check: "text-violet-400",
     glow: "hover:shadow-[0_24px_60px_-28px_rgba(139,92,246,0.7)] hover:border-violet-500/30",
   },
   cyan: {
-    number: "text-cyan-400",
+   number: "bg-linear-to-br from-cyan-200 via-cyan-400 to-teal-600",
     rule: "from-transparent via-cyan-400 to-transparent",
     check: "text-cyan-400",
     glow: "hover:shadow-[0_24px_60px_-28px_rgba(34,211,238,0.6)] hover:border-cyan-400/30",
   },
   rose: {
-    number: "text-rose-500",
+    number: "bg-linear-to-br from-rose-300 via-rose-500 to-rose-800",
     rule: "from-transparent via-rose-500 to-transparent",
     check: "text-rose-500",
     glow: "hover:shadow-[0_24px_60px_-28px_rgba(244,63,94,0.6)] hover:border-rose-500/30",
   },
   purple: {
-    number: "text-purple-500",
+    number: "bg-linear-to-br from-purple-300 via-purple-500 to-fuchsia-700",
     rule: "from-transparent via-purple-500 to-transparent",
     check: "text-purple-400",
     glow: "hover:shadow-[0_24px_60px_-28px_rgba(168,85,247,0.65)] hover:border-purple-500/30",
@@ -50,24 +50,28 @@ export default function ServiceCard({ number, title, description, points = [], a
 
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow}`}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow} `}
     >
       {/* accent hairline along the top edge */}
       <span
         aria-hidden="true"
-        className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${a.rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+        className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${a.rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
       />
 
-      <p className={`text-5xl font-bold leading-none tracking-tight ${a.number}`}>{number}</p>
+      <p
+        className={`inline-block w-full bg-clip-text text-[4rem] font-bold leading-none tracking-tighter text-transparent ${a.number}`}
+        style={{ transform: "scale(1.25, 1.1)", transformOrigin: "left center" }}
 
-      <h3 className="mt-8 text-lg font-semibold leading-snug text-white">{title}</h3>
+      >{number}</p>
 
-      <p className="mt-4 text-sm leading-relaxed text-slate-400">{description}</p>
+      <h3 className="mt-4 text-base font-normal leading-snug text-white">{title}</h3>
+
+      <p className="mt-2 text-xs leading-relaxed text-white/40">{description}</p>
 
       {points.length > 0 && (
-        <ul className="mt-6 flex flex-col gap-3">
+        <ul className="mt-4 flex flex-col gap-1">
           {points.map((point) => (
-            <li key={point} className="flex items-start gap-2.5 text-sm leading-snug text-slate-300">
+            <li key={point} className="flex items-start gap-2.5 text-[0.6rem] leading-snug text-slate-300">
               <CheckIcon className={`mt-0.5 ${a.check}`} />
               <span>{point}</span>
             </li>

@@ -15,10 +15,10 @@ export default function TrustedBySection({
   marquee = false,
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#08080D] py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-[#040309] py-16 sm:py-20">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[140px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-75 w-150 -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[140px]"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">

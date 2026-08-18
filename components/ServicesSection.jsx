@@ -55,20 +55,11 @@ const defaultServices = [
 
 export default function ServicesSection({ services = defaultServices }) {
   return (
-    <section className="relative overflow-hidden bg-[#08080D] py-20 sm:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-20 h-[420px] w-[420px] rounded-full bg-fuchsia-600/15 blur-[150px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-indigo-600/15 blur-[150px]"
-      />
-
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <h2 className="mx-auto max-w-4xl text-center text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10"> 
+        <h2 className="mx-auto max-w-4xl text-center text-2xl font-normal leading-relaxed tracking-itght text-white sm:text-2xl lg:text-4xl">
           Crafting{" "}
-          <span className="bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
             intelligent,
           </span>{" "}
           AI-driven solutions
