@@ -14,8 +14,19 @@ export default function Home() {
   return (
     <main className="relative">
       <Navbar active="Home" />
-      <Hero />
-      <AboutSection />
+      <div className="relative overflow-hidden bg-[#08060f]">
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-60 top-[12%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-30 blur-[80px]  z-10"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-55 top-[30%] h-180 w-120 rounded-full bg-[#31417D] opacity-50 blur-[80px]  z-10"
+        />
+        <Hero />
+        <AboutSection />
+      </div>
       <div className="relative overflow-hidden bg-[#04030b]">
         <div
           aria-hidden="true"
@@ -25,12 +36,12 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-80 top-[5%] h-130 w-130 rounded-full bg-[#31417D] opacity-50 blur-[80px]  z-10"
         />
-      <CapabilitiesSection />
-      <TrustedBySection marquee />
+        <CapabilitiesSection />
+        <TrustedBySection marquee />
       </div>
 
       <div className="relative overflow-hidden bg-[#04030b]">
-       <div
+        <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-60 top-[47%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-30 blur-[80px]  z-10"
         />

@@ -45,7 +45,7 @@ function Card({ card }) {
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-xl p-px lg:absolute lg:w-[290px] ${card.pos ?? ""}`}
+      className={`relative w-full overflow-hidden rounded-xl p-px lg:absolute lg:w-72.5 ${card.pos ?? ""}`}
     >
       {/* gradient hairline */}
       <div
@@ -68,16 +68,14 @@ function Card({ card }) {
 
 export default function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-[#08060f] py-20 sm:py-28">
-      {/* ambient wash behind everything */}
-      <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_50%_at_50%_35%,rgba(56,189,248,.10),transparent_70%)]" />
+    <section className="relative overflow-hidden bg-[#08060f] pt-16 sm:pt-16">
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <h2 className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent sm:text-5xl lg:text-[56px]">
+        <h2 className="bg-linear-[135deg] from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent  text-center text-3xl font-normal tracking-tight  sm:text-4xl lg:text-[3.5rem] py-2">
           Spaces you&rsquo;ll keep talking about
         </h2>
 
-        <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-relaxed text-white/60 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-7xl text-center text-sm leading-tight text-white/60 sm:text-lg">
           Skyron Interactive is a creative technology studio specializing in
           interactive experiential content production, blending storytelling,
           spatial design, motion graphics, and emerging technology to create
@@ -85,15 +83,22 @@ export default function AboutSection() {
         </p>
 
         {/* stage: image centered, cards floated either side on desktop */}
-        <div className="relative mt-14 lg:mt-16 lg:h-[520px]">
-          <div className="relative mx-auto h-[380px] w-full max-w-[520px] sm:h-[480px] lg:h-full">
+        <div className="relative mt-14 lg:mt-16 lg:h-130">
+
+
+          <div className="relative mx-auto h-95 w-full max-w-130 sm:h-120 lg:h-full">
+            {/* glow first in the DOM, explicitly behind */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-50 left-1/2 z-0 h-120 w-120 -translate-x-1/2 rounded-full bg-[#15caff] opacity-90 blur-[140px]"
+            />
             <Image
               src="/assets/vr-portrait.png"
               alt=""
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 520px"
-              className="object-contain object-bottom [mask-image:radial-gradient(ellipse_65%_70%_at_50%_50%,#000_40%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_65%_70%_at_50%_50%,#000_40%,transparent_100%)]"
+              className="z-20 object-contain object-bottom "
             />
           </div>
 

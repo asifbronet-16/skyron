@@ -11,16 +11,8 @@ const PILLS = [
 
 export default function Hero() {
   return (
-      <section className="relative min-h-screen  overflow-hidden bg-[#08060f] pl-6 lg:pl-22">
-        {/* Ambient glow */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-40 top-1/3 h-130 w-130 rounded-full bg-[#31417D] opacity-90 blur-[140px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-50 top-1/8 h-130 w-130 rounded-full bg-[#FF2D78] opacity-30 blur-[140px]  z-10"
-        />
+      <section className="relative min-h-screen  overflow-hidden pl-6 lg:pl-22">
+       
 
         <div className="relative flex items-center gap-12 pl-6 pb-20 pt-36  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-44">
           {/* Left column */}
@@ -56,7 +48,6 @@ export default function Hero() {
           <div className="relative aspect-square w-full lg:aspect-auto lg:h-160 ">
             {/* Replace this block with your <video> once the asset is exported */}
             <div className="absolute inset-0 overflow-hidden rounded-2xl bg-[#08060f]">
-
               <video
                 autoPlay
                 muted
@@ -71,9 +62,6 @@ export default function Hero() {
 
               {/* left falloff — heavier, since that edge sits against the copy */}
               <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f]/90 via-transparent to-transparent from-0% via-10%" />
-
-
-
             </div>
 
 

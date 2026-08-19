@@ -68,7 +68,7 @@ export default function CapabilitiesSection({ capabilities = defaultCapabilities
           </div>
 
           <div className="">
-            <h2 className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-right tracking-tight text-transparent text-2xl font-light leading-tight sm:text-2xl lg:text-5xl">
+            <h2 className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-right tracking-tight text-transparent text-2xl font-normal leading-tight sm:text-2xl lg:text-5xl">
                <span className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">People {" "}</span>
                 Don&apos;t Just See — They Feel.
             </h2>
