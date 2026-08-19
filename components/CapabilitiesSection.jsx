@@ -58,22 +58,29 @@ export default function CapabilitiesSection({ capabilities = defaultCapabilities
     <section className="relative overflow-hidden py-20 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-          Interactive Experiences That
-          <br />
-          People{" "}
-          
-          <span className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
-            Don&apos;t Just See — They Feel.
-          </span>
-        </h2>
+        <div className="flex flex-col max-w-5xl mx-auto">
+          <div className="">
+            <h2 className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">
+              Interactive Experiences That
+              <br/>
+             
+            </h2>
+          </div>
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/40">
+          <div className="">
+            <h2 className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-right tracking-tight text-transparent text-2xl font-light leading-tight sm:text-2xl lg:text-5xl">
+               <span className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">People {" "}</span>
+                Don&apos;t Just See — They Feel.
+            </h2>
+          </div>
+        </div>
+
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/40 mx-auto">
           In a world overloaded with content, interaction is the new attention. We help brands move
           beyond passive visuals into immersive experiences.
         </p>
 
-        <div className="mt-14 grid items-stretch gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
             <CapabilityCard key={item.title} {...item} />
           ))}

@@ -64,10 +64,10 @@ function LinkColumn({ title, links }) {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#08060f] max-w-[82rem] mx-auto">
+    <footer className="relative overflow-hidden bg-[#08060f] max-w-328 mx-auto">
       {/* gradient rule — violet → magenta → cyan, fading out at both ends */}
       <div className="relative h-px w-full bg-linear-to-r from-transparent via-fuchsia-500 to-transparent" />
-      <div className="relative -mt-px h-px w-full bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-80 [mask-image:linear-gradient(to_right,transparent,#000_55%,#000)]" />
+      <div className="relative -mt-px h-px w-full bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-80 mask-[linear-gradient(to_right,transparent,#000_55%,#000)]" />
       {/* soft bloom under the rule */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 [background:radial-gradient(60%_100%_at_50%_0%,rgba(168,85,247,.10),transparent_70%)]" />
 
@@ -92,14 +92,14 @@ export default function Footer() {
                 href="mailto:hello@skyron.me"
                 className="flex items-center gap-3 text-[15px] text-white/40 transition-colors hover:text-white"
               >
-                <Mail className="h-[17px] w-[17px] text-indigo-400" strokeWidth={1.8} />
+                <Mail className="h-4.25 w-4.25 text-indigo-400" strokeWidth={1.8} />
                 hello@skyron.me
               </a>
               <a
                 href="tel:+971508742345"
                 className="flex items-center gap-3 text-[15px] text-white/40 transition-colors hover:text-white"
               >
-                <Phone className="h-[17px] w-[17px] text-indigo-400" strokeWidth={1.8} />
+                <Phone className="h-4.25 w-4.25 text-indigo-400" strokeWidth={1.8} />
                 +971 50 874 2345
               </a>
             </div>

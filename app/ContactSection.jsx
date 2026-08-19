@@ -55,7 +55,7 @@ export default function ContactSection() {
         <div>
           {/* eyebrow with the fading rule */}
           <div className="flex items-center gap-4">
-            <span className="h-[2px] w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
+            <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#5f30ca]">
               Get in touch
             </span>

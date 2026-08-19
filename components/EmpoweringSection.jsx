@@ -48,7 +48,7 @@ export default function EmpoweringSection({
               ) : (
                 <div
                   aria-hidden="true"
-                  className="flex h-full w-full items-center justify-center rounded-3xl border border-dashed border-white/10 bg-white/[0.02] text-xs tracking-wide text-slate-600"
+                  className="flex h-full w-full items-center justify-center rounded-3xl border border-dashed border-white/10 bg-white/2 text-xs tracking-wide text-slate-600"
                 >
                   animation goes here
                 </div>
