@@ -19,11 +19,11 @@ export default function Home() {
       <div className="relative overflow-hidden bg-[#04030b]">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-60 top-[47%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-30 blur-[80px]  z-10"
+          className="pointer-events-none absolute -left-85 bottom-50 h-130 w-130 rounded-full bg-[#FF2D78] opacity-30 blur-[80px]  z-10"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-55 bottom-20 h-130 w-130 rounded-full bg-[#31417D] opacity-50 blur-[80px]  z-10"
+          className="pointer-events-none absolute -right-80 top-[5%] h-130 w-130 rounded-full bg-[#31417D] opacity-50 blur-[80px]  z-10"
         />
       <CapabilitiesSection />
       <TrustedBySection marquee />

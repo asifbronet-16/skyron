@@ -55,30 +55,25 @@ const defaultCapabilities = [
 
 export default function CapabilitiesSection({ capabilities = defaultCapabilities }) {
   return (
-    <section className="relative overflow-hidden bg-[#08080D] py-20 sm:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 bottom-10 h-[420px] w-[420px] rounded-full bg-rose-600/15 blur-[150px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-indigo-600/15 blur-[150px]"
-      />
+    <section className="relative overflow-hidden py-20 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <h2 className="mx-auto max-w-4xl text-center text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-          Interactive Experiences That People{" "}
-          <span className="bg-gradient-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
+        <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Interactive Experiences That
+          <br />
+          People{" "}
+          
+          <span className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
             Don&apos;t Just See — They Feel.
           </span>
         </h2>
 
-        <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-slate-400 md:text-left">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/40">
           In a world overloaded with content, interaction is the new attention. We help brands move
           beyond passive visuals into immersive experiences.
         </p>
 
-        <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
             <CapabilityCard key={item.title} {...item} />
           ))}

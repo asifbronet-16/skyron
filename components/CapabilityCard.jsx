@@ -25,11 +25,11 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
 
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow}`}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/4 to-white/1 p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow}`}
     >
       <span
         aria-hidden="true"
-        className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${a.rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+        className={`absolute inset-x-0 top-0 h-[2.5px] bg-linear-to-r ${a.rule} opacity-90 transition-opacity duration-300 group-hover:opacity-100`}
       />
 
       {Icon && (
@@ -40,9 +40,9 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
         </span>
       )}
 
-      <h3 className="mt-6 text-base font-semibold leading-snug text-white sm:text-lg">{title}</h3>
+      <h3 className="mt-6 text-sm font-semibold leading-snug text-white sm:text-sm">{title}</h3>
 
-      <p className="mt-4 text-sm leading-relaxed text-slate-400">{description}</p>
+      <p className="mt-4 text-xs leading-relaxed text-slate-400">{description}</p>
     </article>
   );
 }

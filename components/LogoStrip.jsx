@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function Logo({ src, name, width = 160, height = 56 }) {
+function Logo({ src, name, width = 148, height = 148 }) {
   return (
     <li className="flex shrink-0 items-center justify-center px-6">
       <Image
@@ -8,7 +8,7 @@ function Logo({ src, name, width = 160, height = 56 }) {
         alt={name}
         width={width}
         height={height}
-        className="h-10 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-12"
+        className="h-24 w-auto object-contain grayscale transition duration-300 hover:grayscale-0 sm:h-28"
       />
     </li>
   );
@@ -19,7 +19,7 @@ function Logo({ src, name, width = 160, height = 56 }) {
  * `marquee` makes the row scroll continuously (list is duplicated for a seamless loop).
  * Logos should be white/monochrome SVGs or PNGs in /public.
  */
-export default function LogoStrip({ logos = [], marquee = false, speed = 32 }) {
+export default function LogoStrip({ logos = [], marquee = false, speed = 16 }) {
   if (!marquee) {
     return (
       <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-8 sm:gap-x-10">
@@ -31,11 +31,11 @@ export default function LogoStrip({ logos = [], marquee = false, speed = 32 }) {
   }
 
   return (
-    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+    <div className="relative overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
       <style>{`
         @keyframes skyron-marquee {
           from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
+          to   { transform: translateX(-25%); }
         }
         .skyron-marquee {
           animation: skyron-marquee ${speed}s linear infinite;
@@ -48,7 +48,7 @@ export default function LogoStrip({ logos = [], marquee = false, speed = 32 }) {
       `}</style>
 
       <ul className="skyron-marquee flex items-center">
-        {[...logos, ...logos].map((logo, i) => (
+        {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
           <Logo key={`${logo.name}-${i}`} {...logo} />
         ))}
       </ul>
