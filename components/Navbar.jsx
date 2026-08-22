@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, ChevronRight } from "@/components/icons";
+import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -23,25 +24,13 @@ const NAV_LINKS = [
       {
         label: "Creative Solutions",
         href: "/creative-solutions",
-        children: [
-          { label: "3D Content Creation", href: "/creative-solutions/3d-content-creation" },
-          { label: "2D Content Creation", href: "/creative-solutions/2d-content-creation" },
-          { label: "Anamorphic 3D Content Creation", href: "/creative-solutions/anamorphic-3d-content-creation" },
-          { label: "Live Action Content Production", href: "/creative-solutions/live-action-content-production" },
-          { label: "AI Driven Generative Content", href: "/creative-solutions/ai-driven-generative-content" },
-        ],
+        children: CREATIVE_SOLUTIONS_ITEMS.map((item) => ({
+          label: item.label,
+          href: `/creative-solutions/${item.slug}`,
+        })),
       },
-      {
-        label: "Technology Solutions",
-        href: "/technology-solutions",
-        children: [
-          { label: "Events, Exhibitions & Brand Activations", href: "/technology-solutions/events-exhibitions-brand-activations" },
-          { label: "Interactive Technologies", href: "/technology-solutions/interactive-technologies" },
-          { label: "Hologram, Holobox & Volumetric Display", href: "/technology-solutions/hologram-holobox-volumetric-display" },
-          { label: "AR, VR, XR Immersive Technologies", href: "/technology-solutions/ar-vr-xr-immersive-technologies" },
-          { label: "Projection Mapping Solutions", href: "/technology-solutions/projection-mapping-solutions" },
-        ],
-      },
+      // No further breakdown for Technology Solutions yet — plain link, no flyout.
+      { label: "Technology Solutions", href: "/technology-solutions" },
     ],
   },
   { label: "Case Studies", href: "/case-studies" },

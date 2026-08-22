@@ -14,7 +14,7 @@ const DELIVER = [
   { label: "Technology Solutions", href: "/technology-solutions" },
   { label: "Featured Work", href: "/work" },
   { label: "Blogs", href: "/blogs" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const SERVICES = [
