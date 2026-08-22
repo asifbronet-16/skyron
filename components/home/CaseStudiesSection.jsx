@@ -1,5 +1,5 @@
 import CaseStudyCard from "./CaseStudyCard";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "@/components/SectionHeading";
 
 const defaultItems = [
   {

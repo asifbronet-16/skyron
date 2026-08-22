@@ -1,5 +1,5 @@
 import FaqAccordion from "./FaqAccordion";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "@/components/SectionHeading";
 
 const defaultFaqs = [
   {

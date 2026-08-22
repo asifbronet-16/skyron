@@ -64,6 +64,22 @@ export function X({ strokeWidth = 2, ...props }) {
   );
 }
 
+export function ChevronDown({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+export function ChevronRight({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}
+
 /**
  * Social icons: pull the official SVG from each brand's press/brand-guidelines
  * page and drop it in here, or install @icons-pack/react-simple-icons.

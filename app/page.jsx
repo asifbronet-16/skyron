@@ -1,14 +1,14 @@
-import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
-import AboutSection from "./AboutSection";
-import Footer from "./Footer";
-import ContactSection from "./ContactSection";
-import CaseStudiesSection from "../components/CaseStudiesSection";
-import FaqSection from "../components/FaqSection";
-import EmpoweringSection from "../components/EmpoweringSection";
-import TrustedBySection from "../components/TrustedBySection";
-import CapabilitiesSection from "../components/CapabilitiesSection";
-import ServicesSection from "../components/ServicesSection";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/home/Hero";
+import AboutSection from "@/components/home/AboutSection";
+import ContactSection from "@/components/home/ContactSection";
+import CaseStudiesSection from "@/components/home/CaseStudiesSection";
+import FaqSection from "@/components/home/FaqSection";
+import EmpoweringSection from "@/components/home/EmpoweringSection";
+import TrustedBySection from "@/components/home/TrustedBySection";
+import CapabilitiesSection from "@/components/home/CapabilitiesSection";
+import ServicesSection from "@/components/home/ServicesSection";
 
 export default function Home() {
   return (
