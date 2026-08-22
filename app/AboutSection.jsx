@@ -98,7 +98,11 @@ export default function AboutSection() {
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 520px"
-              className="z-20 object-contain object-bottom "
+              // className="z-20 object-contain object-bottom "
+              className="z-20 object-contain object-bottom
+              mask-[linear-gradient(to_top,transparent_0%,black_18%)]
+              [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_18%)]
+              lg:mask-none lg:[-webkit-mask-image:none]"
             />
           </div>
 

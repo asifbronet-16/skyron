@@ -10,13 +10,13 @@ const PILLS = [
 ];
 
 export default function Hero() {
-  return (
-      <section className="relative min-h-screen  overflow-hidden pl-6 lg:pl-22">
+  return ( 
+      <section className="relative min-h-screen  overflow-hidden px-6 lg:px-0 lg:pl-22 lg:mt-30 mt-16">
        
 
-        <div className="relative flex items-center gap-12 pl-6 pb-20 pt-36  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-44">
+        <div className="relative flex items-center gap-12 px-6 lg:px-0  pb-20  pt-20  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-14">
           {/* Left column */}
-          <div className="max-w-xl">
+          <div className="max-w-xl absolute lg:relative z-10">
             <h1 className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
               Great experiences begin with a question, not a technology
             </h1>
@@ -45,15 +45,15 @@ export default function Hero() {
           </div>
 
           {/* Right column — video slot + floating pills */}
-          <div className="relative aspect-square w-full lg:aspect-auto lg:h-160 ">
+          <div className="relative aspect-square w-full lg:aspect-auto lg:h-160">
             {/* Replace this block with your <video> once the asset is exported */}
-            <div className="absolute inset-0 overflow-hidden rounded-2xl bg-[#08060f]">
+            <div className="absolute inset-0 overflow-hidden rounded-2xl bg-[#08060f] ">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="h-full w-full object-cover object-[100%_50%] scale-120 mix-blend-screen"
+                className="h-full w-full object-fit lg:object-cover lg:object-[100%_50%] scale-120 mix-blend-screen"
               >
                 <source src="assets/new-bg.mp4" type="video/mp4" />
               </video>
@@ -76,7 +76,7 @@ export default function Hero() {
                   animationIterationCount: "infinite",
                   animationTimingFunction: "ease-in-out",
                 }}
-                className={`pill-float absolute whitespace-nowrap rounded-full border bg-white/5 px-4 py-2 text-[11px] font-medium text-white/90 backdrop-blur-md sm:text-xs ${pill.className} ${pill.border} ${pill.glow}`}
+                className={`pill-float absolute hidden lg:block whitespace-nowrap rounded-full border bg-white/5 px-4 py-2 text-[11px] font-medium text-white/90 backdrop-blur-md sm:text-xs ${pill.className} ${pill.border} ${pill.glow}`}
               >
                 {pill.label}
               </span>

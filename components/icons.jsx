@@ -45,6 +45,25 @@ export function Send({ strokeWidth = 2, ...props }) {
   );
 }
 
+export function Menu({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="M4 6h16" />
+      <path d="M4 12h16" />
+      <path d="M4 18h16" />
+    </svg>
+  );
+}
+
+export function X({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  );
+}
+
 /**
  * Social icons: pull the official SVG from each brand's press/brand-guidelines
  * page and drop it in here, or install @icons-pack/react-simple-icons.
