@@ -3,6 +3,7 @@
  *
  * <SectionHeading lead="Where Creativity" accent="Meets Experience" />
  * <SectionHeading lead="Frequently Asked" accent="Questions" align="center" inline />
+ * <SectionHeading lead="Where Imagination" accent="Becomes Dimension" inline accentClassName="from-violet-500 via-fuchsia-500 to-pink-500" />
  */
 export default function SectionHeading({
   lead,
@@ -11,6 +12,7 @@ export default function SectionHeading({
   inline = false,
   as: Tag = "h2",
   className = "",
+  accentClassName = "from-violet-500 via-indigo-400 to-sky-400",
 }) {
   const alignment = align === "center" ? "text-center" : "text-left";
 
@@ -20,7 +22,7 @@ export default function SectionHeading({
     >
       {lead}
       {inline ? " " : <br />}
-      <span className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent">
+      <span className={`bg-linear-to-r ${accentClassName} bg-clip-text text-transparent`}>
         {accent}
       </span>
     </Tag>

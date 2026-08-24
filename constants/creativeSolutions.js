@@ -4,6 +4,10 @@
  *
  * Add a new sub-page by adding an entry here — the Navbar flyout and the
  * dynamic route both read from this single list.
+ *
+ * `banner.images`: one path renders a static banner, several auto-rotate as
+ * a carousel (see components/SolutionBanner.jsx). Leave empty until real
+ * photography/renders are dropped into /public for this solution.
  */
 export const CREATIVE_SOLUTIONS_ITEMS = [
   {
@@ -11,22 +15,68 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "3D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "3D Content", accent: "Creation" },
+    banner: { images: [] },
     intro:
       "Fully modeled, animated, and rendered 3D worlds built to fill a screen, a dome, or an entire building facade.",
     body: [
       "From product visualizations to abstract generative environments, our 3D pipeline is built for scale — real-time and pre-rendered content designed to hold up on massive projection surfaces and LED walls.",
     ],
-    highlights: [
-      { title: "Real-Time & Pre-Rendered", body: "Content built for both live interactive engines and cinema-grade render pipelines." },
-      { title: "Built for Scale", body: "Optimized for LED walls, domes, and projection-mapped architecture, not just a screen." },
-      { title: "Brand-First Direction", body: "Every asset is art-directed around the brand story, not generic stock motion." },
-    ],
+    highlights: [],
+    features: {
+      lead: "Where Imagination",
+      accent: "Becomes Dimension",
+      subtitle:
+        "From cinematic animation to real-time 3D assets, we craft visuals that bring products, characters, and environments to life with precision and depth.",
+      cards: [
+        {
+          title: "3D Animation & Motion Graphics",
+          description:
+            "We craft cinematic 3D animation and motion graphics for digital, broadcast, social, and immersive experiential content that **elevates** brands and engages audiences.",
+        },
+        {
+          title: "Product Visualization & 3D Advertising",
+          description:
+            "High-impact product visualization and 3D advertising that showcases features, **boosts** desirability, and drives **conversions** across digital and commercial campaigns **globally**.",
+        },
+        {
+          title: "Architectural Visualization & Walkthroughs",
+          description:
+            "Photoreal architectural walkthroughs and 3D visualizations that bring buildings, interiors, and master plans to life before **ground is broken**.",
+        },
+        {
+          title: "Engineering & Technical Animations",
+          description:
+            "Clear, precise 3D animations that **simplify** complex engineering, industrial **processes**, and technical systems for communication and marketing.",
+        },
+        {
+          title: "Character Design & Animation",
+          description:
+            "Expressive character design and animation that builds emotional connection, **enhances** storytelling, and strengthens brand **narratives** across media.",
+        },
+        {
+          title: "3D Asset Creation",
+          description:
+            "High-quality, **optimized** 3D assets built for animation, real-time engines, interactive platforms, and scalable multi-channel production.",
+        },
+        {
+          title: "Digital Twins & Simulation Visuals",
+          description:
+            "Data-driven digital twins and simulation visuals that visualize performance, processes, and environments with **accuracy** and clarity.",
+        },
+        {
+          title: "Real-Time & Interactive 3D Content",
+          description:
+            "Real-time and interactive 3D experiences designed for web, AR, VR, and experiential installations that engage users **dynamically**.",
+        },
+      ],
+    },
   },
   {
     slug: "2d-content-creation",
     label: "2D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "2D Content", accent: "Creation" },
+    banner: { images: [] },
     intro:
       "Motion graphics, illustration, and animated design systems that carry a brand's visual language across every touchpoint.",
     body: [
@@ -43,6 +93,7 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "Anamorphic 3D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "Anamorphic 3D", accent: "Content Creation" },
+    banner: { images: [] },
     intro:
       "Forced-perspective illusions engineered for curved LED corners and billboards — content that appears to break out of the screen from one exact vantage point.",
     body: [
@@ -59,6 +110,7 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "Live Action Content Production",
     eyebrow: "Creative Solutions",
     heading: { lead: "Live Action", accent: "Content Production" },
+    banner: { images: [] },
     intro:
       "Full-service filming — from concept and script through shoot and post — for brand films, campaign content, and experiential backdrops.",
     body: [
@@ -75,6 +127,7 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "AI Driven Generative Content",
     eyebrow: "Creative Solutions",
     heading: { lead: "AI Driven", accent: "Generative Content" },
+    banner: { images: [] },
     intro:
       "Generative tools woven into the creative pipeline to explore more ideas, faster — without losing the art direction that makes content feel intentional.",
     body: [
