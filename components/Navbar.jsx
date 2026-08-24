@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   {
     label: "Our Story",
-    href: "/our-story",
+    href: "",
     children: [
       { label: "Who We Are", href: "/who-we-are" },
       { label: "Our Approach", href: "/our-approach" },

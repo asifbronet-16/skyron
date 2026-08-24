@@ -1,42 +1,8 @@
 import CaseStudyCard from "./CaseStudyCard";
 import SectionHeading from "@/components/SectionHeading";
+import { CASE_STUDIES_ITEMS } from "@/constants/caseStudies";
 
-const defaultItems = [
-  {
-    tag: "Featured Work",
-    title: "Future-Proof Your Business AI Projects",
-    description:
-      "End-to-end experiential content that blends AI-powered generation with live creative direction for unforgettable brand moments.",
-    image: "/assets/CaseStudy/Business-Projects.png",
-    href: "/work/future-proof",
-  },
-  {
-    tag: "Innovation",
-    title: "AI-Powered Projects for Scalable Success",
-    description:
-      "Intelligent experience systems that adapt to audience behavior in real-time, driving deeper engagement at every touchpoint.",
-    image: "/assets/CaseStudy/AI-Powered.png",
-    href: "/work/ai-powered",
-  },
-  {
-    tag: "Efficiency",
-    title: "Tailored AI Projects for Maximum Efficiency",
-    description:
-      "Custom-built immersive environments calibrated to your brand identity, audience profile, and measurable KPIs.",
-    image: "/assets/CaseStudy/Maximum-Efficiency.png",
-    href: "/work/tailored",
-  },
-  {
-    tag: "Strategy",
-    title: "Smarter Spatial Design at Scale",
-    description:
-      "Scalable experience frameworks that grow with your brand — from flagship installations to global rollouts.",
-    image: "/assets/CaseStudy/Spatial-Design.png",
-    href: "/work/spatial-design",
-  },
-];
-
-export default function CaseStudiesSection({ items = defaultItems }) {
+export default function CaseStudiesSection({ items = CASE_STUDIES_ITEMS }) {
   return (
     <section className="relative overflow-hidden  py-20 sm:py-28">
       {/* ambient glow */}
