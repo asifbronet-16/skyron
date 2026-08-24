@@ -23,17 +23,19 @@ export default function CtaBanner({
   return (
     <section className={`relative overflow-hidden bg-[#08060f] px-6 py-20 sm:py-28 ${className}`}>
       <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16">
+        {/* signature top border */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-0.5 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]"
+        />
+
         {/* faint grid, fading out toward the edges */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.12]
+          className="pointer-events-none absolute inset-0 opacity-[0.10] blur-[1px]
             bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)]
             bg-size-[32px_32px]
             mask-[radial-gradient(ellipse_at_center,black_35%,transparent_75%)]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-600/25 blur-[110px]"
         />
 
         <div className="relative">
@@ -42,6 +44,11 @@ export default function CtaBanner({
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
             {subtext}
           </p>
+
+          {/* ambient glow sitting between the copy and the CTAs */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 mx-auto  h-56 w-56 -mt-20">
+            <span className="absolute inset-0 rounded-full bg-linear-to-r from-[#5f30ca] to-[#317890] opacity-30 blur-2xl" />
+          </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a

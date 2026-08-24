@@ -76,3 +76,16 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .pill-float { animation: none !important; }
 }
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shine {
+  /* Added 'alternate' so it plays forward then back */
+  animation: shine 3s ease-in-out infinite alternate; 
+}

@@ -76,7 +76,7 @@ export default function SolutionBanner({
           </span>
         )}
         {label && (
-          <h1 className="text-2xl font-semibold tracking-[0.06em] text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-5xl">
+          <h1 className="text-2xl font-semibold tracking-[0.06em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-5xl border-2 text-transparent bg-clip-text bg-[linear-gradient(110deg,rgba(255,255,255,0.25)_30%,#fff_50%,rgba(255,255,255,0.25)_70%)] bg-size-[200%_100%] animate-shine">
             {label}
           </h1>
         )}

@@ -27,46 +27,56 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
       accent: "Becomes Dimension",
       subtitle:
         "From cinematic animation to real-time 3D assets, we craft visuals that bring products, characters, and environments to life with precision and depth.",
+      // TODO: `image` below is a placeholder (public/assets/vr-portrait.png) just to
+      // preview the hover reveal — swap each card's image for its real asset.
       cards: [
         {
           title: "3D Animation & Motion Graphics",
           description:
             "We craft cinematic 3D animation and motion graphics for digital, broadcast, social, and immersive experiential content that **elevates** brands and engages audiences.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Product Visualization & 3D Advertising",
           description:
             "High-impact product visualization and 3D advertising that showcases features, **boosts** desirability, and drives **conversions** across digital and commercial campaigns **globally**.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Architectural Visualization & Walkthroughs",
           description:
             "Photoreal architectural walkthroughs and 3D visualizations that bring buildings, interiors, and master plans to life before **ground is broken**.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Engineering & Technical Animations",
           description:
             "Clear, precise 3D animations that **simplify** complex engineering, industrial **processes**, and technical systems for communication and marketing.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Character Design & Animation",
           description:
             "Expressive character design and animation that builds emotional connection, **enhances** storytelling, and strengthens brand **narratives** across media.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "3D Asset Creation",
           description:
             "High-quality, **optimized** 3D assets built for animation, real-time engines, interactive platforms, and scalable multi-channel production.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Digital Twins & Simulation Visuals",
           description:
             "Data-driven digital twins and simulation visuals that visualize performance, processes, and environments with **accuracy** and clarity.",
+          image: "/assets/vr-portrait.png",
         },
         {
           title: "Real-Time & Interactive 3D Content",
           description:
             "Real-time and interactive 3D experiences designed for web, AR, VR, and experiential installations that engage users **dynamically**.",
+          image: "/assets/vr-portrait.png",
         },
       ],
     },

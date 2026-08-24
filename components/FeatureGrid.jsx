@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 
 // Cycled across cards in order so a long grid still reads as varied, not random.
@@ -32,10 +33,12 @@ function renderInlineBold(text) {
  *   accent="Becomes Dimension"
  *   subtitle="From cinematic animation to real-time 3D assets..."
  *   cards={[
- *     { title: "3D Animation & Motion Graphics", description: "..." },
+ *     { title: "3D Animation & Motion Graphics", description: "...", image: "/assets/3d-motion.jpg" },
  *     ...
  *   ]}
  * />
+ *
+ * `image` is optional per card — when set, it fades in behind the copy on hover/focus.
  */
 export default function FeatureGrid({ lead, accent, subtitle, cards = [], className = "" }) {
   return (
@@ -62,17 +65,34 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
               return (
                 <article
                   key={card.title}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 focus-within:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {/* accent hairline along the top edge */}
                   <span
                     aria-hidden="true"
-                    className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+                    className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
                   />
 
-                  <h3 className="text-base font-semibold leading-snug text-white">{card.title}</h3>
+                  {/* background image, revealed on hover */}
+                  {card.image && (
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
+                    >
+                      <Image
+                        src={card.image}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-[#08060f] via-[#08060f]/75 to-[#08060f]/30" />
+                    </div>
+                  )}
 
-                  <p className="mt-3 text-sm leading-relaxed text-white/50">
+                  <h3 className="relative text-base font-semibold leading-snug text-white">{card.title}</h3>
+
+                  <p className="relative mt-3 text-sm leading-relaxed text-white/50">
                     {renderInlineBold(card.description)}
                   </p>
                 </article>
