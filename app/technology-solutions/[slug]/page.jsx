@@ -3,15 +3,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CtaBanner from "@/components/CtaBanner";
-import { CREATIVE_SOLUTIONS_ITEMS, getCreativeSolutionsItem } from "@/constants/creativeSolutions";
+import { TECHNOLOGY_SOLUTIONS_ITEMS, getTechnologySolutionsItem } from "@/constants/technologySolutions";
 
 export async function generateStaticParams() {
-  return CREATIVE_SOLUTIONS_ITEMS.map((item) => ({ slug: item.slug }));
+  return TECHNOLOGY_SOLUTIONS_ITEMS.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const item = getCreativeSolutionsItem(slug);
+  const item = getTechnologySolutionsItem(slug);
   if (!item) return {};
 
   return {
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function CreativeSolutionsDetailPage({ params }) {
+export default async function TechnologySolutionsDetailPage({ params }) {
   const { slug } = await params;
-  const item = getCreativeSolutionsItem(slug);
+  const item = getTechnologySolutionsItem(slug);
 
   if (!item) notFound();
 
@@ -69,7 +69,7 @@ export default async function CreativeSolutionsDetailPage({ params }) {
               {item.highlights.map((highlight) => (
                 <div
                   key={highlight.title}
-                  className="relative overflow-hidden rounded-xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-sm"
+                  className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-6 backdrop-blur-sm"
                 >
                   <h3 className="text-base font-semibold text-white">{highlight.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/55">{highlight.body}</p>

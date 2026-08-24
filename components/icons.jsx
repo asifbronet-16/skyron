@@ -80,6 +80,14 @@ export function ChevronRight({ strokeWidth = 2, ...props }) {
   );
 }
 
+export function Zap({ strokeWidth = 2, fill: fillProp = "none", ...props }) {
+  return (
+    <svg {...base} fill={fillProp} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" />
+    </svg>
+  );
+}
+
 /**
  * Social icons: pull the official SVG from each brand's press/brand-guidelines
  * page and drop it in here, or install @icons-pack/react-simple-icons.

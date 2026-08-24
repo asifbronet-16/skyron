@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, ChevronRight } from "@/components/icons";
 import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
+import { TECHNOLOGY_SOLUTIONS_ITEMS } from "@/constants/technologySolutions";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -19,7 +20,7 @@ const NAV_LINKS = [
   },
   {
     label: "What We Do",
-    href: "/what-we-do",
+    href: "",
     children: [
       {
         label: "Creative Solutions",
@@ -29,8 +30,14 @@ const NAV_LINKS = [
           href: `/creative-solutions/${item.slug}`,
         })),
       },
-      // No further breakdown for Technology Solutions yet — plain link, no flyout.
-      { label: "Technology Solutions", href: "/technology-solutions" },
+      {
+        label: "Technology Solutions",
+        href: "/technology-solutions",
+        children: TECHNOLOGY_SOLUTIONS_ITEMS.map((item) => ({
+          label: item.label,
+          href: `/technology-solutions/${item.slug}`,
+        })),
+      },
     ],
   },
   { label: "Case Studies", href: "/case-studies" },
@@ -141,7 +148,7 @@ export default function Navbar({ active = "Home" }) {
                     <Link
                       href={link.href}
                       className={`flex items-center gap-1 text-sm transition-colors ${isActive
-                        ? "font-semibold uppercase tracking-wider text-white"
+                        ? "font-semibold  tracking-wider text-white"
                         : "font-medium text-white/70 hover:text-white"
                         }`}
                     >
