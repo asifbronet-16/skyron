@@ -152,7 +152,7 @@ export default function OurApproachPage() {
 
         <div className="relative bg-[#08060f]">
           <section className="relative overflow-hidden bg-[#08060f] px-6 pt-16 pb-20 sm:pt-20 sm:pb-28">
-            <div className="relative mx-auto max-w-5xl">
+            <div className="relative mx-auto max-w-6xl">
               <SectionHeading
                 lead="Our"
                 accent="Process"
@@ -161,7 +161,7 @@ export default function OurApproachPage() {
                 accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
               />
 
-              <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="mt-14 grid items-stretch gap-10 sm:grid-cols-2 xl:grid-cols-4">
                 {STEPS.map((step) => (
                   <ServiceCard
                     key={step.number}

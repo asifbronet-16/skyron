@@ -50,17 +50,19 @@ const INDUSTRIES = [
 export default function IndustriesPage() {
   return (
     <main className="relative overflow-hidden mt-30">
-      {/* glows are scoped to this wrapper (hero → CtaBanner) so bottom-0 lands on
-          CtaBanner's opaque, full-bleed background instead of bleeding past Footer's
-          narrower, centered container into the page's side gutters */}
+
       <div className="relative">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-60 top-[10%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-35 blur-[100px] z-10"
+          className="pointer-events-none absolute -right-70 top-[10%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-35 blur-[120px] z-10"
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-55 bottom-0 h-130 w-130 rounded-full bg-[#31417D] opacity-50 z-10 blur-[100px]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-40 top-80 h-130 w-130  rounded-full bg-[#2A6DF4] opacity-40 blur-[110px] z-10"
         />
 
         <Navbar active="Our Story" />
@@ -68,39 +70,36 @@ export default function IndustriesPage() {
         <div className="relative bg-[#08060f]">
 
 
-          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden">
- <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/70 to-transparent"
-            />
+          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-34">
+
             {/* Video layer — absolute, full bleed, anchored right */}
-            <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden ">
+            <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="h-full w-full scale-125 object-cover object-[65%_50%] translate-x-[10%]"
+                className="h-full w-full scale-100 object-cover object-[65%_50%] translate-x-[10%]"
               >
                 <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
               </video>
 
-             
-            {/* top + bottom falloff so it melts into the sections around it */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
-            />
+              {/* top + bottom falloff so the video melts into the sections around it */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
+              />
 
-            {/* extra ambient glow, scoped to the hero, left side */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-40 top-1/2 h-130 w-130 -translate-y-1/2 rounded-full bg-[#2A6DF4] opacity-40 blur-[110px]"
-            />
+              {/* left-edge falloff, scoped to the video itself (not the whole section) so it's
+                  fully opaque right at the container's edge — no visible seam — and eases out
+                  from there instead of already being partway faded when the video starts */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#08060f_0%,#08060f_10%,rgba(8,6,15,0.85)_22%,rgba(8,6,15,0.55)_36%,rgba(8,6,15,0.25)_50%,transparent_65%)]"
+              />
             </div>
 
-            <div className="relative mx-auto w-full
-   px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:pl-28">
+            <div className="relative mx-auto w-full ">
               <div className="w-full max-w-xl">
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                   Industries We Serve

@@ -47,7 +47,7 @@ const VALUES = [
 
 export default function WhoWeArePage() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden mt-30">
       <div className="relative">
         <div
           aria-hidden="true"
@@ -60,7 +60,7 @@ export default function WhoWeArePage() {
 
         <Navbar active="Our Story" />
 
-        <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
+        <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
           <video
             autoPlay
             muted
@@ -126,7 +126,7 @@ export default function WhoWeArePage() {
             {/* top + bottom falloff so the image melts into the sections around it, no hard edge */}
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_14%,transparent_86%,#08060f_100%)]" />
 
-            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 py-16 sm:px-14 sm:py-20">
+            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 ">
               <span className="inline-flex w-fit items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                 What We Do
               </span>
