@@ -1,12 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import FeatureGrid from "@/components/FeatureGrid";
 import StatCard from "@/components/home/StatCard";
 import TrustedBySection from "@/components/home/TrustedBySection";
-import { ChevronRight } from "@/components/icons";
 
 export const metadata = {
   title: "Who We Are — Skyron",
@@ -80,22 +78,11 @@ export default function WhoWeArePage() {
 
           <div className="relative mx-auto w-full max-w-6xl">
             <div className="relative max-w-xl">
-              {/* blueprint-style dashed frame */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-6 -top-8 h-[calc(100%+4rem)] w-[calc(100%+3rem)] sm:-right-10 sm:w-[calc(100%+6rem)]"
-              >
-                <span className="absolute left-0 top-0 h-px w-full border-t border-dashed border-white/25" />
-                <span className="absolute right-0 top-0 h-full w-px border-r border-dashed border-white/25" />
-                <span className="absolute right-0 top-13 h-3 w-3 -translate-y-1/2 border border-white/30" />
-                <span className="absolute bottom-0 right-0 h-3 w-3 border border-white/30" />
-              </div>
-
-              <span className="relative inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                 About US
               </span>
 
-              <p className="relative mt-6 text-base leading-relaxed text-white/85 sm:text-lg lg:text-xl">
+              <p className="mt-6 text-base leading-relaxed text-white/85 sm:text-lg lg:text-xl">
                 From digital narratives to large scale immersive installations, our work
                 transforms spaces into living stories where interaction becomes meaning,
                 technology becomes invisible and experiences leave a lasting impact.
@@ -157,15 +144,6 @@ export default function WhoWeArePage() {
                 create experiences that are engaging, intuitive, and memorable.
               </p>
 
-              <Link
-                href="/#contact"
-                className="mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] py-2 pl-7 pr-2 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
-              >
-                Begin The Conversation
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
-                  <ChevronRight className="h-4 w-4" strokeWidth={2.2} />
-                </span>
-              </Link>
             </div>
           </section>
 

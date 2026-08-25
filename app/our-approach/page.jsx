@@ -4,6 +4,7 @@ import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureGrid from "@/components/FeatureGrid";
 import FaqSection from "@/components/home/FaqSection";
+import ServiceCard from "@/components/home/ServiceCard";
 
 export const metadata = {
   title: "Our Approach — Skyron",
@@ -13,27 +14,37 @@ export const metadata = {
 
 const STEPS = [
   {
-    title: "01 — Discover",
+    number: "01",
+    accent: "violet",
+    title: "Discover",
     description:
       "We start with the audience and the space, not the tech. Objectives, venue constraints, and the story you need told shape the brief.",
   },
   {
-    title: "02 — Design",
+    number: "02",
+    accent: "cyan",
+    title: "Design",
     description:
       "Concepts, storyboards, and spatial layouts come together so you can see and approve the experience long before anything is built.",
   },
   {
-    title: "03 — Develop",
+    number: "03",
+    accent: "rose",
+    title: "Develop",
     description:
       "Content, motion, and interactive systems are built in parallel with hardware and integration planning — one team, one timeline.",
   },
   {
-    title: "04 — Deliver",
+    number: "04",
+    accent: "purple",
+    title: "Deliver",
     description:
       "On-site install, calibration, and rehearsal happen under the same team that designed it, so nothing gets lost in handoff.",
   },
   {
-    title: "05 — Support",
+    number: "05",
+    accent: "violet",
+    title: "Support",
     description:
       "Launch day isn't the finish line. We stay on for run-of-show support, content refreshes, and iteration as the experience evolves.",
   },
@@ -140,7 +151,27 @@ export default function OurApproachPage() {
         </section>
 
         <div className="relative bg-[#08060f]">
-          <FeatureGrid lead="Our" accent="Process" cards={STEPS} className="pt-16 sm:pt-20" />
+          <section className="relative overflow-hidden bg-[#08060f] px-6 pt-16 pb-20 sm:pt-20 sm:pb-28">
+            <div className="relative mx-auto max-w-5xl">
+              <SectionHeading
+                lead="Our"
+                accent="Process"
+                inline
+                align="center"
+                accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
+              />
+
+              <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                {STEPS.map((step) => (
+                  <ServiceCard
+                    key={step.number}
+                    {...step}
+                    className="justify-center py-8"
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
 
           <FeatureGrid
             lead="Principles We"

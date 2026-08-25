@@ -45,12 +45,19 @@ function CheckIcon({ className = "" }) {
  * One numbered service card. `accent` is one of: violet | cyan | rose | purple.
  * Class names are looked up from a map so Tailwind can see them at build time.
  */
-export default function ServiceCard({ number, title, description, points = [], accent = "violet" }) {
+export default function ServiceCard({
+  number,
+  title,
+  description,
+  points = [],
+  accent = "violet",
+  className = "",
+}) {
   const a = ACCENTS[accent] ?? ACCENTS.violet;
 
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow} `}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${a.glow} ${className}`}
     >
       {/* accent hairline along the top edge */}
       <span

@@ -47,18 +47,9 @@ const INDUSTRIES = [
   },
 ];
 
-const HERO_PILLS = [
-  { label: "Retail & Retailtainment", className: "top-[5%] right-[38%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
-  { label: "Government & Public Sector", className: "top-[16%] left-[0%]", anim: "float-c", dur: "9.5s", delay: "1.2s", border: "border-violet-200/45", glow: "0 0 18px -4px rgba(221,214,254,.35)" },
-  { label: "Automotive", className: "top-[30%] right-[6%]", anim: "float-b", dur: "8.2s", delay: "0.6s", border: "border-fuchsia-400/55", glow: "0 0 20px -4px rgba(232,121,249,.45)" },
-  { label: "Hospitality & Real Estate", className: "top-[64%] left-[1%]", anim: "float-a", dur: "10s", delay: "2.1s", border: "border-pink-400/55", glow: "0 0 20px -4px rgba(244,114,182,.45)" },
-  { label: "Corporate & Enterprise", className: "top-[68%] right-[3%]", anim: "float-c", dur: "7.8s", delay: "1.7s", border: "border-purple-400/50", glow: "0 0 18px -4px rgba(192,132,252,.40)" },
-  { label: "Entertainment & Media", className: "top-[80%] left-[32%]", anim: "float-b", dur: "9s", delay: "0.3s", border: "border-sky-400/50", glow: "0 0 18px -4px rgba(56,189,248,.40)" },
-];
-
 export default function IndustriesPage() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden mt-30 border border-[yellow]">
       {/* glows are scoped to this wrapper (hero → CtaBanner) so bottom-0 lands on
           CtaBanner's opaque, full-bleed background instead of bleeding past Footer's
           narrower, centered container into the page's side gutters */}
@@ -75,9 +66,8 @@ export default function IndustriesPage() {
         <Navbar active="Our Story" />
 
         <div className="relative bg-[#08060f]">
-          <section className="relative overflow-hidden px-6 pt-32 pb-20 sm:pt-40 sm:pb-24 lg:px-0 lg:pl-22 lg:pt-40 lg:pb-28">
-            <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-8 lg:pl-12">
-              {/* copy */}
+          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:pl-28 border-2 border-[red]">
+            <div className="relative mx-auto w-full max-w-7xl">
               <div className="w-full max-w-xl">
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                   Industries We Serve
@@ -107,38 +97,37 @@ export default function IndustriesPage() {
                   </Link>
                 </div>
               </div>
-
-              {/* video */}
-              <div className="relative aspect-square w-full lg:aspect-auto lg:h-160">
-                <div className="absolute inset-0 overflow-hidden rounded-2xl bg-[#08060f]">
-                  <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-                    <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
-                  </video>
-                  {/* top + bottom falloff */}
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_18%,transparent_65%,#08060f_100%)]" />
-                  {/* left falloff — heavier, since that edge sits against the copy */}
-                  <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f]/90 via-transparent to-transparent from-0% via-10%" />
-                </div>
-
-                {/* floating industry pills */}
-                {HERO_PILLS.map((pill) => (
-                  <span
-                    key={pill.label}
-                    style={{
-                      animationName: pill.anim,
-                      animationDuration: pill.dur,
-                      animationDelay: pill.delay,
-                      animationIterationCount: "infinite",
-                      animationTimingFunction: "ease-in-out",
-                      boxShadow: pill.glow,
-                    }}
-                    className={`pill-float absolute hidden lg:block whitespace-nowrap rounded-full border bg-white/5 px-4 py-2 text-[11px] font-medium text-white/90 backdrop-blur-md sm:text-xs ${pill.className} ${pill.border}`}
-                  >
-                    {pill.label}
-                  </span>
-                ))}
-              </div>
             </div>
+            <div className="flex items-center justify-center overflow-hidden border-2 border-[red]">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover object-[35%_50%]"
+              >
+                <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* left-to-right falloff so the copy stays legible over the video */}
+            {/* <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/70 to-transparent"
+            /> */}
+            {/* top + bottom falloff so it melts into the sections around it */}
+            {/* <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
+            /> */}
+
+            {/* extra ambient glow, scoped to the hero, left side */}
+            {/* <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-40 top-1/2 h-130 w-130 -translate-y-1/2 rounded-full bg-[#2A6DF4] opacity-40 blur-[110px]"
+            /> */}
+
+            
           </section>
 
           <FeatureGrid
