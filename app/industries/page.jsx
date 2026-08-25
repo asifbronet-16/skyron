@@ -49,7 +49,7 @@ const INDUSTRIES = [
 
 export default function IndustriesPage() {
   return (
-    <main className="relative overflow-hidden mt-30 border border-[yellow]">
+    <main className="relative overflow-hidden mt-30">
       {/* glows are scoped to this wrapper (hero → CtaBanner) so bottom-0 lands on
           CtaBanner's opaque, full-bleed background instead of bleeding past Footer's
           narrower, centered container into the page's side gutters */}
@@ -66,8 +66,41 @@ export default function IndustriesPage() {
         <Navbar active="Our Story" />
 
         <div className="relative bg-[#08060f]">
-          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:pl-28 border-2 border-[red]">
-            <div className="relative mx-auto w-full max-w-7xl">
+
+
+          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden">
+ <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/70 to-transparent"
+            />
+            {/* Video layer — absolute, full bleed, anchored right */}
+            <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden ">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full scale-125 object-cover object-[65%_50%] translate-x-[10%]"
+              >
+                <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
+              </video>
+
+             
+            {/* top + bottom falloff so it melts into the sections around it */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
+            />
+
+            {/* extra ambient glow, scoped to the hero, left side */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-40 top-1/2 h-130 w-130 -translate-y-1/2 rounded-full bg-[#2A6DF4] opacity-40 blur-[110px]"
+            />
+            </div>
+
+            <div className="relative mx-auto w-full
+   px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:pl-28">
               <div className="w-full max-w-xl">
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                   Industries We Serve
@@ -98,36 +131,7 @@ export default function IndustriesPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center overflow-hidden border-2 border-[red]">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover object-[35%_50%]"
-              >
-                <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
-              </video>
-            </div>
 
-            {/* left-to-right falloff so the copy stays legible over the video */}
-            {/* <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/70 to-transparent"
-            /> */}
-            {/* top + bottom falloff so it melts into the sections around it */}
-            {/* <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
-            /> */}
-
-            {/* extra ambient glow, scoped to the hero, left side */}
-            {/* <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-40 top-1/2 h-130 w-130 -translate-y-1/2 rounded-full bg-[#2A6DF4] opacity-40 blur-[110px]"
-            /> */}
-
-            
           </section>
 
           <FeatureGrid
