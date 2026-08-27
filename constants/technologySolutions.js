@@ -11,6 +11,12 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     label: "Events, Exhibitions & Brand Activations",
     eyebrow: "Technology Solutions",
     heading: { lead: "Events, Exhibitions &", accent: "Brand Activations" },
+    banner: {
+      images: [
+        "/assets/banners/events-exhibitions-brand-activations/1.jpeg",
+        "/assets/banners/events-exhibitions-brand-activations/2.jpeg",
+      ],
+    },
     intro:
       "End-to-end technology for the moment your brand has one shot to land — live events, exhibition stands, and pop-up activations built to stop a crowd.",
     body: [
@@ -46,6 +52,13 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     label: "Interactive Technologies",
     eyebrow: "Technology Solutions",
     heading: { lead: "Interactive", accent: "Technologies" },
+    banner: {
+      images: [
+        "/assets/banners/interactive-technologies/1.jpeg",
+        "/assets/banners/interactive-technologies/2.jpeg",
+        "/assets/banners/interactive-technologies/3.jpeg",
+      ],
+    },
     intro:
       "Touch, gesture, and sensor-driven installations that respond to the person standing in front of them instead of playing on a loop.",
     body: [
@@ -116,6 +129,12 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     label: "Hologram, Holobox & Volumetric Display",
     eyebrow: "Technology Solutions",
     heading: { lead: "Hologram, Holobox &", accent: "Volumetric Display" },
+    banner: {
+      images: [
+        "/assets/banners/hologram-holobox-volumetric-display/1.jpeg",
+        "/assets/banners/hologram-holobox-volumetric-display/2.jpeg",
+      ],
+    },
     intro:
       "Floating, glass-free 3D imagery — from holobox product reveals to full volumetric capture — for moments that need to look like nothing else in the room.",
     body: [
@@ -166,6 +185,12 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     label: "AR, VR, XR Immersive Technologies",
     eyebrow: "Technology Solutions",
     heading: { lead: "AR, VR, XR", accent: "Immersive Technologies" },
+    banner: {
+      images: [
+        "/assets/banners/ar-vr-xr-immersive-technologies/1.jpeg",
+        "/assets/banners/ar-vr-xr-immersive-technologies/2.jpg",
+      ],
+    },
     intro:
       "Augmented, virtual, and mixed reality experiences built to run reliably in a public venue, not just on a headset in the studio.",
     body: [
@@ -201,6 +226,9 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     label: "Projection Mapping Solutions",
     eyebrow: "Technology Solutions",
     heading: { lead: "Projection Mapping", accent: "Solutions" },
+    banner: {
+      images: ["/assets/banners/projection-mapping-solutions/1.jpeg"],
+    },
     intro:
       "Building facades, interiors, and objects transformed with precisely mapped projection — content sculpted to fit the exact geometry of the surface.",
     body: [

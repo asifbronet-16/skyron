@@ -15,7 +15,15 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "3D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "3D Content", accent: "Creation" },
-    banner: { images: [] },
+    banner: {
+      images: [
+        "/assets/banners/3d-content-creation/1.jpeg",
+        "/assets/banners/3d-content-creation/2.jpg",
+        "/assets/banners/3d-content-creation/3.jpeg",
+        "/assets/banners/3d-content-creation/4.jpeg",
+        "/assets/banners/3d-content-creation/5.jpeg",
+      ],
+    },
     intro:
       "Fully modeled, animated, and rendered 3D worlds built to fill a screen, a dome, or an entire building facade.",
     body: [
@@ -86,7 +94,14 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "2D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "2D Content", accent: "Creation" },
-    banner: { images: [] },
+    banner: {
+      images: [
+        "/assets/banners/2d-content-creation/1.jpeg",
+        "/assets/banners/2d-content-creation/2.jpeg",
+        "/assets/banners/2d-content-creation/3.jpeg",
+        "/assets/banners/2d-content-creation/4.jpeg",
+      ],
+    },
     intro:
       "Motion graphics, illustration, and animated design systems that carry a brand's visual language across every touchpoint.",
     body: [
@@ -137,7 +152,12 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "Anamorphic 3D Content Creation",
     eyebrow: "Creative Solutions",
     heading: { lead: "Anamorphic 3D", accent: "Content Creation" },
-    banner: { images: [] },
+    banner: {
+      images: [
+        "/assets/banners/anamorphic-3d-content-creation/1.jpeg",
+        "/assets/banners/anamorphic-3d-content-creation/2.png",
+      ],
+    },
     intro:
       "Forced-perspective illusions engineered for curved LED corners and billboards — content that appears to break out of the screen from one exact vantage point.",
     body: [
@@ -173,7 +193,12 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "Live Action Content Production",
     eyebrow: "Creative Solutions",
     heading: { lead: "Live Action", accent: "Content Production" },
-    banner: { images: [] },
+    banner: {
+      images: [
+        "/assets/banners/live-action-content-production/1.jpeg",
+        "/assets/banners/live-action-content-production/2.jpeg",
+      ],
+    },
     intro:
       "Full-service filming — from concept and script through shoot and post — for brand films, campaign content, and experiential backdrops.",
     body: [
@@ -190,31 +215,37 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Advertising & Commercial Films",
           description:
             "High-impact advertising and commercial films crafted to capture attention, tell compelling stories, and **drive measurable** brand results.",
+          image: "/assets/cards/advertising-commercial-films/1.jpeg",
         },
         {
           title: "Corporate & Branded Films",
           description:
             "Professionally crafted corporate and branded films that clearly communicate organizational values, **reinforce credibility**, and support consistent brand presence across internal and external channels.",
+          image: "/assets/cards/corporate-branded-films/1.jpeg",
         },
         {
           title: "Documentary & Narrative Content",
           description:
             "Authentic documentary and narrative content that tells meaningful stories, builds **emotional connection**, and resonates with audiences.",
+          image: "/assets/cards/documentary-narrative-content/1.png",
         },
         {
           title: "Product & Launch Films",
           description:
             "Strategic product and launch films designed to showcase innovation, **generate excitement**, and support successful market introductions.",
+          image: "/assets/cards/product-launch-films/1.jpeg",
         },
         {
           title: "Live Shoot & Visual Effects",
           description:
             "We produce cinematic live-action content enhanced with visual effects, seamlessly blending cinematography, CGI, and post-production to **elevate** storytelling and visual impact.",
+          image: "/assets/cards/live-shoot-visual-effects/1.jpeg",
         },
         {
           title: "Drone Shoot",
           description:
             "We capture dynamic aerial visuals using professional drone cinematography, delivering **striking perspectives** that enhance storytelling for brands, spaces, and experiences.",
+          image: "/assets/cards/drone-shoot/1.jpeg",
         },
       ],
     },
@@ -224,7 +255,15 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     label: "AI Driven Generative Content",
     eyebrow: "Creative Solutions",
     heading: { lead: "AI Driven", accent: "Generative Content" },
-    banner: { images: [] },
+    banner: {
+      images: [
+        "/assets/banners/ai-driven-generative-content/1.jpeg",
+        "/assets/banners/ai-driven-generative-content/2.jpeg",
+        "/assets/banners/ai-driven-generative-content/3.jpeg",
+        "/assets/banners/ai-driven-generative-content/4.jpeg",
+        "/assets/banners/ai-driven-generative-content/5.jpeg",
+      ],
+    },
     intro:
       "Generative tools woven into the creative pipeline to explore more ideas, faster — without losing the art direction that makes content feel intentional.",
     body: [
