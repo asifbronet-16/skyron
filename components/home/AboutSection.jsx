@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 const CARDS = [
   {
@@ -71,16 +72,23 @@ export default function AboutSection() {
     <section className="relative overflow-hidden bg-[#08060f] pt-16 sm:pt-16">
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <h2 className="bg-linear-[135deg] from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent  text-center text-3xl font-normal tracking-tight  sm:text-4xl lg:text-[3.5rem] py-2">
+        <Reveal
+          as="h2"
+          className="bg-linear-[135deg] from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent  text-center text-3xl font-normal tracking-tight  sm:text-4xl lg:text-[3.5rem] py-2"
+        >
           Spaces you&rsquo;ll keep talking about
-        </h2>
+        </Reveal>
 
-        <p className="mx-auto mt-5 max-w-7xl text-center text-sm leading-tight text-white/60 sm:text-lg">
+        <Reveal
+          as="p"
+          delay={100}
+          className="mx-auto mt-5 max-w-7xl text-center text-sm leading-tight text-white/60 sm:text-lg"
+        >
           Skyron Interactive is a creative technology studio specializing in
           interactive experiential content production, blending storytelling,
           spatial design, motion graphics, and emerging technology to create
           unforgettable brand experiences.
-        </p>
+        </Reveal>
 
         {/* stage: image centered, cards floated either side on desktop */}
         <div className="relative mt-14 lg:mt-16 lg:h-130">

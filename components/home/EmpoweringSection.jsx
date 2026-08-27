@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import StatCard from "./StatCard";
+import Reveal from "@/components/Reveal";
 
 const defaultStats = [
   { value: "1K+", label: "Satisfied Customers" },
@@ -33,7 +34,7 @@ export default function EmpoweringSection({
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
         {/* media */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <Reveal as="div" className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative aspect-3/4 w-full mask-[radial-gradient(ellipse_55%_85%_at_50%_50%,black_40%,transparent_100%)]">
             {children ??
               (media ? (
@@ -54,10 +55,10 @@ export default function EmpoweringSection({
                 </div>
               ))}
           </div>
-        </div>
+        </Reveal>
 
         {/* copy */}
-        <div>
+        <Reveal as="div" delay={120}>
           <h2 className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
             Empowering Innovation with{" "}
             <span className="bg-linear-to-r from-indigo-500 via-blue-500 to-sky-400 bg-clip-text text-transparent">
@@ -73,11 +74,13 @@ export default function EmpoweringSection({
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} delay={220 + i * 90}>
+                <StatCard {...stat} />
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

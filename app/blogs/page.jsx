@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
 import BlogCard from "@/components/BlogCard";
+import Reveal from "@/components/Reveal";
 import { BLOG_POSTS } from "@/constants/blogs";
 
 export const metadata = {
@@ -27,20 +28,22 @@ export default function BlogsPage() {
         />
 
         <div className="relative mx-auto max-w-3xl text-center">
-          <div className="flex items-center justify-center gap-4">
+          <Reveal className="flex items-center justify-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
               Blogs
             </span>
             <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />
-          </div>
+          </Reveal>
 
-          <SectionHeading lead="From The Studio" accent="Field Notes" align="center" className="mt-6" />
+          <Reveal delay={100}>
+            <SectionHeading lead="From The Studio" accent="Field Notes" align="center" className="mt-6" />
+          </Reveal>
 
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+          <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
             Thinking out loud about spatial design, immersive technology, and the craft behind
             experiences that stick.
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -48,13 +51,14 @@ export default function BlogsPage() {
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {BLOG_POSTS.map((post, i) => (
-              <BlogCard
-                key={post.slug}
-                {...post}
-                href={`/blogs/${post.slug}`}
-                index={i}
-                priority={i === 0}
-              />
+              <Reveal key={post.slug} delay={Math.min(i, 4) * 90} distance={28} className="h-full">
+                <BlogCard
+                  {...post}
+                  href={`/blogs/${post.slug}`}
+                  index={i}
+                  priority={i === 0}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 const PILLS = [
   { label: "Digital Physical Systems", className: "top-[5%] right-[40%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
@@ -17,18 +18,18 @@ export default function Hero() {
         <div className="relative flex items-center gap-12 px-6 lg:px-0  pb-20  pt-20  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-14">
           {/* Left column */}
           <div className="max-w-xl absolute lg:relative z-10">
-            <h1 className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+            <Reveal as="h1" className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
               Great experiences begin with a question, not a technology
-            </h1>
+            </Reveal>
 
-            <p className="mt-7 max-w-md text-base leading-relaxed text-white/60">
+            <Reveal as="p" delay={120} className="mt-7 max-w-md text-base leading-relaxed text-white/60">
               Skyron is a spatial experience studio. We sit at the intersection of
               intelligent technology, cinematic content, and environment design to
               create moments that don&apos;t just communicate ideas&mdash;they make
               people feel them.
-            </p>
+            </Reveal>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="/work"
                 className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
@@ -41,7 +42,7 @@ export default function Hero() {
               >
                 Get in Touch
               </Link>
-            </div>
+            </Reveal>
           </div>
 
           {/* Right column — video slot + floating pills */}
@@ -53,7 +54,7 @@ export default function Hero() {
                 muted
                 loop
                 playsInline
-                className="h-full w-full object-fit lg:object-cover lg:object-[100%_50%] scale-120 mix-blend-screen"
+                className="h-full w-full object-cover lg:object-[100%_50%] mix-blend-screen"
               >
                 <source src="assets/new-bg.mp4" type="video/mp4" />
               </video>

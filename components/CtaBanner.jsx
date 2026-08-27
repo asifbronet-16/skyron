@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { Zap } from "@/components/icons";
 
 /**
@@ -22,7 +23,11 @@ export default function CtaBanner({
 
   return (
     <section className={`relative overflow-hidden bg-[#08060f] px-6 py-20 sm:py-28 ${className}`}>
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16">
+      <Reveal
+        as="div"
+        distance={32}
+        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16"
+      >
         {/* signature top border */}
         <span
           aria-hidden="true"
@@ -88,7 +93,7 @@ export default function CtaBanner({
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

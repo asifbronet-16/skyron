@@ -1,5 +1,6 @@
 import FaqAccordion from "./FaqAccordion";
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 
 const defaultFaqs = [
   {
@@ -34,16 +35,18 @@ export default function FaqSection({ items = defaultFaqs }) {
     <section className="relative overflow-hidden bg-[#08080D] py-20 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-3xl px-6">
-        <SectionHeading
-          lead="Frequently Asked"
-          accent="Questions"
-          align="center"
-          inline
-        />
+        <Reveal>
+          <SectionHeading
+            lead="Frequently Asked"
+            accent="Questions"
+            align="center"
+            inline
+          />
+        </Reveal>
 
-        <div className="mt-14">
+        <Reveal delay={120} className="mt-14">
           <FaqAccordion items={items} />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

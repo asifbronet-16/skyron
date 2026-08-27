@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "@/components/icons";
+import Reveal from "@/components/Reveal";
 
 const DETAILS = [
   { icon: Mail, label: "Email", value: "hello@skyron.me", href: "mailto:hello@skyron.me" },
@@ -52,7 +53,7 @@ export default function ContactSection() {
 
       <div className="relative mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:gap-16">
         {/* ── left column ── */}
-        <div>
+        <Reveal as="div">
           {/* eyebrow with the fading rule */}
           <div className="flex items-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
@@ -101,10 +102,14 @@ export default function ContactSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
         {/* ── right column: form card ── */}
-        <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-white/2 p-6 backdrop-blur-sm sm:p-8">
+        <Reveal
+          as="div"
+          delay={120}
+          className="relative overflow-hidden rounded-2xl border border-white/8 bg-white/2 p-6 backdrop-blur-sm sm:p-8"
+        >
           <span
             aria-hidden="true"
             className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#2981ff] to-transparent opacity-70 transition-opacity duration-300 hover:opacity-100"
@@ -176,7 +181,7 @@ export default function ContactSection() {
               <Send className="h-4 w-4 transition group-hover:translate-x-0.5" strokeWidth={2} />
             </button>
           </form>
-        </div>
+        </Reveal>
     </div>
     </section >
   );

@@ -1,4 +1,5 @@
 import ServiceCard from "./ServiceCard";
+import Reveal from "@/components/Reveal";
 
 const defaultServices = [
   {
@@ -57,17 +58,19 @@ export default function ServicesSection({ services = defaultServices }) {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10"> 
-        <h2 className="mx-auto max-w-4xl text-center text-2xl font-normal leading-relaxed tracking-itght text-white sm:text-2xl lg:text-4xl">
+        <Reveal as="h2" className="mx-auto max-w-4xl text-center text-2xl font-normal leading-relaxed tracking-itght text-white sm:text-2xl lg:text-4xl">
           Crafting{" "}
           <span className="bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
             intelligent,
           </span>{" "}
           AI-driven solutions
-        </h2>
+        </Reveal>
 
         <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => (
-            <ServiceCard key={service.number} {...service} />
+          {services.map((service, i) => (
+            <Reveal key={service.number} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
+              <ServiceCard {...service} className="h-full" />
+            </Reveal>
           ))}
         </div>
       </div>

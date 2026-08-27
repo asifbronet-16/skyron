@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import FeatureGrid from "@/components/FeatureGrid";
 import TrustedBySection from "@/components/home/TrustedBySection";
+import Reveal from "@/components/Reveal";
 import { ChevronRight } from "@/components/icons";
 
 export const metadata = {
@@ -14,36 +15,28 @@ export const metadata = {
 
 const INDUSTRIES = [
   {
-    title: "Retail & Retailtainment",
-    description: "Storefront moments, product launches, and in-store activations that turn footfall into an experience worth posting about.",
+    title: "Corporate, Government & Mega Projects",
+    description: "Experience-led content for corporate showcases, innovation centers, government initiatives, and large-scale regional developments.",
   },
   {
-    title: "Real Estate & Hospitality",
-    description: "Immersive sales galleries, show-suite visualizations, and hotel or resort installations that sell a lifestyle, not just a floor plan.",
+    title: "Exhibitions, Museums & Cultural Projects",
+    description: "Immersive environments, interactive narratives, and spatial media designed to educate, engage, and inspire diverse audiences.",
   },
   {
-    title: "Government & Public Sector",
-    description: "Cultural pavilions, heritage storytelling, and public exhibitions built to represent a nation or city on the world stage.",
+    title: "Live Events & Experiential Marketing",
+    description: "High-impact brand activations, product launches, festivals, and corporate events powered by interactive technology and immersive content.",
   },
   {
-    title: "Automotive",
-    description: "Holographic reveals, showroom AR configurators, and motor-show activations that make a launch impossible to ignore.",
+    title: "Luxury, Retail & Mall Experiences",
+    description: "Premium interactive installations and experiential content for luxury brands, flagship stores, shopping malls, and destination retail spaces.",
   },
   {
-    title: "Corporate & Enterprise",
-    description: "Experience centres, briefing rooms, and product showcases that turn a corporate story into a walk-through your visitors remember.",
-  },
-  {
-    title: "Education & Museums",
-    description: "Interactive exhibits and spatial learning environments that make complex ideas tangible for every age group.",
+    title: "Real Estate, Architecture & Destination Marketing",
+    description: "Interactive visualizations, immersive presentations, and experiential showcases for properties, master plans, and landmark destinations.",
   },
   {
     title: "Entertainment & Media",
-    description: "Concert visuals, immersive stage design, and volumetric content built for audiences who expect spectacle.",
-  },
-  {
-    title: "Events & Exhibitions",
-    description: "Brand activations and trade-show builds engineered to draw a crowd and hold it, hall after hall.",
+    description: "Film launches, OTT promotions, music events, fan experiences, and immersive storytelling installations that turn audiences into participants.",
   },
 ];
 
@@ -101,23 +94,23 @@ export default function IndustriesPage() {
 
             <div className="relative mx-auto w-full ">
               <div className="w-full max-w-xl">
-                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
+                <Reveal as="span" className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
                   Industries We Serve
-                </span>
+                </Reveal>
 
-                <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.2] tracking-tight text-white sm:text-5xl lg:text-[3.2rem]">
-                  We Design Experiences That{" "}
+                <Reveal as="h1" delay={100} className="mt-6 text-[2.25rem] font-semibold leading-[1.2] tracking-tight text-white sm:text-5xl lg:text-[3.2rem]">
+                  We Partner With Industries{" "}
                   <span className="bg-linear-to-r from-fuchsia-500 via-purple-500 to-indigo-400 bg-clip-text text-transparent">
-                    Speak To Every Industry
+                    Where Experience Drives Impact
                   </span>
-                </h1>
+                </Reveal>
 
-                <p className="mt-7 max-w-md text-base leading-relaxed text-white/60">
-                  From retail floors to government pavilions, we adapt projection, holographic, AR,
-                  and interactive work to fit the room — and the audience standing in it.
-                </p>
+                <Reveal as="p" delay={200} className="mt-7 max-w-md text-base leading-relaxed text-white/60">
+                  Our interactive and immersive content is designed to perform at scale — across
+                  live, digital, and spatial environments.
+                </Reveal>
 
-                <div className="mt-10">
+                <Reveal delay={300} className="mt-10">
                   <Link
                     href="/#contact"
                     className="inline-flex items-center gap-3 rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] py-2 pl-7 pr-2 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
@@ -127,7 +120,7 @@ export default function IndustriesPage() {
                       <ChevronRight className="h-4 w-4" strokeWidth={2.2} />
                     </span>
                   </Link>
-                </div>
+                </Reveal>
               </div>
             </div>
 

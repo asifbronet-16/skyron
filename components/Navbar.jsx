@@ -117,8 +117,8 @@ export default function Navbar({ active = "Home" }) {
     <>
     <header className="fixed inset-x-0 top-0 z-50 bg-[#08060f]/70 backdrop-blur-md transition-colors">
       {/* ambient rule — violet → magenta → cyan, fading out at both ends */}
-      <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px w-full bg-linear-to-r from-transparent via-fuchsia-500 to-transparent" />
-      <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px w-full bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-80 mask-[linear-gradient(to_right,transparent,#000_55%,#000)]" />
+      {/* <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px w-full bg-linear-to-r from-transparent via-fuchsia-500 to-transparent" />
+      <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px w-full bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-80 mask-[linear-gradient(to_right,transparent,#000_55%,#000)]" /> */}
 
       <nav className="mx-auto flex items-center justify-between px-6 py-4 lg:px-28 lg:py-7">
         {/* Logo */}
@@ -148,7 +148,7 @@ export default function Navbar({ active = "Home" }) {
                     <Link
                       href={link.href}
                       className={`flex items-center gap-1 text-sm transition-colors ${isActive
-                        ? "font-semibold  tracking-wider text-white"
+                        ? "font-semibold uppercase tracking-wider text-white"
                         : "font-medium text-white/70 hover:text-white"
                         }`}
                     >
@@ -165,13 +165,13 @@ export default function Navbar({ active = "Home" }) {
                         {link.children.map((child) =>
                           child.children ? (
                             <div key={child.label} className="group/sub relative">
-                              <button
-                                type="button"
+                              <Link
+                                href={child.href}
                                 className="flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
                               >
                                 {child.label}
                                 <ChevronRight className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-                              </button>
+                              </Link>
 
                               {/* Second-level flyout — pl-2 bridges the hover gap to the right */}
                               <div className="invisible absolute left-full top-0 pl-2 opacity-0 transition-all duration-200 group-hover/sub:visible group-hover/sub:opacity-100">

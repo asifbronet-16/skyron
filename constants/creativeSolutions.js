@@ -92,11 +92,45 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     body: [
       "We design and animate flat and layered 2D content for everything from wayfinding screens to broadcast-style brand films — clean, on-brand, and built to move.",
     ],
-    highlights: [
-      { title: "Motion Graphics", body: "Typography, iconography, and layered animation systems built to brand guidelines." },
-      { title: "Illustration", body: "Custom illustrated worlds and characters, from flat vector to painterly styles." },
-      { title: "Screen-Ready Delivery", body: "Exported and optimized for whatever hardware the content will actually run on." },
-    ],
+    highlights: [],
+    features: {
+      lead: "Where Motion",
+      accent: "Meets Meaning",
+      subtitle:
+        "From explainer videos to brand films, our 2D pipeline turns ideas into clear, expressive visual stories built for every platform.",
+      cards: [
+        {
+          title: "Explainer & Educational Videos",
+          description:
+            "Engaging explainer and educational videos that **simplify** complex ideas, communicate value clearly, and inform audiences across platforms.",
+        },
+        {
+          title: "Character Animation",
+          description:
+            "Lively character animation that brings personalities to life, **enhances** storytelling, and creates memorable brand-driven narratives.",
+        },
+        {
+          title: "2D Motion Graphics",
+          description:
+            "Clean, dynamic 2D motion graphics designed to communicate messages clearly and **elevate** visual storytelling across media.",
+        },
+        {
+          title: "Infographic & Data Animations",
+          description:
+            "Visually compelling data and infographic animations that transform information into clear, engaging, and **easy-to-understand** stories.",
+        },
+        {
+          title: "Brand Films & Visual Idents",
+          description:
+            "Cinematic brand films and visual identities that define tone, **build recognition**, and express brand purpose through motion.",
+        },
+        {
+          title: "Social & UI Motion Content",
+          description:
+            "Impactful social and UI motion content crafted to enhance usability, **increase engagement**, and strengthen digital brand experiences.",
+        },
+      ],
+    },
   },
   {
     slug: "anamorphic-3d-content-creation",
@@ -109,11 +143,30 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     body: [
       "Anamorphic work lives or dies on the math. We build every scene against the precise geometry of the display and viewing angle, so the illusion holds up in the photo, not just on paper.",
     ],
-    highlights: [
-      { title: "Precision Modeling", body: "Every shot is built against the exact curve and dimensions of the target display." },
-      { title: "Corner LED & Billboards", body: "Purpose-built for the anamorphic corner-screen format driving social reach today." },
-      { title: "Camera-Tested Illusion", body: "Validated from the intended viewing point before a single frame goes live." },
-    ],
+    highlights: [],
+    features: {
+      lead: "Illusions That",
+      accent: "Break The Screen",
+      subtitle:
+        "Forced-perspective content engineered for the exact geometry of corner, flat, and curved LED displays — built to stop a crowd.",
+      cards: [
+        {
+          title: "Corner & L-Shape LED Displays",
+          description:
+            "High-impact corner and L-shape LED displays engineered for immersive storytelling, seamless angles, and **maximum visual impact** in architectural and experiential environments.",
+        },
+        {
+          title: "Flat & Facade LED Installations",
+          description:
+            "Large-scale flat and facade LED installations delivering bold visuals, structural integration, and **captivating** brand presence across commercial buildings and public-facing spaces.",
+        },
+        {
+          title: "Curved & Wrap-Around Displays",
+          description:
+            "Curved and wrap-around LED displays designed to envelop audiences with fluid visuals, dynamic perspectives, and **immersive** spatial brand experiences.",
+        },
+      ],
+    },
   },
   {
     slug: "live-action-content-production",
@@ -126,11 +179,45 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     body: [
       "Our production team handles pre-production, filming, and post entirely in-house, so live-action footage integrates seamlessly with the CG and motion content it sits alongside.",
     ],
-    highlights: [
-      { title: "End-to-End Production", body: "Script, shoot, and edit under one roof — no handoffs between vendors." },
-      { title: "Hybrid Pipelines", body: "Live footage composited directly with 3D and motion graphics for one unified look." },
-      { title: "On-Location & Studio", body: "Equipped for controlled studio shoots and complex on-location productions alike." },
-    ],
+    highlights: [],
+    features: {
+      lead: "Stories Captured",
+      accent: "In The Real World",
+      subtitle:
+        "From commercial films to documentary storytelling, we produce live-action content that captures real moments with cinematic craft.",
+      cards: [
+        {
+          title: "Advertising & Commercial Films",
+          description:
+            "High-impact advertising and commercial films crafted to capture attention, tell compelling stories, and **drive measurable** brand results.",
+        },
+        {
+          title: "Corporate & Branded Films",
+          description:
+            "Professionally crafted corporate and branded films that clearly communicate organizational values, **reinforce credibility**, and support consistent brand presence across internal and external channels.",
+        },
+        {
+          title: "Documentary & Narrative Content",
+          description:
+            "Authentic documentary and narrative content that tells meaningful stories, builds **emotional connection**, and resonates with audiences.",
+        },
+        {
+          title: "Product & Launch Films",
+          description:
+            "Strategic product and launch films designed to showcase innovation, **generate excitement**, and support successful market introductions.",
+        },
+        {
+          title: "Live Shoot & Visual Effects",
+          description:
+            "We produce cinematic live-action content enhanced with visual effects, seamlessly blending cinematography, CGI, and post-production to **elevate** storytelling and visual impact.",
+        },
+        {
+          title: "Drone Shoot",
+          description:
+            "We capture dynamic aerial visuals using professional drone cinematography, delivering **striking perspectives** that enhance storytelling for brands, spaces, and experiences.",
+        },
+      ],
+    },
   },
   {
     slug: "ai-driven-generative-content",
@@ -143,11 +230,35 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     body: [
       "We use AI-assisted workflows for concepting, texture and asset generation, and rapid iteration, always finished and art-directed by hand before anything reaches a screen.",
     ],
-    highlights: [
-      { title: "Rapid Concepting", body: "Explore dozens of creative directions in the time it used to take to explore one." },
-      { title: "Human Art Direction", body: "Every generated asset is curated and finished by our creative team, never shipped raw." },
-      { title: "Novel Formats", body: "Real-time generative visuals for experiences that respond and evolve live." },
-    ],
+    highlights: [],
+    features: {
+      lead: "Ideas, Accelerated",
+      accent: "By Intelligent Tools",
+      subtitle:
+        "AI-assisted workflows woven into the creative pipeline — expanding what's possible across marketing, communication, and storytelling content.",
+      cards: [
+        {
+          title: "Marketing & Brand Content",
+          description:
+            "Strategic marketing and brand content crafted to build awareness, shape perception, and deliver **consistent storytelling** across campaigns, platforms, and audience touchpoints globally.",
+        },
+        {
+          title: "Corporate Communication",
+          description:
+            "Clear corporate communication films designed to align stakeholders, convey messaging effectively, and support internal and external communication objectives with **clarity and confidence**.",
+        },
+        {
+          title: "Education & Learning",
+          description:
+            "Engaging education and learning content that simplifies complex topics, **enhances retention**, and supports training, onboarding, and knowledge sharing across industries.",
+        },
+        {
+          title: "Creative Storytelling",
+          description:
+            "Creative storytelling that blends narrative, visuals, and emotion to connect audiences with ideas, brands, and experiences in **meaningful ways**.",
+        },
+      ],
+    },
   },
 ];
 

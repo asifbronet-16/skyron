@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
 import CaseStudyCard from "@/components/home/CaseStudyCard";
+import Reveal from "@/components/Reveal";
 import { CASE_STUDIES_ITEMS } from "@/constants/caseStudies";
 
 export const metadata = {
@@ -27,20 +28,22 @@ export default function CaseStudiesPage() {
         />
 
         <div className="relative mx-auto max-w-3xl text-center">
-          <div className="flex items-center justify-center gap-4">
+          <Reveal className="flex items-center justify-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
               Case Studies
             </span>
             <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />
-          </div>
+          </Reveal>
 
-          <SectionHeading lead="Where Creativity" accent="Meets Experience" align="center" className="mt-6" />
+          <Reveal delay={100}>
+            <SectionHeading lead="Where Creativity" accent="Meets Experience" align="center" className="mt-6" />
+          </Reveal>
 
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+          <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
             A look at the experiences we&apos;ve shipped — from AI-driven brand activations to spatial
             installations built for scale.
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -48,7 +51,9 @@ export default function CaseStudiesPage() {
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {CASE_STUDIES_ITEMS.map((item, i) => (
-              <CaseStudyCard key={item.title} {...item} priority={i === 0} />
+              <Reveal key={item.title} delay={Math.min(i, 4) * 90} distance={28} className="h-full">
+                <CaseStudyCard {...item} priority={i === 0} />
+              </Reveal>
             ))}
           </div>
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 // Cycled across cards in order so a long grid still reads as varied, not random.
 const ACCENT_RULES = [
@@ -44,58 +45,59 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
   return (
     <section className={`relative overflow-hidden bg-[#08060f] px-6 py-20 sm:py-28 ${className}`}>
       <div className="relative mx-auto max-w-6xl">
-        <SectionHeading
-          lead={lead}
-          accent={accent}
-          inline
-          align="center"
-          accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
-        />
+        <Reveal>
+          <SectionHeading
+            lead={lead}
+            accent={accent}
+            inline
+            align="center"
+            accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
+          />
 
-        {subtitle && (
-          <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-white/50 sm:text-base">
-            {renderInlineBold(subtitle)}
-          </p>
-        )}
+          {subtitle && (
+            <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-white/50 sm:text-base">
+              {renderInlineBold(subtitle)}
+            </p>
+          )}
+        </Reveal>
 
         {cards.length > 0 && (
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((card, i) => {
               const rule = ACCENT_RULES[i % ACCENT_RULES.length];
               return (
-                <article
-                  key={card.title}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 focus-within:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  {/* accent hairline along the top edge */}
-                  <span
-                    aria-hidden="true"
-                    className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
-                  />
-
-                  {/* background image, revealed on hover */}
-                  {card.image && (
-                    <div
+                <Reveal key={card.title} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/6 bg-linear-to-b from-white/5 to-white/1 p-7 transition duration-300 hover:-translate-y-1 focus-within:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none">
+                    {/* accent hairline along the top edge */}
+                    <span
                       aria-hidden="true"
-                      className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
-                    >
-                      <Image
-                        src={card.image}
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-linear-to-t from-[#08060f] via-[#08060f]/75 to-[#08060f]/30" />
-                    </div>
-                  )}
+                      className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
+                    />
 
-                  <h3 className="relative text-base font-semibold leading-snug text-white">{card.title}</h3>
+                    {/* background image, revealed on hover */}
+                    {card.image && (
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
+                      >
+                        <Image
+                          src={card.image}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#08060f] via-[#08060f]/75 to-[#08060f]/30" />
+                      </div>
+                    )}
 
-                  <p className="relative mt-3 text-sm leading-relaxed text-white/50">
-                    {renderInlineBold(card.description)}
-                  </p>
-                </article>
+                    <h3 className="relative text-base font-semibold leading-snug text-white">{card.title}</h3>
+
+                    <p className="relative mt-3 text-sm leading-relaxed text-white/50">
+                      {renderInlineBold(card.description)}
+                    </p>
+                  </article>
+                </Reveal>
               );
             })}
           </div>

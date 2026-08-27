@@ -1,5 +1,6 @@
 import CaseStudyCard from "./CaseStudyCard";
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 import { CASE_STUDIES_ITEMS } from "@/constants/caseStudies";
 
 export default function CaseStudiesSection({ items = CASE_STUDIES_ITEMS }) {
@@ -12,11 +13,15 @@ export default function CaseStudiesSection({ items = CASE_STUDIES_ITEMS }) {
       /> */}
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <SectionHeading lead="Where Creativity" accent="Meets Experience" />
+        <Reveal>
+          <SectionHeading lead="Where Creativity" accent="Meets Experience" />
+        </Reveal>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item, i) => (
-            <CaseStudyCard key={item.title} {...item} priority={i === 0} />
+            <Reveal key={item.title} delay={Math.min(i, 4) * 90} distance={28} className="h-full">
+              <CaseStudyCard {...item} priority={i === 0} />
+            </Reveal>
           ))}
         </div>
       </div>

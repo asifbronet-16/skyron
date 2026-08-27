@@ -1,4 +1,5 @@
 import CapabilityCard from "./CapabilityCard";
+import Reveal from "@/components/Reveal";
 import {
   BuildingIcon,
   ClapperboardIcon,
@@ -58,12 +59,12 @@ export default function CapabilitiesSection({ capabilities = defaultCapabilities
     <section className="relative overflow-hidden py-20 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col max-w-5xl mx-auto">
+        <Reveal className="flex flex-col max-w-5xl mx-auto">
           <div className="">
             <h2 className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">
               Interactive Experiences That
               <br/>
-             
+
             </h2>
           </div>
 
@@ -73,16 +74,17 @@ export default function CapabilitiesSection({ capabilities = defaultCapabilities
                 Don&apos;t Just See — They Feel.
             </h2>
           </div>
-        </div>
+        </Reveal>
 
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/40 mx-auto">
-          In a world overloaded with content, interaction is the new attention. We help brands move
-          beyond passive visuals into immersive experiences.
-        </p>
+        <Reveal as="p" delay={100} className="mt-6 max-w-2xl text-sm leading-relaxed text-white/40 mx-auto">
+          In a world overloaded with content, interaction is the new attention. We help brands move beyond passive visuals into engaging, participatory, and immersive experiences that drive real audience connection.
+        </Reveal>
 
         <div className="mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map((item) => (
-            <CapabilityCard key={item.title} {...item} />
+          {capabilities.map((item, i) => (
+            <Reveal key={item.title} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
+              <CapabilityCard {...item} />
+            </Reveal>
           ))}
         </div>
       </div>
