@@ -36,7 +36,7 @@ export default function SolutionBanner({
 
   return (
     <section
-      className={`relative isolate flex h-[280px] w-full items-center justify-center overflow-hidden bg-[#08060f] sm:h-[380px] lg:h-[460px] ${className}`}
+      className={`relative isolate flex h-[280px] w-full items-center justify-center overflow-hidden bg-[#08060f] sm:h-[380px] lg:h-165 ${className}`}
     >
       {slides.length > 0 ? (
         slides.map((src, i) => (

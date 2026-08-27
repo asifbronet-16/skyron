@@ -72,6 +72,7 @@ export default function CreativeSolutionsPage() {
                       accent={ACCENTS[i % ACCENTS.length]}
                       title={item.label}
                       description={item.intro}
+                      image={item.banner?.images?.[0]}
                       className="h-full"
                     />
                   </Link>

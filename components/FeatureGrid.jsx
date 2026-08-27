@@ -85,7 +85,7 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
                           alt=""
                           fill
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                          className="object-cover"
+                          className="object-contain"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-[#08060f] via-[#08060f]/75 to-[#08060f]/30" />
                       </div>

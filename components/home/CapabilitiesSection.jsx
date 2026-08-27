@@ -16,6 +16,7 @@ const defaultCapabilities = [
     title: "Projection Mapping Solutions",
     description:
       "We create immersive projection mapping experiences that transform surfaces, spaces, and objects into dynamic storytelling platforms.",
+    image: "/assets/banners/projection-mapping-solutions/1.jpeg",
   },
   {
     icon: CubeIcon,
@@ -23,6 +24,7 @@ const defaultCapabilities = [
     title: "Hologram, HoloBox & Volumetric Display",
     description:
       "We create advanced holographic display experiences that present people, products, and digital content as immersive volumetric visuals.",
+    image: "/assets/banners/hologram-holobox-volumetric-display/2.jpeg",
   },
   {
     icon: HeadsetIcon,
@@ -30,6 +32,7 @@ const defaultCapabilities = [
     title: "AR VR XR Immersive Technologies",
     description:
       "We develop immersive AR, VR, and XR experiences that blend digital content with real environments to enhance visualization and training.",
+    image: "/assets/banners/ar-vr-xr-immersive-technologies/2.jpg",
   },
   {
     icon: BuildingIcon,
@@ -44,6 +47,7 @@ const defaultCapabilities = [
     title: "Events, Exhibitions & Brand Activation",
     description:
       "We create immersive events, exhibitions, and brand activations combining storytelling, spatial design, and interactive technology.",
+    image: "/assets/banners/events-exhibitions-brand-activations/2.jpeg",
   },
   {
     icon: DisplayIcon,
@@ -51,6 +55,7 @@ const defaultCapabilities = [
     title: "Interactive Technologies",
     description:
       "We develop interactive technology solutions that enable users to engage with digital content through intuitive, responsive, and immersive interfaces.",
+    image: "/assets/banners/interactive-technologies/2.jpeg",
   },
 ];
 
