@@ -4,6 +4,7 @@ import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
 import BlogCard from "@/components/BlogCard";
 import Reveal from "@/components/Reveal";
+import PhotoBackground from "@/components/PhotoBackground";
 import { BLOG_POSTS } from "@/constants/blogs";
 
 export const metadata = {
@@ -18,6 +19,14 @@ export default function BlogsPage() {
       <Navbar active="Blogs" />
 
       <section className="relative overflow-hidden bg-[#08060f] px-6 pt-36 pb-20 sm:pt-44 sm:pb-24">
+        <PhotoBackground
+          images={["/assets/banners/blogs/1.jpeg", "/assets/banners/blogs/2.jpeg"]}
+        />
+
+        {/* vignette so the copy stays legible over the photo — same treatment as SolutionBanner */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,6,15,0.6)_0%,rgba(8,6,15,0.3)_40%,rgba(8,6,15,0.85)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f]/80 via-[#08060f]/40 to-[#08060f]/80" />
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-60 top-[10%] h-130 w-130 rounded-full bg-[#FF2D78] opacity-20 blur-[100px]"

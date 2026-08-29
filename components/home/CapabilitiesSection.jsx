@@ -40,6 +40,7 @@ const defaultCapabilities = [
     title: "Experience Centre Consulting & Execution",
     description:
       "We design and deliver immersive experience centres that communicate ideas, engage audiences, and bring brands and technologies to life.",
+    image: "/assets/cards/corporate-branded-films/3.jpeg",
   },
   {
     icon: PavilionIcon,

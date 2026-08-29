@@ -5,6 +5,7 @@ const defaultServices = [
   {
     number: "01",
     accent: "violet",
+    image: "/assets/cards/advertising-commercial-films/2.jpeg",
     title: "Interactive Experiential Content Production",
     description:
       "We create end-to-end interactive content for live and digital environments combining creative direction, design, technology, and execution.",
@@ -18,6 +19,7 @@ const defaultServices = [
   {
     number: "02",
     accent: "cyan",
+    image: "/assets/cards/advertising-commercial-films/3.jpeg",
     title: "Immersive & Spatial Media",
     description: "We design content that exists in space, not just on screens.",
     points: [
@@ -30,6 +32,7 @@ const defaultServices = [
   {
     number: "03",
     accent: "rose",
+    image: "/assets/cards/advertising-commercial-films/4.jpeg",
     title: "Motion Graphics & 3D Content",
     description: "High-end motion design and 3D visuals crafted for experiential formats.",
     points: [
@@ -42,6 +45,7 @@ const defaultServices = [
   {
     number: "04",
     accent: "purple",
+    image: "/assets/cards/corporate-branded-films/2.jpeg",
     title: "AR, XR & Interactive Technology",
     description:
       "We integrate emerging technology to make experiences responsive and intelligent.",

@@ -29,18 +29,21 @@ const STORY_PROCESS = [
     accent: "violet",
     title: "Pre-Production",
     description: "A strong creative foundation — concept development, scripting, storyboarding, and mood boards.",
+    image: "/assets/cards/corporate-branded-films/4.jpeg",
   },
   {
     number: "02",
     accent: "cyan",
     title: "Production",
     description: "A tailored pipeline for the story at hand — 2D/3D animation, live-action, VFX, or AI-driven content, whichever serves it best.",
+    image: "/assets/cards/corporate-branded-films/5.jpeg",
   },
   {
     number: "03",
     accent: "purple",
     title: "Post-Production",
     description: "Editing, sound design, visual effects, and color grading, polished into one immersive final output.",
+    image: "/assets/cards/corporate-branded-films/6.jpeg",
   },
 ];
 

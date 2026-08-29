@@ -17,26 +17,32 @@ const INDUSTRIES = [
   {
     title: "Corporate, Government & Mega Projects",
     description: "Experience-led content for corporate showcases, innovation centers, government initiatives, and large-scale regional developments.",
+    image: "/assets/OurStory/8a2b2aaa6dbb97aa603907da8cc760546ae697aa.png",
   },
   {
     title: "Exhibitions, Museums & Cultural Projects",
     description: "Immersive environments, interactive narratives, and spatial media designed to educate, engage, and inspire diverse audiences.",
+    image: "/assets/cards/advertising-commercial-films/2.jpeg",
   },
   {
     title: "Live Events & Experiential Marketing",
     description: "High-impact brand activations, product launches, festivals, and corporate events powered by interactive technology and immersive content.",
+    image: "/assets/cards/advertising-commercial-films/3.jpeg",
   },
   {
     title: "Luxury, Retail & Mall Experiences",
     description: "Premium interactive installations and experiential content for luxury brands, flagship stores, shopping malls, and destination retail spaces.",
+    image: "/assets/cards/advertising-commercial-films/4.jpeg",
   },
   {
     title: "Real Estate, Architecture & Destination Marketing",
     description: "Interactive visualizations, immersive presentations, and experiential showcases for properties, master plans, and landmark destinations.",
+    image: "/assets/cards/corporate-branded-films/2.jpeg",
   },
   {
     title: "Entertainment & Media",
     description: "Film launches, OTT promotions, music events, fan experiences, and immersive storytelling installations that turn audiences into participants.",
+    image: "/assets/cards/corporate-branded-films/3.jpeg",
   },
 ];
 

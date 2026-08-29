@@ -47,9 +47,9 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
             alt=""
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-contain"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#08060f] via-[#08060f]/80 to-[#08060f]/40" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/85 via-[#08060f]/55 to-[#08060f]/20" />
         </div>
       )}
 

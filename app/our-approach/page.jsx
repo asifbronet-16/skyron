@@ -15,7 +15,7 @@ export const metadata = {
 
 const STEPS = [
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/corporate-branded-films/7.jpeg",
     number: "01",
     accent: "violet",
     title: "Envision & Discovery",
@@ -23,7 +23,7 @@ const STEPS = [
       "We begin by listening and observing. Through collaborative dialogue, research, and insight-led exploration, we understand your vision, audience, and challenges — establishing clarity, alignment, and a shared strategic direction that guides every experiential decision forward.",
   },
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/drone-shoot/2.jpeg",
     number: "02",
     accent: "cyan",
     title: "Concept Development",
@@ -31,7 +31,7 @@ const STEPS = [
       "Ideas are shaped through creative exploration and strategic intent. We define the narrative, experience flow, and technological direction, assessing feasibility and impact — translating possibilities into a clear concept, structured roadmap, and confident foundation for execution.",
   },
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/drone-shoot/3.jpeg",
     number: "03",
     accent: "rose",
     title: "Design & Experience Architecture",
@@ -39,7 +39,7 @@ const STEPS = [
       "Creative vision meets technical precision as concepts evolve into detailed experience architectures. Interaction logic, visual language, and system frameworks are developed through prototyping and previsualization — ensuring coherence, usability, and design integrity before production begins.",
   },
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/live-shoot-visual-effects/2.jpeg",
     number: "04",
     accent: "purple",
     title: "Production & Integration",
@@ -47,7 +47,7 @@ const STEPS = [
       "Our multidisciplinary teams bring experiences to life through content creation, development, and system integration. Structured reviews, demonstrations, and collaborative checkpoints ensure consistency, quality, and alignment — transforming designed concepts into fully realized experiential solutions.",
   },
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/product-launch-films/2.jpeg",
     number: "05",
     accent: "violet",
     title: "Experience Deployment & Activation",
@@ -55,7 +55,7 @@ const STEPS = [
       "We manage on-site implementation, calibration, and final refinements to ensure a seamless activation. Each experience is tested, optimized, and launched with confidence — supported by clear documentation and knowledge transfer for smooth handover.",
   },
   {
-    image: "/assets/banners/our-approach/1.jpeg",
+    image: "/assets/cards/product-launch-films/3.jpeg",
     number: "06",
     accent: "cyan",
     title: "Ongoing Support",
