@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, Instagram, Facebook, Youtube } from "@/components/icons";
+import { Mail, Phone } from "@/components/icons";
+// import { Instagram, Facebook, Youtube } from "@/components/icons";
 
 
 const DELIVER = [
@@ -10,29 +11,33 @@ const DELIVER = [
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Our Approach", href: "/our-approach" },
   { label: "Industries We Serve", href: "/industries" },
-  { label: "Creative Solutions", href: "/creative-solutions" },
-  { label: "Technology Solutions", href: "/technology-solutions" },
-  { label: "Featured Work", href: "/work" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/#contact" },
 ];
 
+// The two solution landing pages first, then the individual services beneath them.
+// Every entry points at a real page; those with no page of their own yet —
+// Experience Centres, Motion Graphics, Spatial Media — are parked below
+// rather than linking to a 404.
 const SERVICES = [
-  { label: "Projection Mapping", href: "/services/projection-mapping" },
-  { label: "Hologram & HoloBox", href: "/services/hologram-holobox" },
-  { label: "AR / VR / XR", href: "/services/ar-vr-xr" },
-  { label: "Experience Centres", href: "/services/experience-centres" },
-  { label: "Brand Activations", href: "/services/brand-activations" },
-  { label: "Interactive Technology", href: "/services/interactive-technology" },
-  { label: "Motion Graphics", href: "/services/motion-graphics" },
-  { label: "Spatial Media", href: "/services/spatial-media" },
+  { label: "Creative Solutions", href: "/creative-solutions" },
+  { label: "Technology Solutions", href: "/technology-solutions" },
+  { label: "Projection Mapping", href: "/technology-solutions/projection-mapping-solutions" },
+  { label: "Hologram & HoloBox", href: "/technology-solutions/hologram-holobox-volumetric-display" },
+  { label: "AR / VR / XR", href: "/technology-solutions/ar-vr-xr-immersive-technologies" },
+  { label: "Brand Activations", href: "/technology-solutions/events-exhibitions-brand-activations" },
+  { label: "Interactive Technology", href: "/technology-solutions/interactive-technologies" },
+  // { label: "Experience Centres", href: "/services/experience-centres" },
+  // { label: "Motion Graphics", href: "/services/motion-graphics" },
+  // { label: "Spatial Media", href: "/services/spatial-media" },
 ];
 
-const SOCIALS = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com/" },
-  { icon: Youtube, label: "YouTube", href: "https://youtube.com/" },
-];
+// const SOCIALS = [
+//   { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
+//   { icon: Facebook, label: "Facebook", href: "https://facebook.com/" },
+//   { icon: Youtube, label: "YouTube", href: "https://youtube.com/" },
+// ];
 
 function ColumnHeading({ children }) {
   return (
@@ -104,6 +109,7 @@ export default function Footer() {
               </a>
             </div>
 
+            {/* Social links — restore once the real profile URLs exist.
             <ul className="mt-4 flex gap-3">
               {SOCIALS.map(({ icon: Icon, label, href }) => (
                 <li key={label}>
@@ -120,6 +126,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            */}
           </div>
 
 
@@ -132,9 +139,14 @@ export default function Footer() {
 
           <div className="w-full">
             <ColumnHeading>Our Office</ColumnHeading>
-            <address className="mt-4  text-sm not-italic leading-[1.85] text-white/40">
-              1st floor office <br /> 101-14, Banat Abdullah Al Marzooqi Building, <br /> Al
-              Khabeesi, Deira, <br /> Dubai, UAE.
+            <address className="mt-4 text-sm not-italic leading-[1.85] text-white/40">
+              1st Floor, Office 101-14
+              <br />
+              Banat Abdullah Al Marzooqi Building
+              <br />
+              Al Khabeesi, Deira
+              <br />
+              Dubai, UAE
             </address>
           </div>
         </div>

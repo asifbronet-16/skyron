@@ -30,14 +30,14 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="/work"
+              <Link
+                href="/case-studies"
                 className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
               >
                 Explore Our Work
-              </a>
+              </Link>
               <Link
-                href="/contact"
+                href="/#contact"
                 className="inline-block rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
               >
                 Get in Touch

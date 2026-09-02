@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="t" gradientUnits="userSpaceOnUse" x1="1" y1="0" x2="25" y2="0">
+      <stop offset="0" stop-color="#26048e"/><stop offset="1" stop-color="#52d6d8"/>
+    </linearGradient>
+    <linearGradient id="l" gradientUnits="userSpaceOnUse" x1="0" y1="1" x2="0" y2="16">
+      <stop offset="0" stop-color="#26048e"/><stop offset="1" stop-color="#9b059b"/>
+    </linearGradient>
+    <linearGradient id="r" gradientUnits="userSpaceOnUse" x1="0" y1="5" x2="0" y2="20">
+      <stop offset="0" stop-color="#6fcedc"/><stop offset="1" stop-color="#dd6ec3"/>
+    </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="5" y1="0" x2="29" y2="0">
+      <stop offset="0" stop-color="#b6059c"/><stop offset="1" stop-color="#e166c1"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(1 5.5)">
+    <rect x="1"  y="1"  width="24" height="3"  fill="url(#t)"/>
+    <rect x="1"  y="1"  width="3"  height="15" fill="url(#l)"/>
+    <rect x="26" y="5"  width="3"  height="15" fill="url(#r)"/>
+    <rect x="5"  y="17" width="24" height="3"  fill="url(#b)"/>
+  </g></svg>
