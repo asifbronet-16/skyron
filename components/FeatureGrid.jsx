@@ -34,7 +34,7 @@ function renderInlineBold(text) {
  *   accent="Becomes Dimension"
  *   subtitle="From cinematic animation to real-time 3D assets..."
  *   cards={[
- *     { title: "3D Animation & Motion Graphics", description: "...", image: "/assets/3d-motion.jpg" },
+ *     { title: "3D Animation & Motion Graphics", description: "...", image: "/assets/cards/3d-animation-motion-graphics/1.png" },
  *     ...
  *   ]}
  * />

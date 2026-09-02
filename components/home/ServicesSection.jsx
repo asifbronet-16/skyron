@@ -5,7 +5,7 @@ const defaultServices = [
   {
     number: "01",
     accent: "violet",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Home/1.png",
+    image: "/assets/cards/home-services/1.png",
     title: "Interactive Experiential Content Production",
     description:
       "We create end-to-end interactive content for live and digital environments combining creative direction, design, technology, and execution.",
@@ -19,7 +19,7 @@ const defaultServices = [
   {
     number: "02",
     accent: "cyan",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Home/2.png",
+    image: "/assets/cards/home-services/2.png",
     title: "Immersive & Spatial Media",
     description: "We design content that exists in space, not just on screens.",
     points: [
@@ -32,7 +32,7 @@ const defaultServices = [
   {
     number: "03",
     accent: "rose",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Home/3.png",
+    image: "/assets/cards/home-services/3.png",
     title: "Motion Graphics & 3D Content",
     description: "High-end motion design and 3D visuals crafted for experiential formats.",
     points: [
@@ -45,7 +45,7 @@ const defaultServices = [
   {
     number: "04",
     accent: "purple",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Home/4.png",
+    image: "/assets/cards/home-services/4.png",
     title: "AR, XR & Interactive Technology",
     description:
       "We integrate emerging technology to make experiences responsive and intelligent.",

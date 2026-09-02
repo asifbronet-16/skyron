@@ -40,49 +40,49 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "3D Animation & Motion Graphics",
           description:
             "We craft cinematic 3D animation and motion graphics for digital, broadcast, social, and immersive experiential content that **elevates** brands and engages audiences.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 1.png",
+          image: "/assets/cards/3d-animation-motion-graphics/1.png",
         },
         {
           title: "Product Visualization & 3D Advertising",
           description:
             "High-impact product visualization and 3D advertising that showcases features, **boosts** desirability, and drives **conversions** across digital and commercial campaigns **globally**.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 2.png",
+          image: "/assets/cards/product-visualization-3d-advertising/1.png",
         },
         {
           title: "Architectural Visualization & Walkthroughs",
           description:
             "Photoreal architectural walkthroughs and 3D visualizations that bring buildings, interiors, and master plans to life before **ground is broken**.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 3.png",
+          image: "/assets/cards/architectural-visualization-walkthroughs/1.png",
         },
         {
           title: "Engineering & Technical Animations",
           description:
             "Clear, precise 3D animations that **simplify** complex engineering, industrial **processes**, and technical systems for communication and marketing.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 4.png",
+          image: "/assets/cards/engineering-technical-animations/1.png",
         },
         {
           title: "Character Design & Animation",
           description:
             "Expressive character design and animation that builds emotional connection, **enhances** storytelling, and strengthens brand **narratives** across media.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 5.png",
+          image: "/assets/cards/character-design-animation/1.png",
         },
         {
           title: "3D Asset Creation",
           description:
             "High-quality, **optimized** 3D assets built for animation, real-time engines, interactive platforms, and scalable multi-channel production.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 6.png",
+          image: "/assets/cards/3d-asset-creation/1.png",
         },
         {
           title: "Digital Twins & Simulation Visuals",
           description:
             "Data-driven digital twins and simulation visuals that visualize performance, processes, and environments with **accuracy** and clarity.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 7.png",
+          image: "/assets/cards/digital-twins-simulation-visuals/1.png",
         },
         {
           title: "Real-Time & Interactive 3D Content",
           description:
             "Real-time and interactive 3D experiences designed for web, AR, VR, and experiential installations that engage users **dynamically**.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/3D Content creation/3D 8.png",
+          image: "/assets/cards/real-time-interactive-3d-content/1.png",
         },
       ],
     },
@@ -116,37 +116,37 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Explainer & Educational Videos",
           description:
             "Engaging explainer and educational videos that **simplify** complex ideas, communicate value clearly, and inform audiences across platforms.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/Explainer & Educational Videos/2D Content Creation (1).jpeg",
+          image: "/assets/cards/explainer-educational-videos/1.jpeg",
         },
         {
           title: "Character Animation",
           description:
             "Lively character animation that brings personalities to life, **enhances** storytelling, and creates memorable brand-driven narratives.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/Character Animation/Character Animation  (4).jpeg",
+          image: "/assets/cards/character-animation/1.jpeg",
         },
         {
           title: "2D Motion Graphics",
           description:
             "Clean, dynamic 2D motion graphics designed to communicate messages clearly and **elevate** visual storytelling across media.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/2D Motion Graphics/2D Motion Graphics (1).jpeg",
+          image: "/assets/cards/2d-motion-graphics/1.jpeg",
         },
         {
           title: "Infographic & Data Animations",
           description:
             "Visually compelling data and infographic animations that transform information into clear, engaging, and **easy-to-understand** stories.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/Infographic & Data Animations/Infographic & Data Animations (1).jpeg",
+          image: "/assets/cards/infographic-data-animations/1.jpeg",
         },
         {
           title: "Brand Films & Visual Idents",
           description:
             "Cinematic brand films and visual identities that define tone, **build recognition**, and express brand purpose through motion.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/Brand Films & Visual Idents/Brand Films & Visual Idents (5).jpeg",
+          image: "/assets/cards/brand-films-visual-idents/1.jpeg",
         },
         {
           title: "Social & UI Motion Content",
           description:
             "Impactful social and UI motion content crafted to enhance usability, **increase engagement**, and strengthen digital brand experiences.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/2D Content creation/Social & UI Motion Content/Social & UI Motion Content (4).jpeg",
+          image: "/assets/cards/social-ui-motion-content/1.jpeg",
         },
       ],
     },
@@ -287,25 +287,25 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Marketing & Brand Content",
           description:
             "Strategic marketing and brand content crafted to build awareness, shape perception, and deliver **consistent storytelling** across campaigns, platforms, and audience touchpoints globally.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/AI-Driven Generative Content-20260822T083756Z-1-001/AI-Driven Generative Content/Marketing & Brand Content/Marketing & Brand Content (3).jpeg",
+          image: "/assets/cards/marketing-brand-content/3.jpeg",
         },
         {
           title: "Corporate Communication",
           description:
             "Clear corporate communication films designed to align stakeholders, convey messaging effectively, and support internal and external communication objectives with **clarity and confidence**.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/AI-Driven Generative Content-20260822T083756Z-1-001/AI-Driven Generative Content/Corporate Communication/Corporate Communication (1).jpeg",
+          image: "/assets/cards/corporate-communication/1.jpeg",
         },
         {
           title: "Education & Learning",
           description:
             "Engaging education and learning content that simplifies complex topics, **enhances retention**, and supports training, onboarding, and knowledge sharing across industries.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/AI-Driven Generative Content-20260822T083756Z-1-001/AI-Driven Generative Content/Education & Learning/Education & Learning (2).jpeg",
+          image: "/assets/cards/education-learning/1.jpeg",
         },
         {
           title: "Creative Storytelling",
           description:
             "Creative storytelling that blends narrative, visuals, and emotion to connect audiences with ideas, brands, and experiences in **meaningful ways**.",
-          image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/AI-Driven Generative Content-20260822T083756Z-1-001/AI-Driven Generative Content/Creative Storytelling/Creative Storytelling (3).jpeg",
+          image: "/assets/cards/creative-storytelling/1.jpeg",
         },
       ],
     },

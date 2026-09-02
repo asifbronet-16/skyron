@@ -32,7 +32,7 @@ const defaultCapabilities = [
     title: "AR VR XR Immersive Technologies",
     description:
       "We develop immersive AR, VR, and XR experiences that blend digital content with real environments to enhance visualization and training.",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/AR, VR, XR Immersive Technologies/AR, VR, XR Immersive .jpeg",
+    image: "/assets/banners/ar-vr-xr-immersive-technologies/1.jpeg",
   },
   {
     icon: BuildingIcon,
@@ -40,7 +40,7 @@ const defaultCapabilities = [
     title: "Experience Centre Consulting & Execution",
     description:
       "We design and deliver immersive experience centres that communicate ideas, engage audiences, and bring brands and technologies to life.",
-    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Experiance Centre/Experiance.jpeg",
+    image: "/assets/banners/experience-centre/1.jpeg",
   },
   {
     icon: PavilionIcon,

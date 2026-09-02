@@ -11,7 +11,7 @@ import Image from "next/image";
  * No images yet? It falls back to the site's dark gradient-orb background
  * so a page still looks intentional before real photography is dropped in.
  *
- * <SolutionBanner label="2D Content Creation" eyebrow="Creative Solutions" images={["/assets/2d-hero.jpg"]} />
+ * <SolutionBanner label="2D Content Creation" eyebrow="Creative Solutions" images={["/assets/banners/2d-content-creation/1.jpeg"]} />
  * <SolutionBanner label="3D Content Creation" images={[img1, img2, img3]} interval={7000} />
  */
 export default function SolutionBanner({

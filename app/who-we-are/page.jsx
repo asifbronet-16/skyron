@@ -84,7 +84,7 @@ export default function WhoWeArePage() {
         <Navbar active="Our Story" />
 
         <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
-          <img src="/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Who we are/Who we are.png" alt="Who we are" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+          <img src="/assets/banners/who-we-are/1.png" alt="Who we are" className="absolute inset-0 -z-10 h-full w-full object-cover" />
 
           <div
             aria-hidden="true"
@@ -152,7 +152,7 @@ export default function WhoWeArePage() {
 
           <section className="relative min-h-130 overflow-hidden sm:min-h-155">
             <Image
-              src="/assets/OurStory/galaxy.png"
+              src="/assets/our-story/galaxy.png"
               alt="Skyron — spatial experiences powered by intelligent technology"
               fill
               sizes="100vw"
