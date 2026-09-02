@@ -12,6 +12,7 @@ export const BLOG_POSTS = [
       "From facade survey to final cue stack — what actually happens between a client brief and opening night.",
     date: "2026-08-12",
     readTime: "6 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/BLogs 001.png",
   },
   {
     slug: "spatial-design-next-brand-battleground",
@@ -21,6 +22,7 @@ export const BLOG_POSTS = [
       "Screens are everywhere. The brands winning attention are the ones designing for the room, not just the rectangle.",
     date: "2026-07-28",
     readTime: "5 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/Blogs 002.png",
   },
   {
     slug: "ai-content-meets-human-art-direction",
@@ -30,6 +32,7 @@ export const BLOG_POSTS = [
       "How our pipeline uses generative tools to explore faster, without ever shipping an asset nobody art-directed.",
     date: "2026-07-14",
     readTime: "7 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/Blogs 003.png",
   },
   {
     slug: "holograms-that-dont-feel-like-gimmicks",
@@ -39,6 +42,7 @@ export const BLOG_POSTS = [
       "HoloBox and hologram fan units are easy to buy and easy to misuse. Here's how we decide when they actually earn their place.",
     date: "2026-06-30",
     readTime: "4 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/Blogs 004.png",
   },
   {
     slug: "anamorphic-billboard-frame-by-frame",
@@ -48,6 +52,7 @@ export const BLOG_POSTS = [
       "The illusion lives or dies on the math. A walkthrough of how we build every shot against the exact curve of the screen.",
     date: "2026-06-09",
     readTime: "8 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/Blogs 005.png",
   },
   {
     slug: "what-makes-an-experience-centre-work",
@@ -57,5 +62,6 @@ export const BLOG_POSTS = [
       "Most brand experience centres go stale within a year. The ones that don't are built around a different set of decisions.",
     date: "2026-05-22",
     readTime: "6 min read",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Blogs/Blogs 006.png",
   },
 ];

@@ -17,32 +17,32 @@ const INDUSTRIES = [
   {
     title: "Corporate, Government & Mega Projects",
     description: "Experience-led content for corporate showcases, innovation centers, government initiatives, and large-scale regional developments.",
-    image: "/assets/OurStory/8a2b2aaa6dbb97aa603907da8cc760546ae697aa.png",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Industires/Industries.png",
   },
   {
     title: "Exhibitions, Museums & Cultural Projects",
     description: "Immersive environments, interactive narratives, and spatial media designed to educate, engage, and inspire diverse audiences.",
-    image: "/assets/cards/advertising-commercial-films/2.jpeg",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Events, Exhibitions & Brand Activations/Events, Exhibitions & Brand Activations 1.jpeg",
   },
   {
     title: "Live Events & Experiential Marketing",
     description: "High-impact brand activations, product launches, festivals, and corporate events powered by interactive technology and immersive content.",
-    image: "/assets/cards/advertising-commercial-films/3.jpeg",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Events, Exhibitions & Brand Activations/Events, Exhibitions & Brand Activations 2.jpeg",
   },
   {
     title: "Luxury, Retail & Mall Experiences",
     description: "Premium interactive installations and experiential content for luxury brands, flagship stores, shopping malls, and destination retail spaces.",
-    image: "/assets/cards/advertising-commercial-films/4.jpeg",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Industires/Industries sub3.png",
   },
   {
     title: "Real Estate, Architecture & Destination Marketing",
     description: "Interactive visualizations, immersive presentations, and experiential showcases for properties, master plans, and landmark destinations.",
-    image: "/assets/cards/corporate-branded-films/2.jpeg",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Industires/Industries sub1.png",
   },
   {
     title: "Entertainment & Media",
     description: "Film launches, OTT promotions, music events, fan experiences, and immersive storytelling installations that turn audiences into participants.",
-    image: "/assets/cards/corporate-branded-films/3.jpeg",
+    image: "/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Industires/Industries sub 2.png",
   },
 ];
 
@@ -71,19 +71,11 @@ export default function IndustriesPage() {
 
           <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-34">
 
-            {/* Video layer — absolute, full bleed, anchored right */}
+            {/* Image layer — absolute, full bleed, anchored right */}
             <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full scale-100 object-cover object-[65%_50%] translate-x-[10%]"
-              >
-                <source src="/assets/OurStory/industries-we-serve.mp4" type="video/mp4" />
-              </video>
+              <img src="/assets/Skyon Web Banner Images/Banners-20260822T084715Z-1-001/Banners/Industires/Industries.png" alt="Industries we Work with" className="absolute inset-0 -z-10 h-full w-full object-cover" />
 
-              {/* top + bottom falloff so the video melts into the sections around it */}
+              {/* top + bottom falloff so the image melts into the sections around it */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_16%,transparent_84%,#08060f_100%)]"
