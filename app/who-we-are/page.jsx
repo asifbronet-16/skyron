@@ -15,13 +15,7 @@ export const metadata = {
 
 // Floating capability pills — same treatment as the homepage hero (Hero.jsx),
 // reusing the float-a/b/c keyframes + .pill-float class from globals.css.
-const HERO_PILLS = [
-  { label: "Spatial Storytelling", className: "top-[10%] right-[28%]", anim: "float-a", dur: "7.4s", delay: "0s", border: "border-cyan-300/50", glow: "shadow-[0_0_18px_-4px_rgba(103,232,249,.45)]" },
-  { label: "Cinematic Content", className: "top-[26%] right-[6%]", anim: "float-c", dur: "9s", delay: "1.1s", border: "border-violet-200/45", glow: "shadow-[0_0_18px_-4px_rgba(221,214,254,.35)]" },
-  { label: "Intelligent Systems", className: "top-[46%] right-[32%]", anim: "float-b", dur: "8.4s", delay: "0.5s", border: "border-fuchsia-400/55", glow: "shadow-[0_0_20px_-4px_rgba(232,121,249,.45)]" },
-  { label: "Immersive Design", className: "top-[64%] right-[10%]", anim: "float-a", dur: "10s", delay: "2s", border: "border-pink-400/55", glow: "shadow-[0_0_20px_-4px_rgba(244,114,182,.45)]" },
-  { label: "Human-Centered Craft", className: "top-[80%] right-[30%]", anim: "float-c", dur: "8s", delay: "1.6s", border: "border-sky-400/50", glow: "shadow-[0_0_18px_-4px_rgba(56,189,248,.40)]" },
-];
+
 
 const STORY_PROCESS = [
   {
@@ -90,15 +84,16 @@ export default function WhoWeArePage() {
         <Navbar active="Our Story" />
 
         <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
-          <video
+          {/* <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            className=""
           >
             <source src="/assets/OurStory/who-we-are.mp4" type="video/mp4" />
-          </video>
+          </video> */}
+          <img src="assets\Skyon Web Banner Images\Banners-20260822T084715Z-1-001\Banners\Who we are\Who we are.png" alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
 
           <div
             aria-hidden="true"
