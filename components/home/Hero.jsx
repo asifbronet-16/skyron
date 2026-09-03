@@ -17,7 +17,7 @@ export default function Hero() {
 
         <div className="relative flex items-center gap-12 px-6 lg:px-0  pb-12  pt-20  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-14">
           {/* Left column */}
-          <div className="max-w-xl absolute lg:relative z-10">
+          <div className="max-w-xl top-12 lg:to absolute lg:relative lg:top-0 z-10">
             <Reveal as="h1" className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
               Great experiences begin with a question, not a technology
             </Reveal>
