@@ -10,7 +10,7 @@ export const CASE_STUDIES_ITEMS = [
     description:
       "End-to-end experiential content that blends AI-powered generation with live creative direction for unforgettable brand moments.",
     image: "/assets/cards/marketing-brand-content/2.jpeg",
-    href: "/work/future-proof",
+    // href: "/work/future-proof",
   },
   {
     tag: "Innovation",
@@ -18,7 +18,7 @@ export const CASE_STUDIES_ITEMS = [
     description:
       "Intelligent experience systems that adapt to audience behavior in real-time, driving deeper engagement at every touchpoint.",
     image: "/assets/cards/marketing-brand-content/1.jpeg",
-    href: "/work/ai-powered",
+    // href: "/work/ai-powered",
   },
   {
     tag: "Efficiency",
@@ -26,7 +26,7 @@ export const CASE_STUDIES_ITEMS = [
     description:
       "Custom-built immersive environments calibrated to your brand identity, audience profile, and measurable KPIs.",
     image: "/assets/cards/marketing-brand-content/3.jpeg",
-    href: "/work/tailored",
+    // href: "/work/tailored",
   },
   {
     tag: "Strategy",
@@ -34,6 +34,6 @@ export const CASE_STUDIES_ITEMS = [
     description:
       "Scalable experience frameworks that grow with your brand — from flagship installations to global rollouts.",
     image: "/assets/cards/corporate-communication/2.jpeg",
-    href: "/work/spatial-design",
+    // href: "/work/spatial-design",
   },
 ];
