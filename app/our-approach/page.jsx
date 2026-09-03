@@ -4,7 +4,15 @@ import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureGrid from "@/components/FeatureGrid";
 import FaqSection from "@/components/home/FaqSection";
-import ServiceCard from "@/components/home/ServiceCard";
+import CapabilityCard from "@/components/home/CapabilityCard";
+import {
+  SearchIcon,
+  LightbulbIcon,
+  BlueprintIcon,
+  GearIcon,
+  RocketIcon,
+  ShieldCheckIcon,
+} from "@/components/home/CapabilityIcons";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -15,49 +23,49 @@ export const metadata = {
 
 const STEPS = [
   {
+    icon: SearchIcon,
     image: "/assets/cards/our-approach/1.png",
-    number: "01",
     accent: "violet",
     title: "Envision & Discovery",
     description:
       "We begin by listening and observing. Through collaborative dialogue, research, and insight-led exploration, we understand your vision, audience, and challenges — establishing clarity, alignment, and a shared strategic direction that guides every experiential decision forward.",
   },
   {
+    icon: LightbulbIcon,
     image: "/assets/cards/our-approach/2.png",
-    number: "02",
-    accent: "cyan",
+    accent: "teal",
     title: "Concept Development",
     description:
       "Ideas are shaped through creative exploration and strategic intent. We define the narrative, experience flow, and technological direction, assessing feasibility and impact — translating possibilities into a clear concept, structured roadmap, and confident foundation for execution.",
   },
   {
+    icon: BlueprintIcon,
     image: "/assets/cards/our-approach/3.png",
-    number: "03",
     accent: "rose",
     title: "Design & Experience Architecture",
     description:
       "Creative vision meets technical precision as concepts evolve into detailed experience architectures. Interaction logic, visual language, and system frameworks are developed through prototyping and previsualization — ensuring coherence, usability, and design integrity before production begins.",
   },
   {
+    icon: GearIcon,
     image: "/assets/cards/our-approach/4.png",
-    number: "04",
-    accent: "purple",
+    accent: "violet",
     title: "Production & Integration",
     description:
       "Our multidisciplinary teams bring experiences to life through content creation, development, and system integration. Structured reviews, demonstrations, and collaborative checkpoints ensure consistency, quality, and alignment — transforming designed concepts into fully realized experiential solutions.",
   },
   {
+    icon: RocketIcon,
     image: "/assets/cards/our-approach/5.png",
-    number: "05",
-    accent: "violet",
+    accent: "teal",
     title: "Experience Deployment & Activation",
     description:
       "We manage on-site implementation, calibration, and final refinements to ensure a seamless activation. Each experience is tested, optimized, and launched with confidence — supported by clear documentation and knowledge transfer for smooth handover.",
   },
   {
+    icon: ShieldCheckIcon,
     image: "/assets/cards/our-approach/6.png",
-    number: "06",
-    accent: "cyan",
+    accent: "rose",
     title: "Ongoing Support",
     description:
       "Our involvement continues beyond launch. We provide ongoing monitoring, maintenance, and technical support — ensuring stability, performance, and adaptability as experiences evolve, scale, and continue delivering value over time.",
@@ -178,13 +186,10 @@ export default function OurApproachPage() {
                 />
               </Reveal>
 
-              <div className="mt-8 sm:mt-14 grid items-stretch gap-10 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="mt-8 sm:mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {STEPS.map((step, i) => (
-                  <Reveal key={step.number} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
-                    <ServiceCard
-                      {...step}
-                      className="h-full justify-center py-8"
-                    />
+                  <Reveal key={step.title} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
+                    <CapabilityCard {...step} />
                   </Reveal>
                 ))}
               </div>
