@@ -15,7 +15,7 @@ export default function TrustedBySection({
   marquee = false,
 }) {
   return (
-    <section className="relative overflow-hidden  py-10 sm:py-20">
+    <section className="relative overflow-hidden  py-8 sm:py-20">
 
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
@@ -26,7 +26,7 @@ export default function TrustedBySection({
           </span>
         </Reveal>
 
-        <Reveal delay={120} className="mt-14">
+        <Reveal delay={120} className="mt-8 sm:mt-14">
           <LogoStrip logos={logos} marquee={marquee} />
         </Reveal>
       </div>

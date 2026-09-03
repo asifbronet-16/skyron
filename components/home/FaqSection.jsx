@@ -32,7 +32,7 @@ const defaultFaqs = [
 
 export default function FaqSection({ items = defaultFaqs }) {
   return (
-    <section className="relative overflow-hidden bg-[#08080D] py-12 sm:py-28">
+    <section className="relative overflow-hidden bg-[#08080D] py-8 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-3xl px-6">
         <Reveal>
@@ -44,7 +44,7 @@ export default function FaqSection({ items = defaultFaqs }) {
           />
         </Reveal>
 
-        <Reveal delay={120} className="mt-14">
+        <Reveal delay={120} className="mt-8 sm:mt-14">
           <FaqAccordion items={items} />
         </Reveal>
       </div>

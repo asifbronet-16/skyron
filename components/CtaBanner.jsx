@@ -26,7 +26,7 @@ export default function CtaBanner({
       <Reveal
         as="div"
         distance={32}
-        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16"
+        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 px-6 py-8 text-center backdrop-blur-sm sm:px-12 sm:py-16"
       >
         {/* signature top border */}
         <span

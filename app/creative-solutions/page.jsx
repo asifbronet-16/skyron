@@ -39,7 +39,7 @@ export default function CreativeSolutionsPage() {
 
         <Navbar active="What We Do" />
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-28 pb-12 sm:pt-44 sm:pb-24">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-24 pb-8 sm:pt-44 sm:pb-24">
           <div className="relative mx-auto max-w-3xl text-center">
             <Reveal className="flex items-center justify-center gap-4">
               <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
@@ -61,7 +61,7 @@ export default function CreativeSolutionsPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pb-12 sm:pb-28">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pb-8 sm:pb-28">
           <div className="relative mx-auto max-w-7xl">
             <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {CREATIVE_SOLUTIONS_ITEMS.map((item, i) => (

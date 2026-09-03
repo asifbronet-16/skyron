@@ -129,7 +129,7 @@ export default function OurApproachPage() {
 
         <Navbar active="Our Story" />
 
-        <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
+        <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
           <img src="/assets/banners/our-approach/1.jpeg" alt="Our Approach" className="absolute inset-0 -z-10 h-full w-full object-cover" />
 
           {/* eased top/bottom falloff so the image melts into the sections around it */}
@@ -166,7 +166,7 @@ export default function OurApproachPage() {
         </section>
 
         <div className="relative bg-[#08060f]">
-          <section className="relative overflow-hidden bg-[#08060f] px-6 pt-12 pb-12 sm:pt-20 sm:pb-28">
+          <section className="relative overflow-hidden bg-[#08060f] px-6 pt-8 pb-8 sm:pt-20 sm:pb-28">
             <div className="relative mx-auto max-w-6xl">
               <Reveal>
                 <SectionHeading
@@ -178,7 +178,7 @@ export default function OurApproachPage() {
                 />
               </Reveal>
 
-              <div className="mt-14 grid items-stretch gap-10 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="mt-8 sm:mt-14 grid items-stretch gap-10 sm:grid-cols-2 xl:grid-cols-4">
                 {STEPS.map((step, i) => (
                   <Reveal key={step.number} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
                     <ServiceCard

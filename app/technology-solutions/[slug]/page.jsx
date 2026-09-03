@@ -54,7 +54,7 @@ export default async function TechnologySolutionsDetailPage({ params }) {
           className="pointer-events-none absolute -left-40 bottom-0 z-10 h-100 w-100 rounded-full bg-[#5f30ca] opacity-20 blur-[110px]"
         />
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 py-12 sm:py-20">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 py-8 sm:py-20">
           <div className="relative mx-auto max-w-4xl">
             {item.intro && (
               <Reveal as="p" className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
@@ -73,7 +73,7 @@ export default async function TechnologySolutionsDetailPage({ params }) {
             )}
 
             {item.highlights.length > 0 && (
-              <div className="mt-14 grid gap-5 sm:grid-cols-2">
+              <div className="mt-8 sm:mt-14 grid gap-5 sm:grid-cols-2">
                 {item.highlights.map((highlight, i) => (
                   <Reveal key={highlight.title} delay={Math.min(i, 4) * 90} distance={24}>
                     <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-6 backdrop-blur-sm">

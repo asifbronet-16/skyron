@@ -48,7 +48,7 @@ const INDUSTRIES = [
 
 export default function IndustriesPage() {
   return (
-    <main className="relative overflow-hidden mt-30">
+    <main className="relative overflow-hidden mt-18 lg:mt-30">
 
       <div className="relative">
         <div
@@ -69,7 +69,7 @@ export default function IndustriesPage() {
         <div className="relative bg-[#08060f]">
 
 
-          <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-34">
+          <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-34">
 
             {/* Image layer — absolute, full bleed, anchored right */}
             <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden">

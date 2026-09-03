@@ -70,7 +70,7 @@ const VALUES = [
 
 export default function WhoWeArePage() {
   return (
-    <main className="relative overflow-hidden mt-30">
+    <main className="relative overflow-hidden mt-18 lg:mt-30">
       <div className="relative">
         <div
           aria-hidden="true"
@@ -83,7 +83,7 @@ export default function WhoWeArePage() {
 
         <Navbar active="Our Story" />
 
-        <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden px-6 pt-32 pb-24 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
+        <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
           <img src="/assets/banners/who-we-are/1.png" alt="Who we are" className="absolute inset-0 -z-10 h-full w-full object-cover" />
 
           <div
@@ -118,7 +118,7 @@ export default function WhoWeArePage() {
         </section>
 
         <div className="relative bg-[#08060f]">
-          <section className="relative px-6 pt-12 pb-12 sm:pt-24 sm:pb-28">
+          <section className="relative px-6 pt-8 pb-8 sm:pt-24 sm:pb-28">
 
             <div className="relative mx-auto mt-16 max-w-3xl text-center">
               <Reveal as="h2" className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -162,7 +162,7 @@ export default function WhoWeArePage() {
 
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_14%,transparent_86%,#08060f_100%)]" />
 
-            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-28 pb-16 text-center sm:min-h-[85vh] sm:pt-40 sm:pb-32">
+            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center sm:min-h-[85vh] sm:pt-40 sm:pb-32">
               <Reveal as="h2" className="mt-6 max-w-lg text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
                 We Craft Interactive Spatial Experiences Through{" "}
                 <span className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent">

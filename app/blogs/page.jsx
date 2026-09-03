@@ -18,7 +18,7 @@ export default function BlogsPage() {
     <main className="relative">
       <Navbar active="Blogs" />
 
-      <section className="relative overflow-hidden bg-[#08060f] px-6 pt-28 pb-12 sm:pt-44 sm:pb-24">
+      <section className="relative overflow-hidden bg-[#08060f] px-6 pt-24 pb-8 sm:pt-44 sm:pb-24">
         <PhotoBackground
           images={["/assets/banners/blogs/1.jpeg", "/assets/banners/blogs/2.jpeg"]}
         />
@@ -56,7 +56,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#08060f] px-6 pb-12 sm:pb-28">
+      <section className="relative overflow-hidden bg-[#08060f] px-6 pb-8 sm:pb-28">
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {BLOG_POSTS.map((post, i) => (

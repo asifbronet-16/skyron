@@ -62,7 +62,7 @@ const defaultCapabilities = [
 
 export default function CapabilitiesSection({ capabilities = defaultCapabilities }) {
   return (
-    <section className="relative overflow-hidden py-12 sm:py-28">
+    <section className="relative overflow-hidden py-8 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <Reveal className="flex flex-col max-w-5xl mx-auto">
@@ -86,7 +86,7 @@ export default function CapabilitiesSection({ capabilities = defaultCapabilities
           In a world overloaded with content, interaction is the new attention. We help brands move beyond passive visuals into engaging, participatory, and immersive experiences that drive real audience connection.
         </Reveal>
 
-        <div className="mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item, i) => (
             <Reveal key={item.title} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
               <CapabilityCard {...item} />

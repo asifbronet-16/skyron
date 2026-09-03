@@ -22,7 +22,7 @@ export default function EmpoweringSection({
   children,
 }) {
   return (
-    <section className="relative overflow-hidden py-12 sm:py-20">
+    <section className="relative overflow-hidden py-8 sm:py-20">
       {/* <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-rose-700/15 blur-[160px]"

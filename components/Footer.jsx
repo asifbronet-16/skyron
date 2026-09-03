@@ -76,7 +76,7 @@ export default function Footer() {
       {/* soft bloom under the rule */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 [background:radial-gradient(60%_100%_at_50%_0%,rgba(168,85,247,.10),transparent_70%)]" />
 
-      <div className="relative px-6 py-12 sm:px-10 sm:py-20 lg:px-16 lg:py-24 xl:px-28">
+      <div className="relative px-6 py-10 sm:px-10 sm:py-20 lg:px-16 lg:py-24 xl:px-28">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:flex lg:items-start lg:justify-evenly lg:gap-10">
           {/* brand */}
           <div className="w-full">

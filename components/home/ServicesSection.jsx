@@ -60,7 +60,7 @@ const defaultServices = [
 
 export default function ServicesSection({ services = defaultServices }) {
   return (
-    <section className="relative overflow-hidden py-12 sm:py-28">
+    <section className="relative overflow-hidden py-8 sm:py-28">
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10"> 
         <Reveal as="h2" className="mx-auto max-w-4xl text-center text-2xl font-normal leading-relaxed tracking-itght text-white sm:text-2xl lg:text-4xl">
           Crafting{" "}
@@ -70,7 +70,7 @@ export default function ServicesSection({ services = defaultServices }) {
           AI-driven solutions
         </Reveal>
 
-        <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 sm:mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service, i) => (
             <Reveal key={service.number} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
               <ServiceCard {...service} className="h-full" />
