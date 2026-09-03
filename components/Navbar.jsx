@@ -49,22 +49,49 @@ function MobileNavItem({ link, path, active, openKeys, toggleKey, closeMenu, dep
   const itemKey = [...path, link.label].join(" > ");
   const isOpen = openKeys.has(itemKey);
 
+  // A branch can also be a real page (Creative/Technology Solutions). When it is,
+  // the label navigates and only the chevron toggles — otherwise the whole row
+  // toggles, since group headers like "What We Do" have no page of their own.
+  const hasOwnPage = Boolean(link.href);
+
   if (link.children) {
+    const rowClass = `flex w-full items-center justify-between gap-3 text-left ${depth > 0 ? "text-sm" : "text-base"} ${link.label === active ? "text-white" : "text-white/70"
+      }`;
+    const chevron = (
+      <ChevronDown
+        className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        strokeWidth={2}
+      />
+    );
+
     return (
       <div>
-        <button
-          type="button"
-          onClick={() => toggleKey(itemKey)}
-          aria-expanded={isOpen}
-          className={`flex w-full items-center justify-between gap-3 text-left ${depth > 0 ? "text-sm" : "text-base"} ${link.label === active ? "text-white" : "text-white/70"
-            }`}
-        >
-          {link.label}
-          <ChevronDown
-            className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-            strokeWidth={2}
-          />
-        </button>
+        {hasOwnPage ? (
+          <div className={rowClass}>
+            <Link href={link.href} onClick={closeMenu} className="flex-1">
+              {link.label}
+            </Link>
+            <button
+              type="button"
+              onClick={() => toggleKey(itemKey)}
+              aria-expanded={isOpen}
+              aria-label={`${isOpen ? "Collapse" : "Expand"} ${link.label}`}
+              className="-m-2 shrink-0 p-2"
+            >
+              {chevron}
+            </button>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => toggleKey(itemKey)}
+            aria-expanded={isOpen}
+            className={rowClass}
+          >
+            {link.label}
+            {chevron}
+          </button>
+        )}
         <div
           className={`overflow-hidden transition-all duration-300 ${isOpen ? "mt-3 max-h-140 opacity-100" : "max-h-0 opacity-0"
             }`}

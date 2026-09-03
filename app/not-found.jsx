@@ -14,7 +14,7 @@ export default function NotFound() {
     <main className="relative">
       <Navbar active="" />
 
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#08060f] px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-24">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-[#08060f] px-6 py-28 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-24">
         {/* ambient glow, signature palette */}
         <div
           aria-hidden="true"
