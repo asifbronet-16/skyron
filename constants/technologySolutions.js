@@ -266,37 +266,37 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "Experiential Projection Mapping",
           description:
             "Mapped for experience centres, museums, exhibitions, and learning environments — used to support **storytelling and immersive** journeys.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/experiential-projection-mapping/1.png",
         },
         {
           title: "Interactive Projection Mapping",
           description:
             "Mapped across floors, walls, objects, and installations — built to enable **real-time audience** participation.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/interactive-projection-mapping/1.png",
         },
         {
           title: "Object & Product Projection Mapping",
           description:
             "Mapped onto physical products, scale models, and sculptures — used to explain **features and functionality**.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/object-product-projection-mapping/1.png",
         },
         {
           title: "Stage & Event Projection Mapping",
           description:
             "Mapped for stages, set pieces, and performance spaces — used to **enhance live** performances and presentations.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/stage-event-projection-mapping/1.png",
         },
         {
           title: "Retail & Commercial Projection Mapping",
           description:
             "Mapped across store interiors and window displays — used to attract attention and enhance **retail storytelling**.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/retail-commercial-projection-mapping/1.png",
         },
         {
           title: "Outdoor Projection Mapping",
           description:
             "Mapped onto building façades, landmarks, and outdoor structures — built for mass reach, iconic visuals, and **strong brand recall**.",
-          image: "/assets/banners/projection-mapping-solutions/1.jpeg",
+          image: "/assets/cards/outdoor-projection-mapping/1.png",
         },
       ],
     },
