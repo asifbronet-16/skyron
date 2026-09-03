@@ -70,7 +70,7 @@ const VALUES = [
 
 export default function WhoWeArePage() {
   return (
-    <main className="relative overflow-hidden mt-18 lg:mt-30">
+    <main className="relative overflow-hidden mt-18 sm:mt-30">
       <div className="relative">
         <div
           aria-hidden="true"
