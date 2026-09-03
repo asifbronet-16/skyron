@@ -32,7 +32,7 @@ const defaultFaqs = [
 
 export default function FaqSection({ items = defaultFaqs }) {
   return (
-    <section className="relative overflow-hidden bg-[#08080D] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#08080D] py-12 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-3xl px-6">
         <Reveal>

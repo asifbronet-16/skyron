@@ -60,7 +60,7 @@ const defaultServices = [
 
 export default function ServicesSection({ services = defaultServices }) {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section className="relative overflow-hidden py-12 sm:py-28">
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10"> 
         <Reveal as="h2" className="mx-auto max-w-4xl text-center text-2xl font-normal leading-relaxed tracking-itght text-white sm:text-2xl lg:text-4xl">
           Crafting{" "}

@@ -184,13 +184,13 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Flat & Facade LED Installations",
           description:
             "Large-scale flat and facade LED installations delivering bold visuals, structural integration, and **captivating** brand presence across commercial buildings and public-facing spaces.",
-          image: "/assets/banners/anamorphic-3d-content-creation/2.png",
+          image: "/assets/cards/flat-facade-led-installations/1.jpeg",
         },
         {
           title: "Curved & Wrap-Around Displays",
           description:
             "Curved and wrap-around LED displays designed to envelop audiences with fluid visuals, dynamic perspectives, and **immersive** spatial brand experiences.",
-          image: "/assets/banners/anamorphic-3d-content-creation/1.jpeg",
+          image: "/assets/cards/curved-wrap-around-displays/1.jpeg",
         },
       ],
     },

@@ -166,7 +166,7 @@ export default function OurApproachPage() {
         </section>
 
         <div className="relative bg-[#08060f]">
-          <section className="relative overflow-hidden bg-[#08060f] px-6 pt-16 pb-20 sm:pt-20 sm:pb-28">
+          <section className="relative overflow-hidden bg-[#08060f] px-6 pt-12 pb-12 sm:pt-20 sm:pb-28">
             <div className="relative mx-auto max-w-6xl">
               <Reveal>
                 <SectionHeading

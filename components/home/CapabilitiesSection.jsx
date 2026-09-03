@@ -62,7 +62,7 @@ const defaultCapabilities = [
 
 export default function CapabilitiesSection({ capabilities = defaultCapabilities }) {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section className="relative overflow-hidden py-12 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <Reveal className="flex flex-col max-w-5xl mx-auto">

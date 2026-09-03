@@ -5,7 +5,7 @@ import { CASE_STUDIES_ITEMS } from "@/constants/caseStudies";
 
 export default function CaseStudiesSection({ items = CASE_STUDIES_ITEMS }) {
   return (
-    <section className="relative overflow-hidden  py-20 sm:py-28">
+    <section className="relative overflow-hidden  py-12 sm:py-28">
       {/* ambient glow */}
       {/* <div
         aria-hidden="true"

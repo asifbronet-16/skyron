@@ -69,7 +69,7 @@ function Card({ card }) {
 
 export default function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-[#08060f] pt-16 sm:pt-16">
+    <section className="relative overflow-hidden bg-[#08060f] pt-12 sm:pt-16">
 
       <div className="relative mx-auto max-w-6xl px-6">
         <Reveal

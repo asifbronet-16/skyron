@@ -55,7 +55,7 @@ export default async function CreativeSolutionsDetailPage({ params }) {
         />
 
         {(item.intro || item.body.length > 0 || item.highlights.length > 0) && (
-          <section className="relative overflow-hidden bg-[#08060f] px-6 py-16 sm:py-20">
+          <section className="relative overflow-hidden bg-[#08060f] px-6 py-12 sm:py-20">
             <div className="relative mx-auto max-w-4xl">
               {item.intro && (
                 <Reveal as="p" className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">

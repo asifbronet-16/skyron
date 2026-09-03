@@ -15,7 +15,7 @@ export default function TrustedBySection({
   marquee = false,
 }) {
   return (
-    <section className="relative overflow-hidden  py-16 sm:py-20">
+    <section className="relative overflow-hidden  py-10 sm:py-20">
 
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">

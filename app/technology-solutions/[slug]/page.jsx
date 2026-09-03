@@ -54,7 +54,7 @@ export default async function TechnologySolutionsDetailPage({ params }) {
           className="pointer-events-none absolute -left-40 bottom-0 z-10 h-100 w-100 rounded-full bg-[#5f30ca] opacity-20 blur-[110px]"
         />
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 py-16 sm:py-20">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 py-12 sm:py-20">
           <div className="relative mx-auto max-w-4xl">
             {item.intro && (
               <Reveal as="p" className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">

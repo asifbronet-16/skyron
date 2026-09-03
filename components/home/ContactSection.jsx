@@ -48,7 +48,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24 overflow-hidden bg-[#08060f] py-20 sm:py-28 lg:scroll-mt-32">
+    <section id="contact" className="relative scroll-mt-24 overflow-hidden bg-[#08060f] py-12 sm:py-28 lg:scroll-mt-32">
       <div className="pointer-events-none absolute inset-0 [background:radial-gradient(50%_45%_at_75%_45%,rgba(56,189,248,.07),transparent_70%)]" />
 
       <div className="relative mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:gap-16">
