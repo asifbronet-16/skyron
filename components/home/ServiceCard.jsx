@@ -47,7 +47,7 @@ function CheckIcon({ className = "" }) {
  * One numbered service card. `accent` is one of: violet | cyan | rose | purple.
  * Class names are looked up from a map so Tailwind can see them at build time.
  *
- * `image` is optional — when set, it fades in behind the copy on hover/focus,
+ * `image` is optional — when set, it sits behind the copy at rest and fades out on hover/focus,
  * same treatment as FeatureGrid's cards.
  */
 export default function ServiceCard({
@@ -71,11 +71,12 @@ export default function ServiceCard({
         className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${a.rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
       />
 
-      {/* background image, revealed on hover — same mechanic as FeatureGrid's cards */}
+      {/* background image sits behind the copy at rest and fades out on hover/focus —
+          same mechanic as FeatureGrid's cards */}
       {image && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
+          className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0"
         >
           <Image
             src={image}
@@ -84,7 +85,7 @@ export default function ServiceCard({
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/85 via-[#08060f]/55 to-[#08060f]/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
         </div>
       )}
 

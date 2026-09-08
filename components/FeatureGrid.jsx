@@ -39,7 +39,7 @@ function renderInlineBold(text) {
  *   ]}
  * />
  *
- * `image` is optional per card — when set, it fades in behind the copy on hover/focus.
+ * `image` is optional per card — when set, it sits behind the copy at rest and fades out on hover/focus.
  */
 export default function FeatureGrid({ lead, accent, subtitle, cards = [], className = "" }) {
   return (
@@ -74,11 +74,12 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
                       className={`absolute inset-x-0 top-0 h-0.5 bg-linear-to-r ${rule} opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
                     />
 
-                    {/* background image, revealed on hover */}
+                    {/* background image sits behind the copy at rest and fades out on hover/focus,
+                        so the text reads clean while the card is being looked at */}
                     {card.image && (
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
+                        className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0"
                       >
                         <Image
                           src={card.image}
@@ -87,7 +88,7 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/80 via-[#08060f]/50 to-[#08060f]/15" />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
                       </div>
                     )}
 

@@ -12,12 +12,12 @@ const PILLS = [
 
 export default function Hero() {
   return ( 
-      <section className="relative min-h-screen  overflow-hidden px-6 lg:px-0 lg:pl-22 lg:mt-30 mt-16">
+      <section className="relative min-h-screen  overflow-hidden lg:px-0 lg:pl-22 lg:mt-30 mt-16">
        
 
-        <div className="relative flex items-center gap-12 px-6 lg:px-0  pb-12  pt-20  lg:gap-8 lg:pl-12 lg:pb-28 lg:pt-14">
+        <div className="relative flex items-center lg:flex-row flex-col-reverse gap-2 lg:px-0  pb-4  pt-10  lg:gap-8 lg:pl-12 lg:pb-24 lg:pt-14">
           {/* Left column */}
-          <div className="max-w-xl top-12 lg:to absolute lg:relative lg:top-0 z-10">
+          <div className="max-w-xl px-6 lg:px-0">
             <Reveal as="h1" className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
               Great experiences begin with a question, not a technology
             </Reveal>
@@ -46,15 +46,15 @@ export default function Hero() {
           </div>
 
           {/* Right column — video slot + floating pills */}
-          <div className="relative aspect-square w-full lg:aspect-auto lg:h-160">
+          <div className="relative aspect-square w-full pl-6 lg:pl-0 lg:aspect-auto lg:h-160">
             {/* Replace this block with your <video> once the asset is exported */}
-            <div className="absolute inset-0 overflow-hidden rounded-2xl bg-[#08060f] ">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#08060f] ">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="h-full w-full object-cover lg:object-[100%_50%] mix-blend-screen"
+                className="h-full w-full  object-cover object-[76%_100%] lg:object-[100%_50%] mix-blend-screen"
               >
                 <source src="assets/new-bg.mp4" type="video/mp4" />
               </video>

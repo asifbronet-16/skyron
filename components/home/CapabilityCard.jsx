@@ -21,7 +21,7 @@ const ACCENTS = {
 /**
  * `icon` is a component (e.g. CubeIcon), not an element — it renders here.
  * `accent` is one of: violet | teal | rose.
- * `image` is optional — when set, it fades in behind the copy on hover/focus,
+ * `image` is optional — when set, it sits behind the copy at rest and fades out on hover/focus,
  * same treatment as ServiceCard and FeatureGrid's cards.
  */
 export default function CapabilityCard({ icon: Icon, title, description, accent = "violet", image }) {
@@ -36,11 +36,12 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
         className={`absolute inset-x-0 top-0 h-[2.5px] bg-linear-to-r ${a.rule} opacity-90 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100`}
       />
 
-      {/* background image, revealed on hover — same mechanic as ServiceCard/FeatureGrid */}
+      {/* background image sits behind the copy at rest and fades out on hover/focus —
+          same mechanic as ServiceCard/FeatureGrid */}
       {image && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-within:opacity-100"
+          className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0"
         >
           <Image
             src={image}
@@ -49,7 +50,7 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/85 via-[#08060f]/55 to-[#08060f]/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
         </div>
       )}
 
