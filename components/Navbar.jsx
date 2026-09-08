@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, ChevronRight } from "@/components/icons";
+import { WHATSAPP_URL } from "@/constants/site";
 import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
 import { TECHNOLOGY_SOLUTIONS_ITEMS } from "@/constants/technologySolutions";
 
@@ -279,15 +280,17 @@ export default function Navbar({ active = "Home" }) {
             );
           })}
 
-          <Link
-            href="/#contact"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
             // className="rounded-full bg-linear-to-r from-[#22d3ee] via-[#a855f7] to-[#e849c4] p-[2px] transition-shadow duration-300 hover:shadow-[0_0_20px_-2px_rgba(168,85,247,0.7)]"
             className="gradient-border rounded-full p-0.5"
           >
             <span className="block rounded-full bg-[#08060f] px-7 py-1 text-sm font-medium text-white">
               Contact
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile menu toggle */}
@@ -329,15 +332,17 @@ export default function Navbar({ active = "Home" }) {
             closeMenu={closeMenu}
           />
         ))}
-        <Link
-          href="/#contact"
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
           onClick={() => setOpen(false)}
           className="mt-2 w-fit rounded-full bg-linear-to-r from-[#22d3ee] via-[#a855f7] to-[#e849c4] p-px"
         >
           <span className="block rounded-full bg-[#08060f] px-7 py-2.5 text-sm text-white">
             Contact
           </span>
-        </Link>
+        </a>
       </div>
     </div>
     </>

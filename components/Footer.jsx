@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone } from "@/components/icons";
-// import { Instagram, Facebook, Youtube } from "@/components/icons";
+import { Mail, Phone, Instagram, Facebook, Youtube, Behance, Linkedin, Whatsapp } from "@/components/icons";
+import { SITE, SOCIALS, WHATSAPP_URL } from "@/constants/site";
 
 
 const DELIVER = [
@@ -33,11 +33,23 @@ const SERVICES = [
   // { label: "Spatial Media", href: "/services/spatial-media" },
 ];
 
-// const SOCIALS = [
-//   { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
-//   { icon: Facebook, label: "Facebook", href: "https://facebook.com/" },
-//   { icon: Youtube, label: "YouTube", href: "https://youtube.com/" },
-// ];
+// The profile URLs live in constants/site.js (the root layout reads the same
+// list for its Organization JSON-LD); this only maps each one to its mark.
+const SOCIAL_ICONS = {
+  whatsapp: Whatsapp,
+  instagram: Instagram,
+  facebook: Facebook,
+  youtube: Youtube,
+  behance: Behance,
+  linkedin: Linkedin,
+};
+
+// WhatsApp leads the row as the quickest way to reach us, but it stays out of
+// constants' SOCIALS — schema.org's `sameAs` is for profiles, not a chat link.
+const CONTACT_LINKS = [
+  { key: "whatsapp", label: "WhatsApp", href: WHATSAPP_URL },
+  ...SOCIALS,
+];
 
 function ColumnHeading({ children }) {
   return (
@@ -94,39 +106,44 @@ export default function Footer() {
 
             <div className="mt-4 space-y-0.5">
               <a
-                href="mailto:hello@skyron.me"
+                href={`mailto:${SITE.email}`}
                 className="flex items-center gap-3 text-[15px] text-white/40 transition-colors hover:text-white"
               >
                 <Mail className="h-4.25 w-4.25 text-indigo-400" strokeWidth={1.8} />
-                hello@skyron.me
+                {SITE.email}
               </a>
               <a
-                href="tel:+971508742345"
+                href={`tel:${SITE.phone}`}
                 className="flex items-center gap-3 text-[15px] text-white/40 transition-colors hover:text-white"
               >
                 <Phone className="h-4.25 w-4.25 text-indigo-400" strokeWidth={1.8} />
-                +971 50 874 2345
+                {SITE.phoneDisplay}
               </a>
             </div>
 
-            {/* Social links — restore once the real profile URLs exist.
-            <ul className="mt-4 flex gap-3">
-              {SOCIALS.map(({ icon: Icon, label, href }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={label}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/8 bg-white/4
-                               text-white/40 transition hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white"
-                  >
-                    <Icon className="h-5 w-5" strokeWidth={1.8} />
-                  </a>
-                </li>
-              ))}
+            {/* all six on one line — the tiles step down a size on the narrowest
+                phones so the row never has to wrap */}
+            <ul className="mt-5 flex items-center gap-2 sm:gap-2.5">
+              {CONTACT_LINKS.map(({ key, label, href }) => {
+                const Icon = SOCIAL_ICONS[key];
+                return (
+                  <li key={key}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/8 bg-white/4
+                                 text-white/40 transition hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white
+                                 sm:h-9 sm:w-9"
+                    >
+                      <Icon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
-            */}
           </div>
 
 
@@ -149,6 +166,18 @@ export default function Footer() {
               Dubai, UAE
             </address>
           </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/8 pt-6 text-[13px] text-white/30 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
+          </p>
+          {/* <a
+            href={SITE.url}
+            className="transition-colors hover:text-white"
+          >
+            {SITE.url.replace("https://", "")}
+          </a> */}
         </div>
       </div>
     </footer>
