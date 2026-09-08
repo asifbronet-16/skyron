@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
@@ -39,25 +40,50 @@ export default function CreativeSolutionsPage() {
 
         <Navbar active="What We Do" />
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-24 pb-8 sm:pt-44 sm:pb-24">
-          <div className="relative mx-auto max-w-3xl text-center">
-            <Reveal className="flex items-center justify-center gap-4">
-              <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-                What We Do
-              </span>
-              <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />
-            </Reveal>
+        <section className="relative flex min-h-[70vh] items-center overflow-hidden px-6 pt-24 pb-8 sm:min-h-[80vh] sm:pt-44 sm:pb-24">
+          <Image
+            src="/assets/banners/creative-solutions.png"
+            alt="Creative Solutions"
+            fill
+            preload
+            sizes="100vw"
+            className="-z-10 object-cover"
+          />
 
-            <Reveal delay={100}>
-              <SectionHeading lead="Creative" accent="Solutions" align="center" className="mt-6" />
-            </Reveal>
+          {/* eased top/bottom falloff so the image melts into the sections around it */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#08060f_0%,rgba(8,6,15,0.9)_6%,rgba(8,6,15,0.6)_14%,rgba(8,6,15,0.25)_24%,transparent_38%,transparent_62%,rgba(8,6,15,0.25)_76%,rgba(8,6,15,0.6)_86%,rgba(8,6,15,0.9)_94%,#08060f_100%)]"
+          />
 
-            <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-              Five disciplines, one creative pipeline — 3D and 2D content, anamorphic LED, live-action
-              production, and AI-assisted workflows, all built to move audiences across screens,
-              facades, and spatial installations.
-            </Reveal>
+          {/* left-edge scrim so the copy sits on a dark, readable field and the photo
+              stays visible on the right — heavier on mobile, where the text runs wider */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10
+            bg-[linear-gradient(to_right,rgba(8,6,15,0.92)_0%,rgba(8,6,15,0.82)_45%,rgba(8,6,15,0.55)_75%,rgba(8,6,15,0.3)_100%)]
+            sm:bg-[linear-gradient(to_right,#08060f_0%,rgba(8,6,15,0.9)_18%,rgba(8,6,15,0.7)_38%,rgba(8,6,15,0.35)_56%,transparent_78%)]"
+          />
+
+          <div className="relative mx-auto w-full max-w-7xl text-left">
+            <div className="max-w-2xl">
+              <Reveal className="flex items-center gap-4">
+                <span className="h-0.5 w-16 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
+                  What We Do
+                </span>
+              </Reveal>
+
+              <Reveal delay={100}>
+                <SectionHeading lead="Creative" accent="Solutions" className="mt-6" />
+              </Reveal>
+
+              <Reveal as="p" delay={200} className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+                Five disciplines, one creative pipeline — 3D and 2D content, anamorphic LED, live-action
+                production, and AI-assisted workflows, all built to move audiences across screens,
+                facades, and spatial installations.
+              </Reveal>
+            </div>
           </div>
         </section>
 

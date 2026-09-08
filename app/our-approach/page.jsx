@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
@@ -138,7 +139,14 @@ export default function OurApproachPage() {
         <Navbar active="Our Story" />
 
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 -mt-10 lg:mt-16 py-28 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
-          <img src="/assets/banners/our-approach/1.jpeg" alt="Our Approach" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+          <Image
+            src="/assets/banners/our-approach/1.jpeg"
+            alt="Our Approach"
+            fill
+            preload
+            sizes="100vw"
+            className="-z-10 object-cover"
+          />
 
           {/* eased top/bottom falloff so the image melts into the sections around it */}
           <div
