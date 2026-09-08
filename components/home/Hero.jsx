@@ -2,11 +2,11 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const PILLS = [
-  { label: "Digital Physical Systems", className: "top-[5%] right-[40%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
-  { label: "Experiential Installation", className: "top-[15%] left-[0%]", anim: "float-c", dur: "9.5s", delay: "1.2s", border: "border-violet-200/45", glow: "0 0 18px -4px rgba(221,214,254,.35)" },
-  { label: "Immersive Experiences", className: "top-[28%] right-[10%]", anim: "float-b", dur: "8.2s", delay: "0.6s", border: "border-fuchsia-400/55", glow: "0 0 20px -4px rgba(232,121,249,.45)" },
-  { label: "Interaction Design", className: "top-[66%] left-[1%]", anim: "float-a", dur: "10s", delay: "2.1s", border: "border-pink-400/55", glow: "0 0 20px -4px rgba(244,114,182,.45)" },
-  { label: "Premium Content", className: "top-[65%] right-[5%]", anim: "float-c", dur: "7.8s", delay: "1.7s", border: "border-purple-400/50", glow: "0 0 18px -4px rgba(192,132,252,.40)" },
+  { label: "Phygital Experiences", className: "top-[5%] right-[40%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
+  { label: "Experiential Design", className: "top-[15%] left-[0%]", anim: "float-c", dur: "9.5s", delay: "1.2s", border: "border-violet-200/45", glow: "0 0 18px -4px rgba(221,214,254,.35)" },
+  { label: "Immersive Environments", className: "top-[28%] right-[10%]", anim: "float-b", dur: "8.2s", delay: "0.6s", border: "border-fuchsia-400/55", glow: "0 0 20px -4px rgba(232,121,249,.45)" },
+  { label: "Interactive Experiences", className: "top-[66%] left-[1%]", anim: "float-a", dur: "10s", delay: "2.1s", border: "border-pink-400/55", glow: "0 0 20px -4px rgba(244,114,182,.45)" },
+  { label: "Cinematic Content", className: "top-[65%] right-[5%]", anim: "float-c", dur: "7.8s", delay: "1.7s", border: "border-purple-400/50", glow: "0 0 18px -4px rgba(192,132,252,.40)" },
   { label: "Creative Technology", className: "top-[78%] left-[34%]", anim: "float-b", dur: "9s", delay: "0.3s", border: "border-sky-400/50", glow: "0 0 18px -4px rgba(56,189,248,.40)" },
 ];
 

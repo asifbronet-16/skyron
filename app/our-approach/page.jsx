@@ -146,30 +146,40 @@ export default function OurApproachPage() {
             className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#08060f_0%,rgba(8,6,15,0.9)_6%,rgba(8,6,15,0.6)_14%,rgba(8,6,15,0.25)_24%,transparent_38%,transparent_62%,rgba(8,6,15,0.25)_76%,rgba(8,6,15,0.6)_86%,rgba(8,6,15,0.9)_94%,#08060f_100%)]"
           />
 
-          <div className="relative mx-auto max-w-3xl text-center">
-            <Reveal className="flex items-center justify-center gap-4">
-              <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#a996f0]">
-                Our Approach
-              </span>
-              <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />
-            </Reveal>
+          {/* left-edge scrim so the copy sits on a dark, readable field and the photo
+              stays visible on the right — heavier on mobile, where the text runs wider */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10
+            bg-[linear-gradient(to_right,rgba(8,6,15,0.92)_0%,rgba(8,6,15,0.82)_45%,rgba(8,6,15,0.55)_75%,rgba(8,6,15,0.3)_100%)]
+            sm:bg-[linear-gradient(to_right,#08060f_0%,rgba(8,6,15,0.9)_18%,rgba(8,6,15,0.7)_38%,rgba(8,6,15,0.35)_56%,transparent_78%)]"
+          />
 
-            <Reveal delay={100}>
-              <SectionHeading lead="We Begin With" accent="Understanding, Not Execution" align="center" className="mt-6" />
-            </Reveal>
+          <div className="relative mx-auto w-full max-w-7xl text-left">
+            <div className="max-w-2xl">
+              <Reveal className="flex items-center gap-4">
+                <span className="h-0.5 w-16 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#a996f0]">
+                  Our Approach
+                </span>
+              </Reveal>
 
-            <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-              Every SKYRON Interactive project starts by looking closely at the purpose of the
-              space, the people it&apos;s meant for, the message it needs to carry, and the kind
-              of response it should create. From there, we shape the journey — how the audience
-              should enter the experience, how the story should unfold, where moments of
-              interaction should happen, and how content should move through the environment with
-              clarity and impact. Only after that do we determine the most appropriate media,
-              systems, and technologies to support it. This is what allows our work to feel
-              coherent, rather than crowded. Thoughtful, rather than decorative. Tailored, rather
-              than interchangeable.
-            </Reveal>
+              <Reveal delay={100}>
+                <SectionHeading lead="We Begin With" accent="Understanding, Not Execution" className="mt-6" />
+              </Reveal>
+
+              <Reveal as="p" delay={200} className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+                Every SKYRON Interactive project starts by looking closely at the purpose of the
+                space, the people it&apos;s meant for, the message it needs to carry, and the kind
+                of response it should create. From there, we shape the journey — how the audience
+                should enter the experience, how the story should unfold, where moments of
+                interaction should happen, and how content should move through the environment with
+                clarity and impact. Only after that do we determine the most appropriate media,
+                systems, and technologies to support it. This is what allows our work to feel
+                coherent, rather than crowded. Thoughtful, rather than decorative. Tailored, rather
+                than interchangeable.
+              </Reveal>
+            </div>
           </div>
         </section>
 
