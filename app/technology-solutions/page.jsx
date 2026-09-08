@@ -87,7 +87,7 @@ export default function TechnologySolutionsPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pb-8 sm:pb-28">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-2 pb-8 sm:pb-28">
           <div className="relative mx-auto max-w-7xl">
             <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {TECHNOLOGY_SOLUTIONS_ITEMS.map((item, i) => (
