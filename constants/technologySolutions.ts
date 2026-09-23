@@ -5,7 +5,9 @@
  * Add a new sub-page by adding an entry here — the Navbar flyout and the
  * dynamic route both read from this single list.
  */
-export const TECHNOLOGY_SOLUTIONS_ITEMS = [
+import type { SolutionItem } from "./types";
+
+export const TECHNOLOGY_SOLUTIONS_ITEMS: SolutionItem[] = [
   {
     slug: "events-exhibitions-brand-activations",
     label: "Events, Exhibitions & Brand Activations",
@@ -303,6 +305,6 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
   },
 ];
 
-export function getTechnologySolutionsItem(slug) {
+export function getTechnologySolutionsItem(slug: string): SolutionItem | undefined {
   return TECHNOLOGY_SOLUTIONS_ITEMS.find((item) => item.slug === slug);
 }

@@ -3,6 +3,7 @@
  * (and give each one a cover image via BlogCard's optional `image` prop)
  * whenever there's real content to publish.
  */
+import type { BlogPost } from "./types";
 
 /**
  * There is no app/blogs/[slug] route yet, so /blogs/<slug> 404s. The sitemap
@@ -10,8 +11,8 @@
  * flip it to `true` once post pages exist, and every post is added to the
  * sitemap and old WordPress post URLs point at the post instead of /blogs.
  */
-export const BLOG_POST_PAGES_LIVE = false;
-export const BLOG_POSTS = [
+export const BLOG_POST_PAGES_LIVE: boolean = false;
+export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "anatomy-of-a-projection-mapping-show",
     tag: "Insights",
