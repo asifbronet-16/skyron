@@ -25,7 +25,7 @@ export const metadata = {
 const STEPS = [
   {
     icon: SearchIcon,
-    image: "/assets/cards/our-approach/1.png",
+    image: "/assets/cards/our-approach/1.webp",
     accent: "violet",
     title: "Envision & Discovery",
     description:
@@ -33,7 +33,7 @@ const STEPS = [
   },
   {
     icon: LightbulbIcon,
-    image: "/assets/cards/our-approach/2.png",
+    image: "/assets/cards/our-approach/2.webp",
     accent: "teal",
     title: "Concept Development",
     description:
@@ -41,7 +41,7 @@ const STEPS = [
   },
   {
     icon: BlueprintIcon,
-    image: "/assets/cards/our-approach/3.png",
+    image: "/assets/cards/our-approach/3.webp",
     accent: "rose",
     title: "Design & Experience Architecture",
     description:
@@ -49,7 +49,7 @@ const STEPS = [
   },
   {
     icon: GearIcon,
-    image: "/assets/cards/our-approach/4.png",
+    image: "/assets/cards/our-approach/4.webp",
     accent: "violet",
     title: "Production & Integration",
     description:
@@ -57,7 +57,7 @@ const STEPS = [
   },
   {
     icon: RocketIcon,
-    image: "/assets/cards/our-approach/5.png",
+    image: "/assets/cards/our-approach/5.webp",
     accent: "teal",
     title: "Experience Deployment & Activation",
     description:
@@ -65,7 +65,7 @@ const STEPS = [
   },
   {
     icon: ShieldCheckIcon,
-    image: "/assets/cards/our-approach/6.png",
+    image: "/assets/cards/our-approach/6.webp",
     accent: "rose",
     title: "Ongoing Support",
     description:
@@ -140,7 +140,7 @@ export default function OurApproachPage() {
 
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 -mt-10 lg:mt-16 py-28 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
           <Image
-            src="/assets/banners/our-approach/1.jpeg"
+            src="/assets/banners/our-approach/1.webp"
             alt="Our Approach"
             fill
             preload

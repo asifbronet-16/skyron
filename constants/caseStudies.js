@@ -9,7 +9,7 @@ export const CASE_STUDIES_ITEMS = [
     title: "Future-Proof Your Business AI Projects",
     description:
       "End-to-end experiential content that blends AI-powered generation with live creative direction for unforgettable brand moments.",
-    image: "/assets/cards/marketing-brand-content/2.jpeg",
+    image: "/assets/cards/marketing-brand-content/2.webp",
     // href: "/work/future-proof",
   },
   {
@@ -17,7 +17,7 @@ export const CASE_STUDIES_ITEMS = [
     title: "AI-Powered Projects for Scalable Success",
     description:
       "Intelligent experience systems that adapt to audience behavior in real-time, driving deeper engagement at every touchpoint.",
-    image: "/assets/cards/marketing-brand-content/1.jpeg",
+    image: "/assets/cards/marketing-brand-content/1.webp",
     // href: "/work/ai-powered",
   },
   {
@@ -25,7 +25,7 @@ export const CASE_STUDIES_ITEMS = [
     title: "Tailored AI Projects for Maximum Efficiency",
     description:
       "Custom-built immersive environments calibrated to your brand identity, audience profile, and measurable KPIs.",
-    image: "/assets/cards/marketing-brand-content/3.jpeg",
+    image: "/assets/cards/marketing-brand-content/3.webp",
     // href: "/work/tailored",
   },
   {
@@ -33,7 +33,7 @@ export const CASE_STUDIES_ITEMS = [
     title: "Smarter Spatial Design at Scale",
     description:
       "Scalable experience frameworks that grow with your brand — from flagship installations to global rollouts.",
-    image: "/assets/cards/corporate-communication/2.jpeg",
+    image: "/assets/cards/corporate-communication/2.webp",
     // href: "/work/spatial-design",
   },
 ];

@@ -23,21 +23,21 @@ const STORY_PROCESS = [
     accent: "violet",
     title: "Pre-Production",
     description: "A strong creative foundation — concept development, scripting, storyboarding, and mood boards.",
-    image: "/assets/cards/pre-production/1.png",
+    image: "/assets/cards/pre-production/1.webp",
   },
   {
     number: "02",
     accent: "cyan",
     title: "Production",
     description: "A tailored pipeline for the story at hand — 2D/3D animation, live-action, VFX, or AI-driven content, whichever serves it best.",
-    image: "/assets/cards/production/1.png",
+    image: "/assets/cards/production/1.webp",
   },
   {
     number: "03",
     accent: "purple",
     title: "Post-Production",
     description: "Editing, sound design, visual effects, and color grading, polished into one immersive final output.",
-    image: "/assets/cards/post-production/1.png",
+    image: "/assets/cards/post-production/1.webp",
   },
 ];
 
@@ -84,7 +84,14 @@ export default function WhoWeArePage() {
         <Navbar active="Our Story" />
 
         <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
-          <img src="/assets/banners/who-we-are/1.png" alt="Who we are" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+          <Image
+            src="/assets/banners/who-we-are/1.webp"
+            alt="Who we are"
+            fill
+            preload
+            sizes="100vw"
+            className="absolute inset-0 -z-10 h-full w-full object-cover"
+          />
 
           <div
             aria-hidden="true"
@@ -152,7 +159,7 @@ export default function WhoWeArePage() {
 
           <section className="relative min-h-130 overflow-hidden sm:min-h-155">
             <Image
-              src="/assets/our-story/galaxy.png"
+              src="/assets/our-story/galaxy.webp"
               alt="Skyron — spatial experiences powered by intelligent technology"
               fill
               sizes="100vw"

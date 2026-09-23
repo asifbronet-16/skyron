@@ -3,6 +3,14 @@
  * (and give each one a cover image via BlogCard's optional `image` prop)
  * whenever there's real content to publish.
  */
+
+/**
+ * There is no app/blogs/[slug] route yet, so /blogs/<slug> 404s. The sitemap
+ * (app/sitemap.ts) and the legacy redirects (next.config.ts) both read this:
+ * flip it to `true` once post pages exist, and every post is added to the
+ * sitemap and old WordPress post URLs point at the post instead of /blogs.
+ */
+export const BLOG_POST_PAGES_LIVE = false;
 export const BLOG_POSTS = [
   {
     slug: "anatomy-of-a-projection-mapping-show",
@@ -12,7 +20,7 @@ export const BLOG_POSTS = [
       "From facade survey to final cue stack — what actually happens between a client brief and opening night.",
     date: "2026-08-12",
     readTime: "6 min read",
-    image: "/assets/cards/blogs/1.png",
+    image: "/assets/cards/blogs/1.webp",
   },
   {
     slug: "spatial-design-next-brand-battleground",
@@ -22,7 +30,7 @@ export const BLOG_POSTS = [
       "Screens are everywhere. The brands winning attention are the ones designing for the room, not just the rectangle.",
     date: "2026-07-28",
     readTime: "5 min read",
-    image: "/assets/cards/blogs/2.png",
+    image: "/assets/cards/blogs/2.webp",
   },
   {
     slug: "ai-content-meets-human-art-direction",
@@ -32,7 +40,7 @@ export const BLOG_POSTS = [
       "How our pipeline uses generative tools to explore faster, without ever shipping an asset nobody art-directed.",
     date: "2026-07-14",
     readTime: "7 min read",
-    image: "/assets/cards/blogs/3.png",
+    image: "/assets/cards/blogs/3.webp",
   },
   {
     slug: "holograms-that-dont-feel-like-gimmicks",
@@ -42,7 +50,7 @@ export const BLOG_POSTS = [
       "HoloBox and hologram fan units are easy to buy and easy to misuse. Here's how we decide when they actually earn their place.",
     date: "2026-06-30",
     readTime: "4 min read",
-    image: "/assets/cards/blogs/4.png",
+    image: "/assets/cards/blogs/4.webp",
   },
   {
     slug: "anamorphic-billboard-frame-by-frame",
@@ -52,7 +60,7 @@ export const BLOG_POSTS = [
       "The illusion lives or dies on the math. A walkthrough of how we build every shot against the exact curve of the screen.",
     date: "2026-06-09",
     readTime: "8 min read",
-    image: "/assets/cards/blogs/5.png",
+    image: "/assets/cards/blogs/5.webp",
   },
   {
     slug: "what-makes-an-experience-centre-work",
@@ -62,6 +70,6 @@ export const BLOG_POSTS = [
       "Most brand experience centres go stale within a year. The ones that don't are built around a different set of decisions.",
     date: "2026-05-22",
     readTime: "6 min read",
-    image: "/assets/cards/blogs/6.png",
+    image: "/assets/cards/blogs/6.webp",
   },
 ];

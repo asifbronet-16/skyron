@@ -42,7 +42,7 @@ export default function CreativeSolutionsPage() {
 
         <section className="relative flex min-h-[70vh] items-center overflow-hidden px-6 pt-24 pb-8 sm:min-h-[80vh] sm:pt-44 sm:pb-24">
           <Image
-            src="/assets/banners/creative-solutions.png"
+            src="/assets/banners/creative-solutions.webp"
             alt="Creative Solutions"
             fill
             preload

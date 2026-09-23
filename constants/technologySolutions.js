@@ -13,8 +13,8 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     heading: { lead: "Events, Exhibitions &", accent: "Brand Activations" },
     banner: {
       images: [
-        "/assets/banners/events-exhibitions-brand-activations/1.jpeg",
-        "/assets/banners/events-exhibitions-brand-activations/2.jpeg",
+        "/assets/banners/events-exhibitions-brand-activations/1.webp",
+        "/assets/banners/events-exhibitions-brand-activations/2.webp",
       ],
     },
     intro:
@@ -33,19 +33,19 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "Live Event Experiences",
           description:
             "Interactive content designed to **energize** audiences and elevate live moments — stage visuals and immersive motion graphics, real-time interactive visuals, audience-responsive content systems, and experiential storytelling for launches and ceremonies.",
-          image: "/assets/banners/events-exhibitions-brand-activations/1.jpeg",
+          image: "/assets/banners/events-exhibitions-brand-activations/1.webp",
         },
         {
           title: "Exhibition & Trade Show Experiences",
           description:
             "Content-driven environments that attract, engage, and **convert** visitors — interactive exhibition installations, immersive brand zones and pavilions, touchless and sensor-based interaction, and spatial storytelling through digital scenography.",
-          image: "/assets/banners/events-exhibitions-brand-activations/2.jpeg",
+          image: "/assets/banners/events-exhibitions-brand-activations/2.webp",
         },
         {
           title: "Brand Activations & Experiential Marketing",
           description:
             "We turn brands into experiences people can explore and **remember** — interactive brand installations, experiential pop-ups and roadshows, transparent LED and immersive display content, and AR-powered engagement experiences.",
-          image: "/assets/cards/brand-activations-experiential-marketing/1.png",
+          image: "/assets/cards/brand-activations-experiential-marketing/1.webp",
         },
       ],
     },
@@ -57,9 +57,9 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     heading: { lead: "Interactive", accent: "Technologies" },
     banner: {
       images: [
-        "/assets/banners/interactive-technologies/1.jpeg",
-        "/assets/banners/interactive-technologies/2.jpeg",
-        "/assets/banners/interactive-technologies/3.jpeg",
+        "/assets/banners/interactive-technologies/1.webp",
+        "/assets/banners/interactive-technologies/2.webp",
+        "/assets/banners/interactive-technologies/3.webp",
       ],
     },
     intro:
@@ -78,61 +78,61 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "Touch & Display Interaction",
           description:
             "Touch screens and kiosks, multi-touch tables, interactive LED walls, and **large-format** touch LED displays.",
-          image: "/assets/cards/touch-display-interaction/1.png",
+          image: "/assets/cards/touch-display-interaction/1.webp",
         },
         {
           title: "Gesture, Motion & Spatial Interaction",
           description:
             "Motion sensors and depth cameras, touchless gesture recognition, body and hand tracking, and **spatial tracking**.",
-          image: "/assets/cards/gesture-motion-spatial-interaction/1.png",
+          image: "/assets/cards/gesture-motion-spatial-interaction/1.webp",
         },
         {
           title: "Sensor & Context-Triggered Interaction",
           description:
             "Proximity detection, pressure and interactive floors, and environmental triggers such as **light, sound, and occupancy**.",
-          image: "/assets/cards/sensor-context-triggered-interaction/1.png",
+          image: "/assets/cards/sensor-context-triggered-interaction/1.webp",
         },
         {
           title: "Tangible & Object-Based Interaction",
           description:
             "Physical controls like dials, buttons, and tokens, RFID/NFC-enabled objects, and **interactive physical exhibits**.",
-          image: "/assets/cards/tangible-object-based-interaction/1.png",
+          image: "/assets/cards/tangible-object-based-interaction/1.webp",
         },
         {
           title: "Data-Driven & AI-Powered Interaction",
           description:
             "Real-time data visualization, adaptive content systems, and **AI-driven** content response.",
-          image: "/assets/cards/data-driven-ai-powered-interaction/1.png",
+          image: "/assets/cards/data-driven-ai-powered-interaction/1.webp",
         },
         {
           title: "Multi-User & Collaborative Interaction",
           description:
             "Simultaneous multi-user walls, collaborative learning and planning tables, and **group engagement** systems.",
-          image: "/assets/cards/multi-user-collaborative-interaction/1.png",
+          image: "/assets/cards/multi-user-collaborative-interaction/1.webp",
         },
         {
           title: "Interactive Projection Systems",
           description:
             "Interactive projection walls and floors, motion-triggered projection content, and projection onto **objects and installations**.",
-          image: "/assets/cards/interactive-projection-systems/1.png",
+          image: "/assets/cards/interactive-projection-systems/1.webp",
         },
         {
           title: "Haptic & Tactile Feedback",
           description:
             "Vibration-based feedback, force and localized tactile response, and **enhanced immersion** in interactive exhibits.",
-          image: "/assets/cards/haptic-tactile-feedback/1.png",
+          image: "/assets/cards/haptic-tactile-feedback/1.webp",
         },
         {
           title: "AR & Mixed Reality Interaction",
           description:
             "AR overlays via mobile or smart glasses, mixed reality touchpoints blending physical and digital layers, and **hybrid** online-to-offline continuity.",
-          image: "/assets/cards/ar-mixed-reality-interaction/1.png",
+          image: "/assets/cards/ar-mixed-reality-interaction/1.webp",
         },
         {
           title: "Voice & Mobile Interaction",
           description:
             "Voice assistants and conversational interfaces, QR/NFC/BLE engagement, and **app-based** controllers.",
-          image: "/assets/cards/voice-mobile-interaction/1.png",
+          image: "/assets/cards/voice-mobile-interaction/1.webp",
         },
       ],
     },
@@ -144,8 +144,8 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     heading: { lead: "Hologram, Holobox &", accent: "Volumetric Display" },
     banner: {
       images: [
-        "/assets/banners/hologram-holobox-volumetric-display/1.jpeg",
-        "/assets/banners/hologram-holobox-volumetric-display/2.jpeg",
+        "/assets/banners/hologram-holobox-volumetric-display/1.webp",
+        "/assets/banners/hologram-holobox-volumetric-display/2.webp",
       ],
     },
     intro:
@@ -164,37 +164,37 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "3D Volumetric LED",
           description:
             "3D volumetric LED displays deliver 360-degree immersive visuals with depth and motion, enabling **multi-angle viewing**, interactive engagement, and impactful storytelling.",
-          image: "/assets/cards/3d-volumetric-led/1.png",
+          image: "/assets/cards/3d-volumetric-led/1.webp",
         },
         {
           title: "Holobox",
           description:
             "Designed for life-size projections, the Holobox enhances the presentation of people, products, AI avatars, or recorded or interactive content, offering an **immersive and striking** experience.",
-          image: "/assets/cards/holobox/1.png",
+          image: "/assets/cards/holobox/1.webp",
         },
         {
           title: "Fan Hologram",
           description:
             "The holographic propeller ensures **maximum visibility** and impact on your audience. We guarantee immediate attractiveness at all your events.",
-          image: "/assets/cards/fan-hologram/1.png",
+          image: "/assets/cards/fan-hologram/1.webp",
         },
         {
           title: "Pyramid Hologram",
           description:
             "Give your flagship product unparalleled visibility with our **270° holographic pyramids**. Grab everyone's attention, engage your customers, and boost your sales.",
-          image: "/assets/cards/pyramid-hologram/1.png",
+          image: "/assets/cards/pyramid-hologram/1.webp",
         },
         {
           title: "Holographic Tube",
           description:
             "A 360° cylindrical holographic display that showcases a product or figure floating in mid-air, viewable from **every angle** — built for retail counters, lobbies, and showroom centrepieces.",
-          image: "/assets/cards/holographic-tube/1.png",
+          image: "/assets/cards/holographic-tube/1.webp",
         },
         {
           title: "Mesh Hologram",
           description:
             "A 360° holographic mesh projection screen built for **large-scale hologram shows** and stage presentations.",
-          image: "/assets/cards/mesh-hologram/1.png",
+          image: "/assets/cards/mesh-hologram/1.webp",
         },
       ],
     },
@@ -206,7 +206,7 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     heading: { lead: "AR, VR, XR", accent: "Immersive Technologies" },
     banner: {
       images: [
-        "/assets/banners/ar-vr-xr-immersive-technologies/1.jpeg",
+        "/assets/banners/ar-vr-xr-immersive-technologies/1.webp",
       ],
     },
     intro:
@@ -225,19 +225,19 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "VR Car Configurator",
           description:
             "Enables immersive vehicle visualization and customization through a VR headset. Powered by Unity's real-time rendering, it delivers intuitive interaction, high visual fidelity, and **faster, more engaging** decision-making for customers and dealers.",
-          image: "/assets/cards/vr-car-configurator/1.png",
+          image: "/assets/cards/vr-car-configurator/1.webp",
         },
         {
           title: "VR Industrial Training",
           description:
             "Delivers immersive, realistic simulations for safe, hands-on learning, improved retention, and **enhanced performance** across complex industrial environments.",
-          image: "/assets/cards/vr-industrial-training/1.png",
+          image: "/assets/cards/vr-industrial-training/1.webp",
         },
         {
           title: "AR Furniture Configurator",
           description:
             "Allows users to visualize, customize, and place furniture in real environments, enabling confident decisions, enhanced engagement, and **seamless product exploration** through interactive augmented reality experiences.",
-          image: "/assets/cards/ar-furniture-configurator/1.png",
+          image: "/assets/cards/ar-furniture-configurator/1.webp",
         },
       ],
     },
@@ -248,7 +248,7 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
     eyebrow: "Technology Solutions",
     heading: { lead: "Projection Mapping", accent: "Solutions" },
     banner: {
-      images: ["/assets/banners/projection-mapping-solutions/1.jpeg"],
+      images: ["/assets/banners/projection-mapping-solutions/1.webp"],
     },
     intro:
       "Building facades, interiors, and objects transformed with precisely mapped projection — content sculpted to fit the exact geometry of the surface.",
@@ -266,37 +266,37 @@ export const TECHNOLOGY_SOLUTIONS_ITEMS = [
           title: "Experiential Projection Mapping",
           description:
             "Mapped for experience centres, museums, exhibitions, and learning environments — used to support **storytelling and immersive** journeys.",
-          image: "/assets/cards/experiential-projection-mapping/1.png",
+          image: "/assets/cards/experiential-projection-mapping/1.webp",
         },
         {
           title: "Interactive Projection Mapping",
           description:
             "Mapped across floors, walls, objects, and installations — built to enable **real-time audience** participation.",
-          image: "/assets/cards/interactive-projection-mapping/1.png",
+          image: "/assets/cards/interactive-projection-mapping/1.webp",
         },
         {
           title: "Object & Product Projection Mapping",
           description:
             "Mapped onto physical products, scale models, and sculptures — used to explain **features and functionality**.",
-          image: "/assets/cards/object-product-projection-mapping/1.png",
+          image: "/assets/cards/object-product-projection-mapping/1.webp",
         },
         {
           title: "Stage & Event Projection Mapping",
           description:
             "Mapped for stages, set pieces, and performance spaces — used to **enhance live** performances and presentations.",
-          image: "/assets/cards/stage-event-projection-mapping/1.png",
+          image: "/assets/cards/stage-event-projection-mapping/1.webp",
         },
         {
           title: "Retail & Commercial Projection Mapping",
           description:
             "Mapped across store interiors and window displays — used to attract attention and enhance **retail storytelling**.",
-          image: "/assets/cards/retail-commercial-projection-mapping/1.png",
+          image: "/assets/cards/retail-commercial-projection-mapping/1.webp",
         },
         {
           title: "Outdoor Projection Mapping",
           description:
             "Mapped onto building façades, landmarks, and outdoor structures — built for mass reach, iconic visuals, and **strong brand recall**.",
-          image: "/assets/cards/outdoor-projection-mapping/1.png",
+          image: "/assets/cards/outdoor-projection-mapping/1.webp",
         },
       ],
     },
