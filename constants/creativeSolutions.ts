@@ -9,7 +9,9 @@
  * a carousel (see components/SolutionBanner.jsx). Leave empty until real
  * photography/renders are dropped into /public for this solution.
  */
-export const CREATIVE_SOLUTIONS_ITEMS = [
+import type { SolutionItem } from "./types";
+
+export const CREATIVE_SOLUTIONS_ITEMS: SolutionItem[] = [
   {
     slug: "3d-content-creation",
     label: "3D Content Creation",
@@ -312,6 +314,6 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
   },
 ];
 
-export function getCreativeSolutionsItem(slug) {
+export function getCreativeSolutionsItem(slug: string): SolutionItem | undefined {
   return CREATIVE_SOLUTIONS_ITEMS.find((item) => item.slug === slug);
 }

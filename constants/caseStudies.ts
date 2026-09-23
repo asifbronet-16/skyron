@@ -3,7 +3,9 @@
  * Shared by the homepage teaser (components/home/CaseStudiesSection.jsx) and
  * the full listing at /case-studies — one list, so the two never drift.
  */
-export const CASE_STUDIES_ITEMS = [
+import type { CaseStudy } from "./types";
+
+export const CASE_STUDIES_ITEMS: CaseStudy[] = [
   {
     tag: "Featured Work",
     title: "Future-Proof Your Business AI Projects",

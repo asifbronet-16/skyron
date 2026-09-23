@@ -33,7 +33,7 @@ const SERVICES = [
   // { label: "Spatial Media", href: "/services/spatial-media" },
 ];
 
-// The profile URLs live in constants/site.js (the root layout reads the same
+// The profile URLs live in constants/site.ts (the root layout reads the same
 // list for its Organization JSON-LD); this only maps each one to its mark.
 const SOCIAL_ICONS = {
   whatsapp: Whatsapp,

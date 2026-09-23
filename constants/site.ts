@@ -3,6 +3,8 @@
  * Consumed by the root layout (metadata + Organization JSON-LD) and by the
  * footer, so the canonical URL and profile links can't drift between them.
  */
+import type { Social } from "./types";
+
 export const SITE = {
   name: "Skyron",
   legalName: "Skyron Interactive",
@@ -26,8 +28,7 @@ export const SITE = {
 // Opens the WhatsApp app on mobile and web.whatsapp.com on desktop.
 export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}`;
 
-// `key` maps to an icon in components/icons.jsx (see Footer's ICONS lookup).
-export const SOCIALS = [
+export const SOCIALS: Social[] = [
   { key: "instagram", label: "Instagram", href: "https://www.instagram.com/skyron.me" },
   { key: "facebook", label: "Facebook", href: "https://www.facebook.com/skyron.me" },
   { key: "youtube", label: "YouTube", href: "https://www.youtube.com/@skyron_me" },
