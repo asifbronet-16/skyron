@@ -56,6 +56,8 @@ export default function Home() {
             loop
             muted
             playsInline
+            preload="metadata"
+            poster="/assets/icon-rotate-poster.webp"
             className="h-full w-full object-cover"
           />
         </EmpoweringSection>

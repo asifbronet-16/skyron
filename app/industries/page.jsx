@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
@@ -17,32 +18,32 @@ const INDUSTRIES = [
   {
     title: "Corporate, Government & Mega Projects",
     description: "Experience-led content for corporate showcases, innovation centers, government initiatives, and large-scale regional developments.",
-    image: "/assets/banners/industries/1.png",
+    image: "/assets/banners/industries/1.webp",
   },
   {
     title: "Exhibitions, Museums & Cultural Projects",
     description: "Immersive environments, interactive narratives, and spatial media designed to educate, engage, and inspire diverse audiences.",
-    image: "/assets/banners/events-exhibitions-brand-activations/1.jpeg",
+    image: "/assets/banners/events-exhibitions-brand-activations/1.webp",
   },
   {
     title: "Live Events & Experiential Marketing",
     description: "High-impact brand activations, product launches, festivals, and corporate events powered by interactive technology and immersive content.",
-    image: "/assets/banners/events-exhibitions-brand-activations/2.jpeg",
+    image: "/assets/banners/events-exhibitions-brand-activations/2.webp",
   },
   {
     title: "Luxury, Retail & Mall Experiences",
     description: "Premium interactive installations and experiential content for luxury brands, flagship stores, shopping malls, and destination retail spaces.",
-    image: "/assets/cards/industries/3.png",
+    image: "/assets/cards/industries/3.webp",
   },
   {
     title: "Real Estate, Architecture & Destination Marketing",
     description: "Interactive visualizations, immersive presentations, and experiential showcases for properties, master plans, and landmark destinations.",
-    image: "/assets/cards/industries/1.png",
+    image: "/assets/cards/industries/1.webp",
   },
   {
     title: "Entertainment & Media",
     description: "Film launches, OTT promotions, music events, fan experiences, and immersive storytelling installations that turn audiences into participants.",
-    image: "/assets/cards/industries/2.png",
+    image: "/assets/cards/industries/2.webp",
   },
 ];
 
@@ -73,7 +74,14 @@ export default function IndustriesPage() {
 
             {/* Image layer — absolute, full bleed, anchored right */}
             <div className="absolute inset-y-0 right-0 h-full w-[55%] overflow-hidden">
-              <img src="/assets/banners/industries/1.png" alt="Industries we Work with" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+              <Image
+                src="/assets/banners/industries/1.webp"
+                alt="Industries we Work with"
+                fill
+                preload
+                sizes="55vw"
+                className="absolute inset-0 -z-10 h-full w-full object-cover"
+              />
 
               {/* top + bottom falloff so the image melts into the sections around it */}
               <div

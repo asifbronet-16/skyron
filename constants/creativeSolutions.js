@@ -17,11 +17,11 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     heading: { lead: "3D Content", accent: "Creation" },
     banner: {
       images: [
-        "/assets/banners/3d-content-creation/1.jpeg",
-        "/assets/banners/3d-content-creation/2.jpg",
-        "/assets/banners/3d-content-creation/3.jpeg",
-        "/assets/banners/3d-content-creation/4.jpeg",
-        "/assets/banners/3d-content-creation/5.jpeg",
+        "/assets/banners/3d-content-creation/1.webp",
+        "/assets/banners/3d-content-creation/2.webp",
+        "/assets/banners/3d-content-creation/3.webp",
+        "/assets/banners/3d-content-creation/4.webp",
+        "/assets/banners/3d-content-creation/5.webp",
       ],
     },
     intro:
@@ -40,49 +40,49 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "3D Animation & Motion Graphics",
           description:
             "We craft cinematic 3D animation and motion graphics for digital, broadcast, social, and immersive experiential content that **elevates** brands and engages audiences.",
-          image: "/assets/cards/3d-animation-motion-graphics/1.png",
+          image: "/assets/cards/3d-animation-motion-graphics/1.webp",
         },
         {
           title: "Product Visualization & 3D Advertising",
           description:
             "High-impact product visualization and 3D advertising that showcases features, **boosts** desirability, and drives **conversions** across digital and commercial campaigns **globally**.",
-          image: "/assets/cards/product-visualization-3d-advertising/1.png",
+          image: "/assets/cards/product-visualization-3d-advertising/1.webp",
         },
         {
           title: "Architectural Visualization & Walkthroughs",
           description:
             "Photoreal architectural walkthroughs and 3D visualizations that bring buildings, interiors, and master plans to life before **ground is broken**.",
-          image: "/assets/cards/architectural-visualization-walkthroughs/1.png",
+          image: "/assets/cards/architectural-visualization-walkthroughs/1.webp",
         },
         {
           title: "Engineering & Technical Animations",
           description:
             "Clear, precise 3D animations that **simplify** complex engineering, industrial **processes**, and technical systems for communication and marketing.",
-          image: "/assets/cards/engineering-technical-animations/1.png",
+          image: "/assets/cards/engineering-technical-animations/1.webp",
         },
         {
           title: "Character Design & Animation",
           description:
             "Expressive character design and animation that builds emotional connection, **enhances** storytelling, and strengthens brand **narratives** across media.",
-          image: "/assets/cards/character-design-animation/1.png",
+          image: "/assets/cards/character-design-animation/1.webp",
         },
         {
           title: "3D Asset Creation",
           description:
             "High-quality, **optimized** 3D assets built for animation, real-time engines, interactive platforms, and scalable multi-channel production.",
-          image: "/assets/cards/3d-asset-creation/1.png",
+          image: "/assets/cards/3d-asset-creation/1.webp",
         },
         {
           title: "Digital Twins & Simulation Visuals",
           description:
             "Data-driven digital twins and simulation visuals that visualize performance, processes, and environments with **accuracy** and clarity.",
-          image: "/assets/cards/digital-twins-simulation-visuals/1.png",
+          image: "/assets/cards/digital-twins-simulation-visuals/1.webp",
         },
         {
           title: "Real-Time & Interactive 3D Content",
           description:
             "Real-time and interactive 3D experiences designed for web, AR, VR, and experiential installations that engage users **dynamically**.",
-          image: "/assets/cards/real-time-interactive-3d-content/1.png",
+          image: "/assets/cards/real-time-interactive-3d-content/1.webp",
         },
       ],
     },
@@ -94,10 +94,10 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     heading: { lead: "2D Content", accent: "Creation" },
     banner: {
       images: [
-        "/assets/banners/2d-content-creation/1.jpeg",
-        "/assets/banners/2d-content-creation/2.jpeg",
-        "/assets/banners/2d-content-creation/3.jpeg",
-        "/assets/banners/2d-content-creation/4.jpeg",
+        "/assets/banners/2d-content-creation/1.webp",
+        "/assets/banners/2d-content-creation/2.webp",
+        "/assets/banners/2d-content-creation/3.webp",
+        "/assets/banners/2d-content-creation/4.webp",
       ],
     },
     intro:
@@ -116,37 +116,37 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Explainer & Educational Videos",
           description:
             "Engaging explainer and educational videos that **simplify** complex ideas, communicate value clearly, and inform audiences across platforms.",
-          image: "/assets/cards/explainer-educational-videos/1.jpeg",
+          image: "/assets/cards/explainer-educational-videos/1.webp",
         },
         {
           title: "Character Animation",
           description:
             "Lively character animation that brings personalities to life, **enhances** storytelling, and creates memorable brand-driven narratives.",
-          image: "/assets/cards/character-animation/1.jpeg",
+          image: "/assets/cards/character-animation/1.webp",
         },
         {
           title: "2D Motion Graphics",
           description:
             "Clean, dynamic 2D motion graphics designed to communicate messages clearly and **elevate** visual storytelling across media.",
-          image: "/assets/cards/2d-motion-graphics/1.jpeg",
+          image: "/assets/cards/2d-motion-graphics/1.webp",
         },
         {
           title: "Infographic & Data Animations",
           description:
             "Visually compelling data and infographic animations that transform information into clear, engaging, and **easy-to-understand** stories.",
-          image: "/assets/cards/infographic-data-animations/1.jpeg",
+          image: "/assets/cards/infographic-data-animations/1.webp",
         },
         {
           title: "Brand Films & Visual Idents",
           description:
             "Cinematic brand films and visual identities that define tone, **build recognition**, and express brand purpose through motion.",
-          image: "/assets/cards/brand-films-visual-idents/1.jpeg",
+          image: "/assets/cards/brand-films-visual-idents/1.webp",
         },
         {
           title: "Social & UI Motion Content",
           description:
             "Impactful social and UI motion content crafted to enhance usability, **increase engagement**, and strengthen digital brand experiences.",
-          image: "/assets/cards/social-ui-motion-content/1.jpeg",
+          image: "/assets/cards/social-ui-motion-content/1.webp",
         },
       ],
     },
@@ -158,8 +158,8 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     heading: { lead: "Anamorphic 3D", accent: "Content Creation" },
     banner: {
       images: [
-        "/assets/banners/anamorphic-3d-content-creation/1.jpeg",
-        "/assets/banners/anamorphic-3d-content-creation/2.png",
+        "/assets/banners/anamorphic-3d-content-creation/1.webp",
+        "/assets/banners/anamorphic-3d-content-creation/2.webp",
       ],
     },
     intro:
@@ -178,19 +178,19 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Corner & L-Shape LED Displays",
           description:
             "High-impact corner and L-shape LED displays engineered for immersive storytelling, seamless angles, and **maximum visual impact** in architectural and experiential environments.",
-          image: "/assets/banners/anamorphic-3d-content-creation/1.jpeg",
+          image: "/assets/banners/anamorphic-3d-content-creation/1.webp",
         },
         {
           title: "Flat & Facade LED Installations",
           description:
             "Large-scale flat and facade LED installations delivering bold visuals, structural integration, and **captivating** brand presence across commercial buildings and public-facing spaces.",
-          image: "/assets/cards/flat-facade-led-installations/1.jpeg",
+          image: "/assets/cards/flat-facade-led-installations/1.webp",
         },
         {
           title: "Curved & Wrap-Around Displays",
           description:
             "Curved and wrap-around LED displays designed to envelop audiences with fluid visuals, dynamic perspectives, and **immersive** spatial brand experiences.",
-          image: "/assets/cards/curved-wrap-around-displays/1.jpeg",
+          image: "/assets/cards/curved-wrap-around-displays/1.webp",
         },
       ],
     },
@@ -202,8 +202,8 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     heading: { lead: "Live Action", accent: "Content Production" },
     banner: {
       images: [
-        "/assets/banners/live-action-content-production/1.jpeg",
-        "/assets/banners/live-action-content-production/2.jpeg",
+        "/assets/banners/live-action-content-production/1.webp",
+        "/assets/banners/live-action-content-production/2.webp",
       ],
     },
     intro:
@@ -222,37 +222,37 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Advertising & Commercial Films",
           description:
             "High-impact advertising and commercial films crafted to capture attention, tell compelling stories, and **drive measurable** brand results.",
-          image: "/assets/cards/advertising-commercial-films/1.jpeg",
+          image: "/assets/cards/advertising-commercial-films/1.webp",
         },
         {
           title: "Corporate & Branded Films",
           description:
             "Professionally crafted corporate and branded films that clearly communicate organizational values, **reinforce credibility**, and support consistent brand presence across internal and external channels.",
-          image: "/assets/cards/corporate-branded-films/1.jpeg",
+          image: "/assets/cards/corporate-branded-films/1.webp",
         },
         {
           title: "Documentary & Narrative Content",
           description:
             "Authentic documentary and narrative content that tells meaningful stories, builds **emotional connection**, and resonates with audiences.",
-          image: "/assets/cards/documentary-narrative-content/1.png",
+          image: "/assets/cards/documentary-narrative-content/1.webp",
         },
         {
           title: "Product & Launch Films",
           description:
             "Strategic product and launch films designed to showcase innovation, **generate excitement**, and support successful market introductions.",
-          image: "/assets/cards/product-launch-films/1.jpeg",
+          image: "/assets/cards/product-launch-films/1.webp",
         },
         {
           title: "Live Shoot & Visual Effects",
           description:
             "We produce cinematic live-action content enhanced with visual effects, seamlessly blending cinematography, CGI, and post-production to **elevate** storytelling and visual impact.",
-          image: "/assets/cards/live-shoot-visual-effects/1.jpeg",
+          image: "/assets/cards/live-shoot-visual-effects/1.webp",
         },
         {
           title: "Drone Shoot",
           description:
             "We capture dynamic aerial visuals using professional drone cinematography, delivering **striking perspectives** that enhance storytelling for brands, spaces, and experiences.",
-          image: "/assets/cards/drone-shoot/1.jpeg",
+          image: "/assets/cards/drone-shoot/1.webp",
         },
       ],
     },
@@ -264,11 +264,11 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
     heading: { lead: "AI Driven", accent: "Generative Content" },
     banner: {
       images: [
-        "/assets/banners/ai-driven-generative-content/1.jpeg",
-        "/assets/banners/ai-driven-generative-content/2.jpeg",
-        "/assets/banners/ai-driven-generative-content/3.jpeg",
-        "/assets/banners/ai-driven-generative-content/4.jpeg",
-        "/assets/banners/ai-driven-generative-content/5.jpeg",
+        "/assets/banners/ai-driven-generative-content/1.webp",
+        "/assets/banners/ai-driven-generative-content/2.webp",
+        "/assets/banners/ai-driven-generative-content/3.webp",
+        "/assets/banners/ai-driven-generative-content/4.webp",
+        "/assets/banners/ai-driven-generative-content/5.webp",
       ],
     },
     intro:
@@ -287,25 +287,25 @@ export const CREATIVE_SOLUTIONS_ITEMS = [
           title: "Marketing & Brand Content",
           description:
             "Strategic marketing and brand content crafted to build awareness, shape perception, and deliver **consistent storytelling** across campaigns, platforms, and audience touchpoints globally.",
-          image: "/assets/cards/marketing-brand-content/3.jpeg",
+          image: "/assets/cards/marketing-brand-content/3.webp",
         },
         {
           title: "Corporate Communication",
           description:
             "Clear corporate communication films designed to align stakeholders, convey messaging effectively, and support internal and external communication objectives with **clarity and confidence**.",
-          image: "/assets/cards/corporate-communication/1.jpeg",
+          image: "/assets/cards/corporate-communication/1.webp",
         },
         {
           title: "Education & Learning",
           description:
             "Engaging education and learning content that simplifies complex topics, **enhances retention**, and supports training, onboarding, and knowledge sharing across industries.",
-          image: "/assets/cards/education-learning/1.jpeg",
+          image: "/assets/cards/education-learning/1.webp",
         },
         {
           title: "Creative Storytelling",
           description:
             "Creative storytelling that blends narrative, visuals, and emotion to connect audiences with ideas, brands, and experiences in **meaningful ways**.",
-          image: "/assets/cards/creative-storytelling/1.jpeg",
+          image: "/assets/cards/creative-storytelling/1.webp",
         },
       ],
     },

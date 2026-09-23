@@ -54,9 +54,11 @@ export default function Hero() {
                 muted
                 loop
                 playsInline
+                preload="metadata"
+                poster="/assets/new-bg-poster.webp"
                 className="h-full w-full  object-cover object-[76%_100%] lg:object-[100%_50%] mix-blend-screen"
               >
-                <source src="assets/new-bg.mp4" type="video/mp4" />
+                <source src="/assets/new-bg.mp4" type="video/mp4" />
               </video>
               {/* top + bottom falloff */}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_18%,transparent_65%,#08060f_100%)]" />

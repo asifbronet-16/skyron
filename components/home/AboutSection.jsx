@@ -101,7 +101,7 @@ export default function AboutSection() {
               className="pointer-events-none absolute -bottom-50 left-1/2 z-0 h-120 w-120 -translate-x-1/2 rounded-full bg-[#15caff] opacity-90 blur-[140px]"
             />
             <Image
-              src="/assets/vr-portrait.png"
+              src="/assets/vr-portrait.webp"
               alt=""
               fill
               priority

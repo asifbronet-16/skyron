@@ -20,7 +20,7 @@ export default function BlogsPage() {
 
       <section className="relative overflow-hidden bg-[#08060f] px-6 pt-24 pb-8 sm:pt-44 sm:pb-24">
         <PhotoBackground
-          images={["/assets/banners/blogs/1.jpeg", "/assets/banners/blogs/2.jpeg"]}
+          images={["/assets/banners/blogs/1.webp", "/assets/banners/blogs/2.webp"]}
         />
 
         {/* vignette so the copy stays legible over the photo — same treatment as SolutionBanner */}

@@ -10,7 +10,7 @@ import Image from "next/image";
  * <Image> layer; the caller supplies its own vignette/gradient overlays and
  * foreground content on top (e.g. `relative z-10`).
  *
- * <PhotoBackground images={["/assets/banners/blogs/1.jpeg", "/assets/banners/blogs/2.jpeg"]} />
+ * <PhotoBackground images={["/assets/banners/blogs/1.webp", "/assets/banners/blogs/2.webp"]} />
  */
 export default function PhotoBackground({ images = [], interval = 6000, className = "" }) {
   const slides = images.filter(Boolean);
