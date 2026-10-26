@@ -3,6 +3,7 @@
 import { SITE } from "@/constants/site";
 import { CV_MAX_BYTES, CV_MAX_MB } from "@/constants/careers";
 import { CAREERS_INBOX, sendMail } from "@/lib/mail";
+import { applicationEmail } from "@/lib/emails";
 import { type FormState, isBot, isEmail, normalizeUrl, readText } from "@/lib/forms";
 
 const CV_EXTENSIONS = /\.(pdf|docx?)$/i;
@@ -43,25 +44,15 @@ export async function submitApplication(_prevState: FormState, formData: FormDat
     return { status: "error", message: "Almost there, just check the highlighted fields.", errors, values };
   }
 
-  const role = values.role || "General application";
+  const cvName = file.name.replace(/[^\w.\- ]+/g, "_");
   const delivered = await sendMail({
     to: CAREERS_INBOX,
     // No email given: HR replies using the contact details on the CV.
     replyTo: values.email || undefined,
-    subject: `Application: ${role} - ${values.name || file.name}`,
-    text: [
-      `Position: ${role}`,
-      `Name: ${values.name || "-"}`,
-      `Email: ${values.email || "- (see CV)"}`,
-      `Phone: ${values.phone || "-"}`,
-      `Portfolio: ${portfolio || "-"}`,
-      `LinkedIn: ${linkedin || "-"}`,
-      "",
-      values.message || "(No cover note)",
-    ].join("\n"),
-    attachments: [
-      { filename: file.name.replace(/[^\w.\- ]+/g, "_"), content: Buffer.from(await file.arrayBuffer()) },
-    ],
+    // Kept short: the role and who applied, when given. Everything else is in the body.
+    subject: `${values.role ? `New application for ${values.role}` : "New job application"}${values.name ? ` from ${values.name}` : ""}`,
+    html: applicationEmail({ ...values, portfolio, linkedin, cvName }),
+    attachments: [{ filename: cvName, content: Buffer.from(await file.arrayBuffer()) }],
   });
 
   if (!delivered) {

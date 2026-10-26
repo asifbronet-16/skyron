@@ -4,7 +4,8 @@ import { SITE } from "@/constants/site";
 type Mail = {
   to: string;
   subject: string;
-  text: string;
+  // Full HTML document; see lib/emails.ts.
+  html: string;
   replyTo?: string;
   attachments?: { filename: string; content: Buffer }[];
 };
@@ -25,13 +26,15 @@ export const CAREERS_INBOX = process.env.CAREERS_INBOX || SITE.careersEmail;
  *   MICROSOFT_CLIENT_SECRET  Client secret *value* (not its ID). These expire;
  *                            an expired one logs AADSTS7000222.
  *   MICROSOFT_SENDER         Mailbox the emails come from, e.g. hello@skyron.me
- * The app needs the Mail.Send application permission with admin consent.
+ * Sending rights come from Exchange Online RBAC for Applications ("Application
+ * Mail.Send" scoped to the sender mailbox), not an Entra admin consent: an
+ * Entra grant would let the app send as any mailbox and bypass that scope.
  *
  * Without them it logs the message in development, so the forms can be tried
  * locally, and fails in production, so a visitor is pointed to email/WhatsApp
  * instead of being thanked for a message that went nowhere.
  */
-export async function sendMail({ to, subject, text, replyTo, attachments = [] }: Mail) {
+export async function sendMail({ to, subject, html, replyTo, attachments = [] }: Mail) {
   const tenantId = process.env.MICROSOFT_TENANT_ID;
   const clientId = process.env.MICROSOFT_CLIENT_ID;
   const clientSecret = process.env.MICROSOFT_CLIENT_SECRET;
@@ -40,7 +43,7 @@ export async function sendMail({ to, subject, text, replyTo, attachments = [] }:
   if (!tenantId || !clientId || !clientSecret || !sender) {
     if (process.env.NODE_ENV === "development") {
       const files = attachments.map((file) => file.filename).join(", ") || "none";
-      console.info(`[mail] Not sent (MICROSOFT_* env unset)\nTo: ${to}\nSubject: ${subject}\nAttachments: ${files}\n\n${text}`);
+      console.info(`[mail] Not sent (MICROSOFT_* env unset)\nTo: ${to}\nSubject: ${subject}\nAttachments: ${files}\nBody: ${(html.length / 1024).toFixed(1)}KB of HTML`);
       return true;
     }
     console.error("[mail] MICROSOFT_* env unset; form submission dropped.");
@@ -70,7 +73,7 @@ export async function sendMail({ to, subject, text, replyTo, attachments = [] }:
       body: JSON.stringify({
         message: {
           subject,
-          body: { contentType: "Text", content: text },
+          body: { contentType: "HTML", content: html },
           toRecipients: [{ emailAddress: { address: to } }],
           ...(replyTo && { replyTo: [{ emailAddress: { address: replyTo } }] }),
           ...(attachments.length > 0 && {

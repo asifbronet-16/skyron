@@ -102,10 +102,10 @@ export default function OfficeLocations({ headingAs = "h2", className = "py-12 s
   const multiple = OFFICES.length > 1;
 
   return (
-    // Gutters match the Navbar's (px-6, lg:px-28) and there's no max-width, so the
-    // heading lines up under the logo and the map's edge under the Contact button.
+    // Gutters match the Navbar's (px-6, lg:px-28); max-w-296 caps it on wide
+    // screens at the same width as the other sections on /contact.
     <section id="offices" className={`relative scroll-mt-24 overflow-hidden bg-[#08060f] px-6 lg:scroll-mt-32 lg:px-28 ${className}`}>
-      <div className="relative">
+      <div className="relative mx-auto max-w-296">
         <Reveal>
           <div className="flex items-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
