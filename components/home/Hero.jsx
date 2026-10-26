@@ -37,7 +37,7 @@ export default function Hero() {
                 Explore Our Work
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-block rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
               >
                 Get in Touch

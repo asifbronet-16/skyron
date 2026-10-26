@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, Instagram, Facebook, Youtube, Behance, Linkedin, Whatsapp } from "@/components/icons";
-import { SITE, SOCIALS, WHATSAPP_URL } from "@/constants/site";
+import { OFFICES, SITE, SOCIALS, WHATSAPP_URL } from "@/constants/site";
 
 
 const DELIVER = [
@@ -13,7 +13,8 @@ const DELIVER = [
   { label: "Industries We Serve", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blogs", href: "/blogs" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // The two solution landing pages first, then the individual services beneath them.
@@ -155,16 +156,17 @@ export default function Footer() {
           </div>
 
           <div className="w-full">
-            <ColumnHeading>Our Office</ColumnHeading>
-            <address className="mt-4 text-sm not-italic leading-[1.85] text-white/40">
-              1st Floor, Office 101-14
-              <br />
-              Banat Abdullah Al Marzooqi Building
-              <br />
-              Al Khabeesi, Deira
-              <br />
-              Dubai, UAE
-            </address>
+            <ColumnHeading>{OFFICES.length > 1 ? "Our Offices" : "Our Office"}</ColumnHeading>
+            {OFFICES.map((office) => (
+              <address key={office.id} className="mt-4 text-sm not-italic leading-[1.85] text-white/40">
+                {OFFICES.length > 1 && <span className="block font-medium text-white/70">{office.city}</span>}
+                {office.addressLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+            ))}
           </div>
         </div>
 

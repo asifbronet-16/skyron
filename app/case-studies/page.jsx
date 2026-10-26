@@ -5,12 +5,14 @@ import SectionHeading from "@/components/SectionHeading";
 import CaseStudyCard from "@/components/home/CaseStudyCard";
 import Reveal from "@/components/Reveal";
 import { CASE_STUDIES_ITEMS } from "@/constants/caseStudies";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Case Studies — Skyron",
   description:
     "Featured work from Skyron — experiential content, brand activations, and spatial installations built to be remembered.",
-};
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

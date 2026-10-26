@@ -6,6 +6,7 @@ import CtaBanner from "@/components/CtaBanner";
 import FeatureGrid from "@/components/FeatureGrid";
 import Reveal from "@/components/Reveal";
 import { CREATIVE_SOLUTIONS_ITEMS, getCreativeSolutionsItem } from "@/constants/creativeSolutions";
+import { pageMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   return CREATIVE_SOLUTIONS_ITEMS.map((item) => ({ slug: item.slug }));
@@ -16,10 +17,11 @@ export async function generateMetadata({ params }) {
   const item = getCreativeSolutionsItem(slug);
   if (!item) return {};
 
-  return {
+  return pageMetadata({
     title: `${item.label} — Skyron`,
     description: item.intro,
-  };
+    path: `/creative-solutions/${item.slug}`,
+  });
 }
 
 export default async function CreativeSolutionsDetailPage({ params }) {

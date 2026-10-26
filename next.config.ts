@@ -40,6 +40,13 @@ function legacyWordPressRedirects(): Redirect[] {
 }
 
 const nextConfig: NextConfig = {
+  experimental: {
+    serverActions: {
+      // Room for a CV upload on /careers (capped at 2.5MB in constants/careers.ts)
+      // plus the rest of the form. The default is 1MB.
+      bodySizeLimit: "3mb",
+    },
+  },
   async redirects() {
     return legacyWordPressRedirects();
   },

@@ -14,6 +14,8 @@ const STATIC_ROUTES = [
   "/technology-solutions",
   "/case-studies",
   "/blogs",
+  "/careers",
+  "/contact",
 ];
 
 // Dynamic routes read the same lists as their generateStaticParams, so a new

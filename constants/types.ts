@@ -41,6 +41,38 @@ export type Social = {
   href: string;
 };
 
+/** One studio location, listed on /contact with its own map pin and in the footer. */
+export type Office = {
+  // Stable key for React lists and the selected-office state.
+  id: string;
+  city: string;
+  country: string;
+  // Optional badge, e.g. "Headquarters".
+  label?: string;
+  // Display lines, top to bottom.
+  addressLines: string[];
+  email?: string;
+  // E.164 for tel: links; `phoneDisplay` is what people read.
+  phone?: string;
+  phoneDisplay?: string;
+  // Digits only, for wa.me.
+  whatsapp?: string;
+  // What Google Maps searches for to drop the pin: a place name, an address,
+  // or "lat,lng" for an exact spot.
+  mapQuery: string;
+};
+
+/** An open role on /careers. Its `slug` preselects it in the application form. */
+export type JobOpening = {
+  slug: string;
+  title: string;
+  department: string;
+  location: string;
+  // e.g. "Full-time", "Contract".
+  type: string;
+  summary: string;
+};
+
 /** One entry of the Creative / Technology Solutions lists (one /…/[slug] page each). */
 export type SolutionItem = {
   slug: string;

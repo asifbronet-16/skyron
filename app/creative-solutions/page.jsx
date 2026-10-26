@@ -7,12 +7,14 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/home/ServiceCard";
 import Reveal from "@/components/Reveal";
 import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Creative Solutions — Skyron",
   description:
     "3D and 2D content, anamorphic LED, live-action production, and AI-driven generative content — the creative disciplines behind every Skyron experience.",
-};
+  path: "/creative-solutions",
+});
 
 // Cycled across cards so a five-item grid still reads as varied, not random —
 // same accent rotation ServiceCard already uses on the Our Approach process grid.

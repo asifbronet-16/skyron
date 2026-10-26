@@ -15,12 +15,14 @@ import {
   ShieldCheckIcon,
 } from "@/components/home/CapabilityIcons";
 import Reveal from "@/components/Reveal";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Our Approach — Skyron",
   description:
     "How Skyron takes an idea from first brief to opening night — discovery, design, build, and on-site delivery under one accountable team.",
-};
+  path: "/our-approach",
+});
 
 const STEPS = [
   {
