@@ -25,50 +25,49 @@ export async function submitApplication(_prevState: FormState, formData: FormDat
     message: readText(formData, "message", 5000, true),
   };
   const cv = formData.get("cv");
-  const portfolio = values.portfolio ? normalizeUrl(values.portfolio) : "";
-  const linkedin = values.linkedin ? normalizeUrl(values.linkedin) : "";
+  const file = cv instanceof File && cv.size > 0 ? cv : null;
+  // Tidied into a proper URL when it looks like one, otherwise passed on as
+  // typed: "@jane on Instagram" is still something a recruiter can follow.
+  const portfolio = values.portfolio && (normalizeUrl(values.portfolio) ?? values.portfolio);
+  const linkedin = values.linkedin && (normalizeUrl(values.linkedin) ?? values.linkedin);
 
+  // Kept deliberately light: the CV is the only thing we insist on, since it
+  // carries the applicant's details anyway. An email, if given, must be one
+  // we can actually reply to.
   const errors: Record<string, string> = {};
-  if (!values.name) errors.name = "Please tell us your name.";
-  if (!isEmail(values.email)) errors.email = "Please enter a valid email address.";
-  if (!values.phone) errors.phone = "Please add a phone number.";
-  if (portfolio === null) errors.portfolio = "That doesn't look like a valid link.";
-  if (linkedin === null) errors.linkedin = "That doesn't look like a valid link.";
-  if (!(cv instanceof File) || cv.size === 0) errors.cv = "Please attach your CV.";
-  else if (!CV_EXTENSIONS.test(cv.name)) errors.cv = "Please upload a PDF or Word document.";
-  else if (cv.size > CV_MAX_BYTES) errors.cv = `Your CV must be ${CV_MAX_MB}MB or smaller.`;
-  if (Object.keys(errors).length > 0) {
-    return { status: "error", message: "Please check the highlighted fields.", errors, values };
+  if (values.email && !isEmail(values.email)) errors.email = "Please enter a valid email address.";
+  if (!file) errors.cv = "Please attach your CV.";
+  else if (!CV_EXTENSIONS.test(file.name)) errors.cv = "Please upload a PDF or Word document.";
+  else if (file.size > CV_MAX_BYTES) errors.cv = `Your CV must be ${CV_MAX_MB}MB or smaller.`;
+  if (Object.keys(errors).length > 0 || !file) {
+    return { status: "error", message: "Almost there, just check the highlighted fields.", errors, values };
   }
 
   const role = values.role || "General application";
-  const file = cv as File;
   const delivered = await sendMail({
     to: CAREERS_INBOX,
-    replyTo: values.email,
-    subject: `Application: ${role} - ${values.name}`,
+    // No email given: HR replies using the contact details on the CV.
+    replyTo: values.email || undefined,
+    subject: `Application: ${role} - ${values.name || file.name}`,
     text: [
       `Position: ${role}`,
-      `Name: ${values.name}`,
-      `Email: ${values.email}`,
-      `Phone: ${values.phone}`,
+      `Name: ${values.name || "-"}`,
+      `Email: ${values.email || "- (see CV)"}`,
+      `Phone: ${values.phone || "-"}`,
       `Portfolio: ${portfolio || "-"}`,
       `LinkedIn: ${linkedin || "-"}`,
       "",
       values.message || "(No cover note)",
     ].join("\n"),
     attachments: [
-      {
-        filename: file.name.replace(/[^\w.\- ]+/g, "_"),
-        content: Buffer.from(await file.arrayBuffer()),
-      },
+      { filename: file.name.replace(/[^\w.\- ]+/g, "_"), content: Buffer.from(await file.arrayBuffer()) },
     ],
   });
 
   if (!delivered) {
     return {
       status: "error",
-      message: `We couldn't send your application just now. Please email your CV to ${SITE.careersEmail} instead.`,
+      message: `We couldn't send your application just now. Please email it to ${SITE.careersEmail} instead.`,
       values,
     };
   }

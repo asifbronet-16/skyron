@@ -191,12 +191,12 @@ export default function CareersPage() {
               <SectionHeading lead="Send Us Your" accent="Application" className="mt-6" />
 
               <p className="mt-6 max-w-md text-base leading-relaxed text-white/55">
-                Tell us the role you&apos;re after, or leave it blank for a general application.
-                Every application is read by the team.
+                All we need is your CV, the rest is up to you. Tell us the role you&apos;re
+                after, or leave it blank for a general application.
               </p>
 
               <h3 className="mt-8 text-[11px] font-medium uppercase tracking-[0.14em] text-white/40">
-                What to include
+                What helps us get to know you
               </h3>
               <ul className="mt-4 space-y-3">
                 {APPLY_CHECKLIST.map((item) => (

@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Send } from "@/components/icons";
+import { Info, Send } from "@/components/icons";
 import { submitApplication } from "@/app/careers/actions";
 import { SITE } from "@/constants/site";
 import { CV_ACCEPT, CV_MAX_BYTES, CV_MAX_MB, JOB_OPENINGS } from "@/constants/careers";
@@ -63,14 +63,14 @@ export default function ApplicationForm() {
         <Honeypot />
 
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="Full name" required name="name" error={error("name")}>
-            <input {...bind("name")} type="text" required autoComplete="name" placeholder="Your name" className={inputBase} />
+          <Field label="Full name" name="name" error={error("name")}>
+            <input {...bind("name")} type="text" autoComplete="name" placeholder="Your name" className={inputBase} />
           </Field>
-          <Field label="Email" required name="email" error={error("email")}>
-            <input {...bind("email")} type="email" required autoComplete="email" placeholder="Email address" className={inputBase} />
+          <Field label="Email" name="email" error={error("email")}>
+            <input {...bind("email")} type="email" autoComplete="email" placeholder="Email address" className={inputBase} />
           </Field>
-          <Field label="Phone" required name="phone" error={error("phone")}>
-            <input {...bind("phone")} type="tel" required autoComplete="tel" placeholder="Phone number" className={inputBase} />
+          <Field label="Phone" name="phone" error={error("phone")}>
+            <input {...bind("phone")} type="tel" autoComplete="tel" placeholder="Phone number" className={inputBase} />
           </Field>
           <Field label="Role" name="role" error={error("role")} hint="Leave blank for a general application.">
             <Suspense fallback={<RoleInput {...role} />}>
@@ -85,13 +85,15 @@ export default function ApplicationForm() {
           </Field>
         </div>
 
-        <Field
-          label="CV / resume"
-          required
-          name="cv"
-          error={cvError || error("cv")}
-          hint={`PDF, DOC or DOCX, up to ${CV_MAX_MB}MB.`}
-        >
+        <Field label="CV / resume" required name="cv" error={cvError || error("cv")}>
+          {/* Up front, before a file is picked: an oversized CV can't be sent at all. */}
+          <span className="mb-2.5 flex gap-2.5 rounded-lg border border-violet-400/20 bg-violet-500/10 px-3.5 py-2.5 text-xs leading-relaxed text-violet-100/90">
+            <Info className="mt-px h-4 w-4 shrink-0 text-violet-300" strokeWidth={1.8} />
+            <span>
+              Please upload a PDF, DOC or DOCX file of <strong className="font-semibold text-white">{CV_MAX_MB}MB or less</strong>.
+              Larger files can&apos;t be sent, so compress your CV first if it&apos;s over the limit.
+            </span>
+          </span>
           <input
             name="cv"
             type="file"
