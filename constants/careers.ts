@@ -8,14 +8,6 @@
 import type { JobOpening } from "./types";
 
 export const JOB_OPENINGS: JobOpening[] = [
-  // {
-  //   slug: "3d-motion-designer",
-  //   title: "3D Motion Designer",
-  //   department: "Creative",
-  //   location: "Dubai, UAE",
-  //   type: "Full-time",
-  //   summary: "Concept-to-render 3D animation for projection mapping, LED and holographic content.",
-  // },
 ];
 
 // CVs are mailed as attachments through Microsoft Graph, which caps a whole
