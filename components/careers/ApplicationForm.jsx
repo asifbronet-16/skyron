@@ -37,7 +37,7 @@ function RoleFromUrl({ defaultValue, ...props }) {
 export default function ApplicationForm() {
   const [state, formAction, pending] = useFormAction(
     submitApplication,
-    `Something went wrong sending your application. Please try again, or email your CV to ${SITE.email}.`
+    `Something went wrong sending your application. Please try again, or email your CV to ${SITE.careersEmail}.`
   );
   const [cvError, setCvError] = useState("");
   const bind = (name) => bindField(state, name);

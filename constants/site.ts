@@ -14,6 +14,8 @@ export const SITE = {
   description:
     "Skyron sits at the intersection of intelligent technology, cinematic content, and environment design.",
   email: "hello@skyron.me",
+  // Job applications go here; everything else goes to `email`.
+  careersEmail: "career@skyron.me",
   // E.164 for schema.org / tel: links; `phoneDisplay` is what people read.
   phone: "+971508742345",
   phoneDisplay: "+971 50 874 2345",

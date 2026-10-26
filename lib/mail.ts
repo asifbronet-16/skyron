@@ -9,10 +9,10 @@ type Mail = {
   attachments?: { filename: string; content: Buffer }[];
 };
 
-// Where each form delivers. Both default to the public inbox; point them at
-// separate addresses per environment if sales and hiring are split.
+// Where each form delivers: enquiries to the public inbox, applications to
+// the careers inbox. The env vars override them, e.g. to test on staging.
 export const CONTACT_INBOX = process.env.CONTACT_INBOX || SITE.email;
-export const CAREERS_INBOX = process.env.CAREERS_INBOX || SITE.email;
+export const CAREERS_INBOX = process.env.CAREERS_INBOX || SITE.careersEmail;
 
 /**
  * Sends one email from our Microsoft 365 mailbox through Microsoft Graph,

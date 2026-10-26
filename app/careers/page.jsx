@@ -207,8 +207,8 @@ export default function CareersPage() {
 
             <p className="mt-8 text-sm text-white/45">
               Prefer email? Send your CV to{" "}
-              <a href={`mailto:${SITE.email}`} className="text-white/85 transition hover:text-violet-300">
-                {SITE.email}
+              <a href={`mailto:${SITE.careersEmail}`} className="text-white/85 transition hover:text-violet-300">
+                {SITE.careersEmail}
               </a>
               .
             </p>

@@ -68,7 +68,7 @@ export async function submitApplication(_prevState: FormState, formData: FormDat
   if (!delivered) {
     return {
       status: "error",
-      message: `We couldn't send your application just now. Please email your CV to ${SITE.email} instead.`,
+      message: `We couldn't send your application just now. Please email your CV to ${SITE.careersEmail} instead.`,
       values,
     };
   }
