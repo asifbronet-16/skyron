@@ -53,7 +53,7 @@ export default function ContactPage() {
         <section className="relative overflow-hidden bg-[#08060f] px-6 py-12 sm:py-24">
           <div className="pointer-events-none absolute inset-0 [background:radial-gradient(50%_45%_at_75%_45%,rgba(56,189,248,.07),transparent_70%)]" />
 
-          <div className="relative mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
+          <div className="relative mx-auto grid max-w-296 gap-14 lg:grid-cols-2 lg:gap-16">
             {/* ── left column ── */}
             <Reveal as="div">
               <div className="flex items-center gap-4">
@@ -117,7 +117,7 @@ export default function ContactPage() {
         <section className="relative overflow-hidden bg-[#08060f] px-6 pt-4 pb-16 sm:pb-28">
           <Reveal
             distance={32}
-            className="relative mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 p-6 sm:flex-row sm:items-center sm:p-10"
+            className="relative mx-auto flex max-w-296 flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl border border-white/10 bg-[#0b0916]/80 p-6 sm:flex-row sm:items-center sm:p-10"
           >
             <span
               aria-hidden="true"

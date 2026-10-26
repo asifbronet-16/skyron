@@ -2,6 +2,7 @@
 
 import { SITE } from "@/constants/site";
 import { CONTACT_INBOX, sendMail } from "@/lib/mail";
+import { contactEmail } from "@/lib/emails";
 import { type FormState, isBot, isEmail, readText } from "@/lib/forms";
 
 export async function sendContactMessage(_prevState: FormState, formData: FormData): Promise<FormState> {
@@ -24,7 +25,6 @@ export async function sendContactMessage(_prevState: FormState, formData: FormDa
   if (!values.name) errors.name = "Please tell us your name.";
   if (!values.phone) errors.phone = "Please add a phone number.";
   if (!isEmail(values.email)) errors.email = "Please enter a valid email address.";
-  if (!values.project) errors.project = "Please tell us a little about your project.";
   if (Object.keys(errors).length > 0) {
     return { status: "error", message: "Please check the highlighted fields.", errors, values };
   }
@@ -32,15 +32,9 @@ export async function sendContactMessage(_prevState: FormState, formData: FormDa
   const delivered = await sendMail({
     to: CONTACT_INBOX,
     replyTo: values.email,
-    subject: `New enquiry from ${values.name}${values.company ? ` (${values.company})` : ""}`,
-    text: [
-      `Name: ${values.name}`,
-      `Company: ${values.company || "-"}`,
-      `Email: ${values.email}`,
-      `Phone: ${values.phone}`,
-      "",
-      values.project,
-    ].join("\n"),
+    // Kept short: who it's from. Company and the rest are in the body.
+    subject: `New project enquiry from ${values.name}`,
+    html: contactEmail(values),
   });
 
   if (!delivered) {

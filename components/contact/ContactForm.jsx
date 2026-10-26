@@ -69,10 +69,9 @@ export default function ContactForm() {
           </Field>
         </div>
 
-        <Field label="Your project" required name="project" error={error("project")}>
+        <Field label="Your project" name="project" error={error("project")}>
           <textarea
             {...bind("project")}
-            required
             rows={6}
             placeholder="Tell us about your project..."
             className={`${inputBase} resize-none`}

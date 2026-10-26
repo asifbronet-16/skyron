@@ -55,7 +55,8 @@ export const OFFICES: Office[] = [
     phone: SITE.phone,
     phoneDisplay: SITE.phoneDisplay,
     whatsapp: SITE.whatsapp,
-    mapQuery: "Banat Abdullah Al Marzooqi Building, Al Khabeesi, Deira, Dubai",
+    // Exact spot of the building: Google mis-resolves it by name.
+    mapQuery: "25.266676,55.333725",
   },
 ];
 
