@@ -2,13 +2,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
-import ContactSection from "@/components/home/ContactSection";
+import CtaBanner from "@/components/CtaBanner";
 import CaseStudiesSection from "@/components/home/CaseStudiesSection";
 import FaqSection from "@/components/home/FaqSection";
 import EmpoweringSection from "@/components/home/EmpoweringSection";
 import TrustedBySection from "@/components/home/TrustedBySection";
 import CapabilitiesSection from "@/components/home/CapabilitiesSection";
 import ServicesSection from "@/components/home/ServicesSection";
+import { SITE } from "@/constants/site";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({ title: SITE.title, description: SITE.description, path: "/" });
 
 export default function Home() {
   return (
@@ -76,7 +80,7 @@ export default function Home() {
         <CaseStudiesSection />
         <FaqSection />
       </div>
-      <ContactSection />
+      <CtaBanner />
       <Footer />
     </main>
   );

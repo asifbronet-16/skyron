@@ -3,12 +3,14 @@
  * Consumed by the root layout (metadata + Organization JSON-LD) and by the
  * footer, so the canonical URL and profile links can't drift between them.
  */
-import type { Social } from "./types";
+import type { Office, Social } from "./types";
 
 export const SITE = {
   name: "Skyron",
   legalName: "Skyron Interactive",
   url: "https://skyron.me",
+  // The home page's title, and the fallback for any page without its own.
+  title: "Skyron — Spatial Experience Studio",
   description:
     "Skyron sits at the intersection of intelligent technology, cinematic content, and environment design.",
   email: "hello@skyron.me",
@@ -26,7 +28,34 @@ export const SITE = {
 };
 
 // Opens the WhatsApp app on mobile and web.whatsapp.com on desktop.
-export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}`;
+// `text` pre-fills the chat box so the visitor only has to hit send.
+export const whatsappUrl = (number: string, text?: string) =>
+  `https://wa.me/${number}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
+export const WHATSAPP_URL = whatsappUrl(SITE.whatsapp);
+
+// Every studio location. The first entry is the headquarters (mirrored in
+// SITE.address for the Organization JSON-LD); /contact lists them all with a
+// map, and the footer prints their addresses. Add a city by appending here.
+export const OFFICES: Office[] = [
+  {
+    id: "dubai",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    label: "Headquarters",
+    addressLines: [
+      "1st Floor, Office 101-14",
+      "Banat Abdullah Al Marzooqi Building",
+      "Al Khabeesi, Deira",
+      "Dubai, UAE",
+    ],
+    email: SITE.email,
+    phone: SITE.phone,
+    phoneDisplay: SITE.phoneDisplay,
+    whatsapp: SITE.whatsapp,
+    mapQuery: "Banat Abdullah Al Marzooqi Building, Al Khabeesi, Deira, Dubai",
+  },
+];
 
 export const SOCIALS: Social[] = [
   { key: "instagram", label: "Instagram", href: "https://www.instagram.com/skyron.me" },

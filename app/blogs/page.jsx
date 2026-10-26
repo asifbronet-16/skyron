@@ -6,12 +6,14 @@ import BlogCard from "@/components/BlogCard";
 import Reveal from "@/components/Reveal";
 import PhotoBackground from "@/components/PhotoBackground";
 import { BLOG_POSTS } from "@/constants/blogs";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Blogs — Skyron",
   description:
     "Field notes from Skyron on spatial design, immersive technology, and the craft behind experiences that stick.",
-};
+  path: "/blogs",
+});
 
 export default function BlogsPage() {
   return (

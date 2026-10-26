@@ -7,12 +7,14 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/home/ServiceCard";
 import Reveal from "@/components/Reveal";
 import { TECHNOLOGY_SOLUTIONS_ITEMS } from "@/constants/technologySolutions";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Technology Solutions — Skyron",
   description:
     "Events & activations, interactive technologies, hologram & volumetric display, AR/VR/XR, and projection mapping — the systems behind every Skyron experience.",
-};
+  path: "/technology-solutions",
+});
 
 // Cycled across cards so a five-item grid still reads as varied, not random —
 // same accent rotation ServiceCard already uses on the Our Approach process grid.

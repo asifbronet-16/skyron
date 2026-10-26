@@ -54,7 +54,7 @@ export default function NotFound() {
               Back To Home
             </Link>
             <Link
-              href="/#contact"
+              href="/contact"
               className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
             >
               Get In Touch

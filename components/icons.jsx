@@ -80,6 +80,32 @@ export function ChevronRight({ strokeWidth = 2, ...props }) {
   );
 }
 
+export function ArrowUpRight({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
+
+export function Briefcase({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      <rect width="20" height="14" x="2" y="6" rx="2" />
+    </svg>
+  );
+}
+
+export function Paperclip({ strokeWidth = 2, ...props }) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} aria-hidden="true" {...props}>
+      <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+    </svg>
+  );
+}
+
 export function Zap({ strokeWidth = 2, fill: fillProp = "none", ...props }) {
   return (
     <svg {...base} fill={fillProp} strokeWidth={strokeWidth} aria-hidden="true" {...props}>

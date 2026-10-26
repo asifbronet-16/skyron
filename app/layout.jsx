@@ -14,28 +14,16 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-const TITLE = "Skyron — Spatial Experience Studio";
-
 // Pages set their own full titles (e.g. "Blogs — Skyron"), so there's no
 // title template here — it would double the brand up.
+//
+// No canonical, openGraph or twitter here on purpose: metadata merges
+// shallowly, so every page that didn't set them would inherit the home
+// page's. Each page builds its own with pageMetadata() (lib/metadata.ts).
 export const metadata = {
   metadataBase: new URL(SITE.url),
-  title: TITLE,
+  title: SITE.title,
   description: SITE.description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    url: "/",
-    siteName: SITE.name,
-    title: TITLE,
-    description: SITE.description,
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE,
-    description: SITE.description,
-  },
 };
 
 // Organization markup so search engines tie the site, the office, and the

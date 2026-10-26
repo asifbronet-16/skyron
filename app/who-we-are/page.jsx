@@ -6,12 +6,14 @@ import CtaBanner from "@/components/CtaBanner";
 import FeatureGrid from "@/components/FeatureGrid";
 import ServiceCard from "@/components/home/ServiceCard";
 import TrustedBySection from "@/components/home/TrustedBySection";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Who We Are — Skyron",
   description:
     "Skyron is a creative technology studio blending storytelling, spatial design, motion graphics, and emerging technology into unforgettable brand experiences.",
-};
+  path: "/who-we-are",
+});
 
 // Floating capability pills — same treatment as the homepage hero (Hero.jsx),
 // reusing the float-a/b/c keyframes + .pill-float class from globals.css.

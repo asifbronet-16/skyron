@@ -7,12 +7,14 @@ import FeatureGrid from "@/components/FeatureGrid";
 import TrustedBySection from "@/components/home/TrustedBySection";
 import Reveal from "@/components/Reveal";
 import { ChevronRight } from "@/components/icons";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Industries We Serve — Skyron",
   description:
     "From retail and hospitality to government and education — how Skyron adapts projection, holographic, and interactive experiences to different industries.",
-};
+  path: "/industries",
+});
 
 const INDUSTRIES = [
   {
@@ -118,7 +120,7 @@ export default function IndustriesPage() {
 
                 <Reveal delay={300} className="mt-10">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-3 rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] py-2 pl-7 pr-2 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
                   >
                     Start The Conversation
