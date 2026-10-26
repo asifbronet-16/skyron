@@ -4,7 +4,10 @@ import { ArrowUpRight, Mail, MapPin, Phone, Whatsapp } from "@/components/icons"
 import { OFFICES, whatsappUrl } from "@/constants/site";
 
 // Keyless Google Maps embed + deep links, all driven by the office's `mapQuery`.
-const mapEmbedUrl = (query) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=16&output=embed`;
+// t=h is satellite imagery with street labels (Google Maps' "Satellite" view);
+// t=k drops the labels, t=m is the plain road map.
+const mapEmbedUrl = (query) =>
+  `https://www.google.com/maps?q=${encodeURIComponent(query)}&t=h&z=16&output=embed`;
 const directionsUrl = (query) =>
   `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
 
@@ -13,7 +16,9 @@ const pillClass =
 
 function OfficeCard({ office }) {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-linear-to-b from-violet-500/7 to-transparent p-5 sm:p-6">
+    // self-start + lg:min-h-96: a bit shorter than the map (lg:min-h-112) rather
+    // than stretched to match it, with the actions pinned to the foot
+    <div className="flex flex-col self-start rounded-2xl border border-white/10 bg-linear-to-b from-violet-500/7 to-transparent p-5 sm:p-6 lg:min-h-96">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-medium text-white">{office.city}</h3>
         {office.label && (
@@ -52,7 +57,6 @@ function OfficeCard({ office }) {
         </div>
       )}
 
-      {/* mt-auto pins the actions to the card's foot when the map makes the row taller */}
       <div className="mt-auto flex flex-wrap gap-2 pt-5">
         <a href={directionsUrl(office.mapQuery)} target="_blank" rel="noreferrer" className={pillClass}>
           Get directions
@@ -71,15 +75,14 @@ function OfficeCard({ office }) {
 
 function OfficeMap({ office }) {
   return (
-    <div className="relative min-h-72 overflow-hidden rounded-2xl border border-white/8 bg-white/2 sm:min-h-80">
-      {/* Inverted + hue-rotated so Google's light tiles sit in the dark palette. */}
+    <div className="relative min-h-80 overflow-hidden rounded-2xl border border-white/8 bg-white/2 sm:min-h-96 lg:min-h-112">
       <iframe
         title={`Map of our ${office.city} office`}
         src={mapEmbedUrl(office.mapQuery)}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen
-        className="absolute inset-0 h-full w-full border-0 invert-90 hue-rotate-180 saturate-75"
+        className="absolute inset-0 h-full w-full border-0"
       />
     </div>
   );
@@ -99,8 +102,10 @@ export default function OfficeLocations({ headingAs = "h2", className = "py-12 s
   const multiple = OFFICES.length > 1;
 
   return (
-    <section id="offices" className={`relative scroll-mt-24 overflow-hidden bg-[#08060f] px-6 lg:scroll-mt-32 ${className}`}>
-      <div className="relative mx-auto max-w-6xl">
+    // Gutters match the Navbar's (px-6, lg:px-28) and there's no max-width, so the
+    // heading lines up under the logo and the map's edge under the Contact button.
+    <section id="offices" className={`relative scroll-mt-24 overflow-hidden bg-[#08060f] px-6 lg:scroll-mt-32 lg:px-28 ${className}`}>
+      <div className="relative">
         <Reveal>
           <div className="flex items-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
@@ -123,7 +128,8 @@ export default function OfficeLocations({ headingAs = "h2", className = "py-12 s
               as="li"
               key={office.id}
               delay={Math.min(i, 3) * 100}
-              className="grid gap-4 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-6"
+              // z-20 lifts the row above the page's ambient glows (z-10), so they don't tint the map
+              className="relative z-20 grid gap-4 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-6"
             >
               <OfficeCard office={office} />
               <OfficeMap office={office} />
