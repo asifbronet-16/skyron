@@ -1,4 +1,5 @@
 import { Poppins, Orbitron } from "next/font/google";
+import Script from "next/script";
 import { SITE, SOCIALS } from "@/constants/site";
 import "./globals.css";
 
@@ -49,6 +50,10 @@ const ORGANIZATION_LD = {
   sameAs: SOCIALS.map((social) => social.href),
 };
 
+// Google Analytics 4. Production only, so local dev traffic stays out of the reports.
+const GA_MEASUREMENT_ID = "G-BX89E4FXS6";
+const LOAD_ANALYTICS = process.env.NODE_ENV === "production";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
@@ -61,6 +66,21 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_LD) }}
         />
+
+        {LOAD_ANALYTICS && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
