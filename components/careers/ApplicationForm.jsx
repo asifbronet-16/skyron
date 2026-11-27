@@ -37,7 +37,8 @@ function RoleFromUrl({ defaultValue, ...props }) {
   return <RoleInput key={role} {...props} defaultValue={defaultValue || role} />;
 }
 
-export default function ApplicationForm() {
+/** `privacyNote`: the consent line under the button (components/PrivacyNote.jsx). */
+export default function ApplicationForm({ privacyNote }) {
   const [state, formAction, pending] = useFormAction(
     submitApplication,
     `Something went wrong sending your application. Please try again, or email your CV to ${SITE.careersEmail}.`
@@ -92,8 +93,7 @@ export default function ApplicationForm() {
           <span className="mb-2.5 flex gap-2.5 rounded-lg border border-violet-400/20 bg-violet-500/10 px-3.5 py-2.5 text-xs leading-relaxed text-violet-100/90">
             <Info className="mt-px h-4 w-4 shrink-0 text-violet-300" strokeWidth={1.8} />
             <span>
-              Please upload a PDF, DOC or DOCX file of <strong className="font-semibold text-white">{CV_MAX_MB}MB or less</strong>.
-              Larger files can&apos;t be sent, so compress your CV first if it&apos;s over the limit.
+              PDF, DOC or DOCX, <strong className="font-semibold text-white">{CV_MAX_MB} MB or less</strong>
             </span>
           </span>
           <input
@@ -120,8 +120,10 @@ export default function ApplicationForm() {
         <FormNotice state={state} />
 
         <SubmitButton pending={pending} pendingLabel="Sending..." icon={Send}>
-          Submit Application
+          Submit application
         </SubmitButton>
+
+        {privacyNote}
       </form>
     </FormCard>
   );

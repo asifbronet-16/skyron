@@ -5,62 +5,52 @@ import Reveal from "@/components/Reveal";
 import FeatureGrid from "@/components/FeatureGrid";
 import SectionHeading from "@/components/SectionHeading";
 import ApplicationForm from "@/components/careers/ApplicationForm";
+import PrivacyNote from "@/components/PrivacyNote";
 import { Briefcase, ChevronRight, MapPin, Paperclip } from "@/components/icons";
 import { SITE } from "@/constants/site";
 import { CV_MAX_MB, JOB_OPENINGS } from "@/constants/careers";
+import { PATHS } from "@/constants/paths";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Careers — Skyron",
+  title: "Careers at Skyron | 3D, Motion & Creative Tech Jobs Dubai",
   description:
-    "Join Skyron's team of artists, designers and technologists crafting immersive spatial experiences. See open roles and apply online.",
-  path: "/careers",
+    "Join Skyron in Dubai. We hire 3D artists, motion designers, developers and producers who want their work on facades, stages and holograms, not just screens.",
+  path: PATHS.careers,
 });
 
 const WHY_SKYRON = [
   {
-    title: "Work Across Mediums",
+    title: "Work across mediums",
     description: "Projection mapping one month, holograms or AR the next. Our briefs span 2D, 3D, live action, real-time and spatial tech, so no two projects look alike.",
   },
   {
-    title: "See Your Work Live",
+    title: "See your work live",
     description: "What you make doesn't stay on a screen. It lands on building facades, exhibition floors and stages, in front of real audiences.",
   },
   {
-    title: "Story Before Stack",
+    title: "Story before stack",
     description: "Every project starts from the idea and the emotion it should create. The technology is chosen to serve your craft, never the other way round.",
   },
   {
-    title: "One Team, End To End",
+    title: "One team, end to end",
     description: "Concept, content, hardware and on-site delivery sit under one roof, so you follow a project from first sketch to opening night.",
   },
   {
-    title: "Craft Obsessed",
-    description: "Motion, sound and spatial detail get tuned frame by frame. You'll work with people who care about the details most studios ship past.",
+    title: "Craft obsessed",
+    description: "Motion, sound and spatial detail get tuned frame by frame. You'll work with people who care about the details.",
   },
   {
-    title: "Grow With The Industry",
+    title: "Grow with the industry",
     description: "Displays, engines and AI tools keep moving, and so do we. You'll pick up new pipelines and formats as the medium evolves.",
   },
 ];
 
 const APPLY_CHECKLIST = [
-  `Your CV, as a PDF or Word file up to ${CV_MAX_MB}MB`,
+  `Your CV, as a PDF or Word file up to ${CV_MAX_MB} MB`,
   "A link to your portfolio, showreel, Behance or GitHub",
   "A few lines on the work you'd love to do with us",
 ];
-
-function Eyebrow({ children, center = false }) {
-  return (
-    <div className={`flex items-center gap-4 ${center ? "justify-center" : ""}`}>
-      <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
-      <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-        {children}
-      </span>
-      {center && <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />}
-    </div>
-  );
-}
 
 export default function CareersPage() {
   return (
@@ -83,16 +73,18 @@ export default function CareersPage() {
         <section className="relative overflow-hidden bg-[#08060f] px-6 pt-28 pb-8 sm:pt-44 sm:pb-16">
           <div className="relative mx-auto max-w-3xl text-center">
             <Reveal>
-              <Eyebrow center>Careers</Eyebrow>
+              <SectionHeading as="h1" lead="Shape the future of" accent="spatial storytelling" align="center" />
             </Reveal>
 
-            <Reveal delay={100}>
-              <SectionHeading as="h1" lead="Shape The Future Of" accent="Spatial Storytelling" align="center" className="mt-6" />
+            <Reveal as="p" delay={100} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+              We&apos;re a studio of artists, designers and technologists in Dubai, turning spaces into
+              living stories across the Middle East and beyond. If you love the moment craft meets
+              technology, we&apos;d love to meet you.
             </Reveal>
 
-            <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-              We&apos;re a studio of artists, designers and technologists turning spaces into living
-              stories. If you love the moment craft meets technology, we&apos;d love to meet you.
+            <Reveal as="p" delay={200} className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+              Most of our work starts with content creation: 2D and 3D animation, anamorphic 3D,
+              generative AI, live shoots and visual effects for interactive and immersive experiences.
             </Reveal>
 
             <Reveal delay={300} className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -100,21 +92,20 @@ export default function CareersPage() {
                 href="#openings"
                 className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
               >
-                See Open Roles
+                See open roles
               </Link>
               <Link
                 href="#apply"
                 className="inline-block rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
               >
-                Apply Now
+                Apply now
               </Link>
             </Reveal>
           </div>
         </section>
 
         <FeatureGrid
-          lead="Why Build"
-          accent="With Skyron"
+          heading="Why build with Skyron"
           subtitle="The kind of work, and the kind of team, you'd be joining."
           cards={WHY_SKYRON}
         />
@@ -122,8 +113,7 @@ export default function CareersPage() {
         <section id="openings" className="relative scroll-mt-24 overflow-hidden bg-[#08060f] px-6 py-12 sm:py-20 lg:scroll-mt-32">
           <div className="relative mx-auto max-w-6xl">
             <Reveal>
-              <Eyebrow>Open Roles</Eyebrow>
-              <SectionHeading lead="Current" accent="Openings" inline className="mt-6" />
+              <SectionHeading text="Current openings" size="md" inline />
             </Reveal>
 
             {JOB_OPENINGS.length > 0 ? (
@@ -187,12 +177,11 @@ export default function CareersPage() {
 
           <div className="relative mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
             <Reveal as="div">
-              <Eyebrow>Apply</Eyebrow>
-              <SectionHeading lead="Send Us Your" accent="Application" className="mt-6" />
+              <SectionHeading text="Send us your application" size="md" inline />
 
               <p className="mt-6 max-w-md text-base leading-relaxed text-white/55">
-                All we need is your CV, the rest is up to you. Tell us the role you&apos;re
-                after, or leave it blank for a general application.
+                All we need is your CV; the rest is up to you. Tell us the role you&apos;re after, or
+                leave it blank for a general application.
               </p>
 
               <h3 className="mt-8 text-[11px] font-medium uppercase tracking-[0.14em] text-white/40">
@@ -218,7 +207,7 @@ export default function CareersPage() {
               </p>
             </Reveal>
 
-            <ApplicationForm />
+            <ApplicationForm privacyNote={<PrivacyNote extra="We keep CVs for 12 months." />} />
           </div>
         </section>
       </div>

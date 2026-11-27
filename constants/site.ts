@@ -7,12 +7,15 @@ import type { Office, Social } from "./types";
 
 export const SITE = {
   name: "Skyron",
-  legalName: "Skyron Interactive",
+  // Footer ©, schema legalName and the About page only. Everywhere else the
+  // studio is just "Skyron".
+  legalName: "Skyron Interactive LLC",
   url: "https://skyron.me",
-  // The home page's title, and the fallback for any page without its own.
-  title: "Skyron — Spatial Experience Studio",
+  // The home page's title and meta description, and the fallback for any
+  // page without its own.
+  title: "Immersive Content & Experience Agency in Dubai | Skyron",
   description:
-    "Skyron sits at the intersection of intelligent technology, cinematic content, and environment design.",
+    "Skyron is a Dubai studio creating immersive content and experiences: 3D, anamorphic and AI content, projection mapping, holograms, AR/VR and experience centres.",
   email: "hello@skyron.me",
   // Job applications go here; everything else goes to `email`.
   careersEmail: "career@skyron.me",
@@ -21,12 +24,17 @@ export const SITE = {
   phoneDisplay: "+971 50 874 2345",
   // Same line as `phone`. wa.me wants digits only — no "+", spaces or dashes.
   whatsapp: "971508742345",
+  // As schema.org's PostalAddress wants it (see lib/schema.ts).
   address: {
-    street: "1st Floor, Office 101-14, Banat Abdullah Al Marzooqi Building",
-    locality: "Al Khabeesi, Deira",
-    region: "Dubai",
+    street: "1st Floor, Office 101-14, Banat Abdullah Al Marzooqi Building, Al Khabeesi, Deira",
+    locality: "Dubai",
     country: "AE",
   },
+  // Square mark (512×512) for the Organization schema's logo.
+  logoSquare: "/logo-square.png",
+  // Share link of the "Skyron Interactive LLC" Google Business Profile, for the
+  // schema's hasMap. Empty until Skyron sends it; the schema leaves hasMap out.
+  googleBusinessProfileUrl: "",
 };
 
 // Opens the WhatsApp app on mobile and web.whatsapp.com on desktop.
@@ -45,6 +53,9 @@ export const OFFICES: Office[] = [
     city: "Dubai",
     country: "United Arab Emirates",
     label: "Headquarters",
+    title: "Dubai headquarters",
+    note: "Tell us whether you need content creation, an installation, or both.",
+    hours: "Mon–Fri, 9:00–18:00",
     addressLines: [
       "1st Floor, Office 101-14",
       "Banat Abdullah Al Marzooqi Building",

@@ -2,23 +2,25 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
-import BlogCard from "@/components/BlogCard";
+import BlogList from "@/components/BlogList";
 import Reveal from "@/components/Reveal";
 import PhotoBackground from "@/components/PhotoBackground";
-import { BLOG_POSTS } from "@/constants/blogs";
+import { BLOG_POSTS, INSIGHTS_LIVE, INSIGHTS_TOPICS } from "@/constants/blogs";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Blogs — Skyron",
+  title: "Insights on Immersive Experience Design | Skyron",
   description:
-    "Field notes from Skyron on spatial design, immersive technology, and the craft behind experiences that stick.",
+    "Practical guides on projection mapping, holograms, anamorphic billboards and experience centres in the UAE and the Middle East, from the Skyron studio in Dubai.",
   path: "/blogs",
+  // Out of search (and the menu and sitemap) until the first post is live.
+  noindex: !INSIGHTS_LIVE,
 });
 
 export default function BlogsPage() {
   return (
     <main className="relative">
-      <Navbar active="Blogs" />
+      <Navbar active="Insights" />
 
       <section className="relative overflow-hidden bg-[#08060f] px-6 pt-24 pb-8 sm:pt-44 sm:pb-24">
         <PhotoBackground
@@ -39,41 +41,31 @@ export default function BlogsPage() {
         />
 
         <div className="relative mx-auto max-w-3xl text-center">
-          <Reveal className="flex items-center justify-center gap-4">
-            <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
-            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-              Blogs
-            </span>
-            <span className="h-0.5 w-16 bg-linear-to-r from-[#317890] via-[#5f30ca] to-transparent" />
+          <Reveal>
+            <SectionHeading as="h1" lead="Insights" accent="from the studio" align="center" inline />
           </Reveal>
 
-          <Reveal delay={100}>
-            <SectionHeading lead="From The Studio" accent="Field Notes" align="center" className="mt-6" />
+          <Reveal as="p" delay={100} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+            Practical notes on projection mapping, holograms, 3D billboards and experience
+            centres: how they work, what they cost and how to plan them in the UAE and the
+            Middle East.
           </Reveal>
 
-          <Reveal as="p" delay={200} className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-            Thinking out loud about spatial design, immersive technology, and the craft behind
-            experiences that stick.
+          <Reveal as="p" delay={200} className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+            We also share how we approach content creation and creative storytelling for
+            interactive and immersive experiences.
           </Reveal>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#08060f] px-6 pb-8 sm:pb-28">
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {BLOG_POSTS.map((post, i) => (
-              <Reveal key={post.slug} delay={Math.min(i, 4) * 90} distance={28} className="h-full">
-                <BlogCard
-                  {...post}
-                  href={`/blogs/${post.slug}`}
-                  index={i}
-                  priority={i === 0}
-                />
-              </Reveal>
-            ))}
+      {/* A card appears only once its post is published (constants/blogs.ts). */}
+      {BLOG_POSTS.length > 0 && (
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pb-8 sm:pb-28">
+          <div className="relative mx-auto max-w-7xl">
+            <BlogList posts={BLOG_POSTS} topics={INSIGHTS_TOPICS} />
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CtaBanner />
       <Footer />

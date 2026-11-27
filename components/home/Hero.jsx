@@ -1,16 +1,16 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 import Reveal from "@/components/Reveal";
+import { CASE_STUDIES_LIVE } from "@/constants/caseStudies";
+import { PATHS } from "@/constants/paths";
 
-const PILLS = [
-  { label: "Phygital Experiences", className: "top-[5%] right-[40%]", anim: "float-a", dur: "7s", delay: "0s", border: "border-cyan-300/50", glow: "0 0 18px -4px rgba(103,232,249,.45)" },
-  { label: "Experiential Design", className: "top-[15%] left-[0%]", anim: "float-c", dur: "9.5s", delay: "1.2s", border: "border-violet-200/45", glow: "0 0 18px -4px rgba(221,214,254,.35)" },
-  { label: "Immersive Environments", className: "top-[28%] right-[10%]", anim: "float-b", dur: "8.2s", delay: "0.6s", border: "border-fuchsia-400/55", glow: "0 0 20px -4px rgba(232,121,249,.45)" },
-  { label: "Interactive Experiences", className: "top-[66%] left-[1%]", anim: "float-a", dur: "10s", delay: "2.1s", border: "border-pink-400/55", glow: "0 0 20px -4px rgba(244,114,182,.45)" },
-  { label: "Cinematic Content", className: "top-[65%] right-[5%]", anim: "float-c", dur: "7.8s", delay: "1.7s", border: "border-purple-400/50", glow: "0 0 18px -4px rgba(192,132,252,.40)" },
-  { label: "Creative Technology", className: "top-[78%] left-[34%]", anim: "float-b", dur: "9s", delay: "0.3s", border: "border-sky-400/50", glow: "0 0 18px -4px rgba(56,189,248,.40)" },
-];
+
+const HERO_POSTER = "/assets/new-bg-poster.webp";
 
 export default function Hero() {
+  // The video's poster is what paints first, so it's the one image preloaded.
+  preload(HERO_POSTER, { as: "image", fetchPriority: "high" });
+
   return ( 
       <section className="relative min-h-screen  overflow-hidden lg:px-0 lg:pl-22 lg:mt-30 mt-16">
        
@@ -18,34 +18,47 @@ export default function Hero() {
         <div className="relative flex items-center lg:flex-row flex-col-reverse gap-2 lg:px-0  pb-4  pt-10  lg:gap-8 lg:pl-12 lg:pb-24 lg:pt-14">
           {/* Left column */}
           <div className="max-w-xl px-6 lg:px-0">
-            <Reveal as="h1" className="text-[2.25rem] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+            <Reveal as="p" className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#a996f0]">
+              <span aria-hidden="true" className="h-0.5 w-10 shrink-0 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
               Great experiences begin with a question, not a technology
             </Reveal>
 
-            <Reveal as="p" delay={120} className="mt-7 max-w-md text-base leading-relaxed text-white/60">
-              Skyron is a spatial experience studio. We sit at the intersection of
-              intelligent technology, cinematic content, and environment design to
-              create moments that don&apos;t just communicate ideas&mdash;they make
-              people feel them.
+            <Reveal as="h1" delay={80} className="mt-6 text-[2rem] font-light leading-[1.15] tracking-tight text-white sm:text-[2.6rem] lg:text-[2.9rem]">
+              Immersive content and experiences, created in Dubai{" "}
+              <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-sky-400 bg-clip-text text-transparent">
+                for the Middle East and beyond
+              </span>
+            </Reveal>
+
+            <Reveal as="p" delay={160} className="mt-7 text-[15px] leading-relaxed text-white/60">
+              Skyron is a spatial experience studio and immersive experience agency in Dubai. Our core
+              is content creation and creative storytelling: 2D and 3D animation, anamorphic 3D,
+              generative AI content, live shoots and visual effects, made for interactive and
+              immersive experiences. We bring that content to life through projection mapping,
+              holograms, AR/VR, interactive installations and experience centres for brands,
+              developers and government entities across the UAE, Saudi Arabia, the wider Middle East
+              and beyond. One team handles the story, the content and the technology, from first
+              sketch to opening night.
             </Reveal>
 
             <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href="/case-studies"
-                className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
-              >
-                Explore Our Work
-              </Link>
-              <Link
-                href="/contact"
+                href={PATHS.brief}
                 className="inline-block rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
               >
-                Get in Touch
+                Send us your brief
+              </Link>
+              {/* Points at /case-studies once that page is live (CASE_STUDIES_LIVE). */}
+              <Link
+                href={CASE_STUDIES_LIVE ? PATHS.caseStudies : PATHS.creativeSolutions}
+                className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 hover:bg-white/5"
+              >
+                View our projects
               </Link>
             </Reveal>
           </div>
 
-          {/* Right column — video slot + floating pills */}
+          {/* Right column — video */}
           <div className="relative aspect-square w-full pl-6 lg:pl-0 lg:aspect-auto lg:h-160">
             {/* Replace this block with your <video> once the asset is exported */}
             <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#08060f] ">
@@ -55,7 +68,7 @@ export default function Hero() {
                 loop
                 playsInline
                 preload="metadata"
-                poster="/assets/new-bg-poster.webp"
+                poster={HERO_POSTER}
                 className="h-full w-full  object-cover object-[76%_100%] lg:object-[100%_50%] mix-blend-screen"
               >
                 <source src="/assets/new-bg.mp4" type="video/mp4" />
@@ -68,22 +81,6 @@ export default function Hero() {
             </div>
 
 
-            {/* Floating capability pills */}
-            {PILLS.map((pill) => (
-              <span
-                key={pill.label}
-                style={{
-                  animationName: pill.anim,
-                  animationDuration: pill.dur,
-                  animationDelay: pill.delay,
-                  animationIterationCount: "infinite",
-                  animationTimingFunction: "ease-in-out",
-                }}
-                className={`pill-float absolute hidden lg:block whitespace-nowrap rounded-full border bg-white/5 px-4 py-2 text-[11px] font-medium text-white/90 backdrop-blur-md sm:text-xs ${pill.className} ${pill.border} ${pill.glow}`}
-              >
-                {pill.label}
-              </span>
-            ))}
           </div>
         </div>
       </section>

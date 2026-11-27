@@ -1,41 +1,43 @@
 "use client";
 
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import Reveal from "@/components/Reveal";
 
+// The four reasons from the copy deck, each a bold lead-in and its text.
 const CARDS = [
   {
-    title: "Design-First",
-    body: "Every experience starts with human emotion",
+    title: "Story first:",
+    body: "we start with the purpose of the space, build the creative concept around it, then add the technology that suits it best.",
     side: "left",
     // tint = the wash inside the card, ring = the gradient hairline border
     tint: "from-violet-500/18 via-violet-500/6 to-transparent",
     ring: "from-violet-400/60 via-violet-400/15 to-transparent",
-    pos: "lg:top-[8%] lg:left-0",
+    pos: "lg:top-[4%] lg:left-0",
   },
   {
-    title: "Future-Ready",
-    body: "Built for evolving display platforms",
+    title: "One team, end to end:",
+    body: "user experience design, experiential technology and programming, content creation, hardware installation and on-site delivery under one roof.",
     side: "left",
     tint: "from-fuchsia-500/18 via-fuchsia-500/6 to-transparent",
     ring: "from-fuchsia-400/60 via-fuchsia-400/15 to-transparent",
-    pos: "lg:top-[42%] lg:left-0",
+    pos: "lg:top-[48%] lg:left-0",
   },
   {
-    title: "End-to-End",
-    body: "Concept to execution under one roof",
+    title: "In-house content development:",
+    body: "2D and 3D animation, anamorphic 3D, generative AI content, live shoots and visual effects, made for custom resolutions and mediums.",
     side: "right",
     tint: "from-cyan-400/18 via-cyan-400/6 to-transparent",
     ring: "from-cyan-300/60 via-cyan-300/15 to-transparent",
-    pos: "lg:top-[8%] lg:right-0",
+    pos: "lg:top-[4%] lg:right-0",
   },
   {
-    title: "Story-Driven",
-    body: "Tech always serves the narrative",
+    title: "Built for the Middle East and beyond:",
+    body: "delivering in the UAE, Saudi Arabia, across the Middle East and beyond, with no language barrier.",
     side: "right",
     tint: "from-purple-500/18 via-purple-500/6 to-transparent",
     ring: "from-purple-400/60 via-purple-400/15 to-transparent",
-    pos: "lg:top-[42%] lg:right-0",
+    pos: "lg:top-[48%] lg:right-0",
   },
 ];
 
@@ -45,7 +47,7 @@ function Card({ card }) {
   const dir = card.side === "left" ? "bg-linear-to-br" : "bg-linear-to-bl";
 
   return (
-    <div
+    <li
       className={`relative w-full overflow-hidden rounded-xl p-px lg:absolute lg:w-72.5 ${card.pos ?? ""}`}
     >
       {/* gradient hairline */}
@@ -56,14 +58,11 @@ function Card({ card }) {
         <div
           className={`pointer-events-none absolute inset-0 rounded-xl ${dir} ${card.tint}`}
         />
-        <div className="relative">
-          <h3 className="text-[15px] font-semibold text-white">{card.title}</h3>
-          <p className="mt-1.5 text-[13px] leading-snug text-white/55">
-            {card.body}
-          </p>
-        </div>
+        <p className="relative text-[13px] leading-relaxed text-white/60">
+          <strong className="font-semibold text-white">{card.title}</strong> {card.body}
+        </p>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -76,22 +75,11 @@ export default function AboutSection() {
           as="h2"
           className="bg-linear-[135deg] from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent  text-center text-3xl font-normal tracking-tight  sm:text-4xl lg:text-[3.5rem] py-2"
         >
-          Spaces you&rsquo;ll keep talking about
-        </Reveal>
-
-        <Reveal
-          as="p"
-          delay={100}
-          className="mx-auto mt-5 max-w-7xl text-center text-sm leading-tight text-white/60 sm:text-lg"
-        >
-          Skyron Interactive is a creative technology studio specializing in
-          interactive experiential content production, blending storytelling,
-          spatial design, motion graphics, and emerging technology to create
-          unforgettable brand experiences.
+          Why organisations choose Skyron
         </Reveal>
 
         {/* stage: image centered, cards floated either side on desktop */}
-        <div className="relative mt-14 lg:mt-16 lg:h-130">
+        <div className="relative mt-14 lg:mt-16 lg:h-140">
 
 
           <div className="relative mx-auto h-95 w-full max-w-130 sm:h-120 lg:h-full">
@@ -102,9 +90,8 @@ export default function AboutSection() {
             />
             <Image
               src="/assets/vr-portrait.webp"
-              alt=""
+              alt={altFor("/assets/vr-portrait.webp")}
               fill
-              priority
               sizes="(max-width: 1024px) 90vw, 520px"
               // className="z-20 object-contain object-bottom "
               className="z-20 object-contain object-bottom
@@ -115,11 +102,11 @@ export default function AboutSection() {
           </div>
 
           {/* desktop: absolutely placed. mobile: 2-col grid below the image */}
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-0 lg:block">
+          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-0 lg:block">
             {CARDS.map((card) => (
               <Card key={card.title} card={card} />
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

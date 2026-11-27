@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 
 // Cycled by card index when a post has no cover image yet.
 const COVER_GRADIENTS = [
@@ -17,8 +18,8 @@ function formatDate(iso) {
 }
 
 /**
- * Blog post card — same visual language as CaseStudyCard. Falls back to a
- * signature-palette gradient cover when a post has no `image` yet.
+ * Blog post card. Falls back to a signature-palette gradient cover when a
+ * post has no `image` yet.
  *
  * <BlogCard
  *   tag="Insights"
@@ -36,8 +37,8 @@ export default function BlogCard({
   date,
   readTime,
   image,
-  href = "#",
-  cta = "Read Article",
+  href,
+  cta = "Read article",
   index = 0,
   priority = false,
 }) {
@@ -49,7 +50,7 @@ export default function BlogCard({
         {image ? (
           <Image
             src={image}
-            alt=""
+            alt={altFor(image)}
             fill
             preload={priority}
             sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 90vw"
@@ -86,6 +87,7 @@ export default function BlogCard({
 
         <Link
           href={href}
+          aria-label={`${cta}: ${title}`}
           className="mt-auto inline-flex items-center gap-1.5 pt-2 text-[0.65rem] font-medium text-sky-400 transition-colors hover:text-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08080D]"
         >
           {cta}

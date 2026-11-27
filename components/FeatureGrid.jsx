@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -28,7 +29,9 @@ function renderInlineBold(text) {
 
 /**
  * Reusable "title + subtitle + N feature cards" grid, driven entirely by props.
+ * The title is either `heading` (split in two automatically) or `lead` + `accent`.
  *
+ * <FeatureGrid heading="What drives every project" cards={VALUES} />
  * <FeatureGrid
  *   lead="Where Imagination"
  *   accent="Becomes Dimension"
@@ -41,14 +44,16 @@ function renderInlineBold(text) {
  *
  * `image` is optional per card — when set, it sits behind the copy at rest and fades out on hover/focus.
  */
-export default function FeatureGrid({ lead, accent, subtitle, cards = [], className = "" }) {
+export default function FeatureGrid({ heading, lead, accent, subtitle, cards = [], className = "" }) {
   return (
     <section className={`relative overflow-hidden bg-[#08060f] px-6 py-20 sm:py-28 ${className}`}>
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
           <SectionHeading
+            text={heading}
             lead={lead}
             accent={accent}
+            size={heading ? "md" : "lg"}
             inline
             align="center"
             accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
@@ -83,7 +88,7 @@ export default function FeatureGrid({ lead, accent, subtitle, cards = [], classN
                       >
                         <Image
                           src={card.image}
-                          alt=""
+                          alt={altFor(card.image)}
                           fill
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                           className="object-cover"
