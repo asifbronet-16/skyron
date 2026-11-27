@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
+import { MoreLink } from "@/components/content/Blocks";
 
 const ACCENTS = {
   violet: {
@@ -23,8 +25,9 @@ const ACCENTS = {
  * `accent` is one of: violet | teal | rose.
  * `image` is optional — when set, it sits behind the copy at rest and fades out on hover/focus,
  * same treatment as ServiceCard and FeatureGrid's cards.
+ * `link` ({ label, href }) adds a "Label →" link at the foot of the card.
  */
-export default function CapabilityCard({ icon: Icon, title, description, accent = "violet", image }) {
+export default function CapabilityCard({ icon: Icon, title, description, accent = "violet", image, link }) {
   const a = ACCENTS[accent] ?? ACCENTS.violet;
 
   return (
@@ -39,18 +42,15 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
       {/* background image sits behind the copy at rest and fades out on hover/focus —
           same mechanic as ServiceCard/FeatureGrid */}
       {image && (
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0"
-        >
+        <div className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0">
           <Image
             src={image}
-            alt=""
+            alt={altFor(image)}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
+          <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
         </div>
       )}
 
@@ -65,6 +65,8 @@ export default function CapabilityCard({ icon: Icon, title, description, accent 
       <h3 className="relative mt-6 text-sm font-semibold leading-snug text-white sm:text-sm">{title}</h3>
 
       <p className="relative mt-4 text-xs leading-relaxed text-slate-400">{description}</p>
+
+      {link && <MoreLink link={link} className="relative mt-auto pt-5 text-xs" />}
     </article>
   );
 }

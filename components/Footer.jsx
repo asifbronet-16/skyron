@@ -1,38 +1,38 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, Instagram, Facebook, Youtube, Behance, Linkedin, Whatsapp } from "@/components/icons";
+import { PATHS } from "@/constants/paths";
 import { OFFICES, SITE, SOCIALS, WHATSAPP_URL } from "@/constants/site";
+import { isLive } from "@/lib/routes";
 
-
+// The footer's link lists, as in the copy deck. A link whose page isn't live
+// yet (Insights before its first post, the legal pages) is left out.
 const DELIVER = [
-  { label: "Home", href: "/" },
-  { label: "Who We Are", href: "/who-we-are" },
-  { label: "Our Approach", href: "/our-approach" },
-  { label: "Industries We Serve", href: "/industries" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Blogs", href: "/blogs" },
-  { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/contact" },
-];
+  { label: "Home", href: PATHS.home },
+  { label: "Who We Are", href: PATHS.whoWeAre },
+  { label: "Our Approach", href: PATHS.ourApproach },
+  { label: "Industries We Serve", href: PATHS.industries },
+  { label: "Insights", href: PATHS.insights },
+  { label: "Careers", href: PATHS.careers },
+  { label: "Contact", href: PATHS.contact },
+].filter((link) => isLive(link.href));
 
-// The two solution landing pages first, then the individual services beneath them.
-// Every entry points at a real page; those with no page of their own yet —
-// Experience Centres, Motion Graphics, Spatial Media — are parked below
-// rather than linking to a 404.
 const SERVICES = [
-  { label: "Creative Solutions", href: "/creative-solutions" },
-  { label: "Technology Solutions", href: "/technology-solutions" },
-  { label: "Projection Mapping", href: "/technology-solutions/projection-mapping-solutions" },
-  { label: "Hologram & HoloBox", href: "/technology-solutions/hologram-holobox-volumetric-display" },
-  { label: "AR / VR / XR", href: "/technology-solutions/ar-vr-xr-immersive-technologies" },
-  { label: "Brand Activations", href: "/technology-solutions/events-exhibitions-brand-activations" },
-  { label: "Interactive Technology", href: "/technology-solutions/interactive-technologies" },
-  // { label: "Experience Centres", href: "/services/experience-centres" },
-  // { label: "Motion Graphics", href: "/services/motion-graphics" },
-  // { label: "Spatial Media", href: "/services/spatial-media" },
-];
+  { label: "Content Creation", href: PATHS.creativeSolutions },
+  { label: "Experience Centres", href: PATHS.experienceCentres },
+  { label: "Creative Solutions", href: PATHS.creativeSolutions },
+  { label: "Technology Solutions", href: PATHS.technologySolutions },
+  { label: "Projection Mapping", href: PATHS.projectionMapping },
+  { label: "Holograms & HoloBox", href: PATHS.holograms },
+  { label: "AR / VR / XR", href: PATHS.arVr },
+  { label: "Brand Activations", href: PATHS.events },
+  { label: "Interactive Technology", href: PATHS.interactive },
+].filter((link) => isLive(link.href));
+
+const LEGAL = [
+  { label: "Privacy Policy", href: PATHS.privacyPolicy },
+  { label: "Terms of Use", href: PATHS.terms },
+].filter((link) => isLive(link.href));
 
 // The profile URLs live in constants/site.ts (the root layout reads the same
 // list for its Organization JSON-LD); this only maps each one to its mark.
@@ -52,11 +52,12 @@ const CONTACT_LINKS = [
   ...SOCIALS,
 ];
 
+// A label, not a heading: footer columns shouldn't add to the page's outline.
 function ColumnHeading({ children }) {
   return (
-    <h3 className="text-[13px] font-bold uppercase tracking-[0.12em] text-white">
+    <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-white">
       {children}
-    </h3>
+    </p>
   );
 }
 
@@ -102,7 +103,8 @@ export default function Footer() {
             />
 
             <p className=" text-[15px] leading-relaxed text-white/40">
-              Transforming ideas into engaging digital and spatial experiences.
+              Spatial experience studio in Dubai: content creation and immersive experiences for the
+              Middle East and beyond.
             </p>
 
             <div className="mt-4 space-y-0.5">
@@ -149,14 +151,14 @@ export default function Footer() {
 
 
           <div className="w-full">
-            <LinkColumn title="What We Deliver" links={DELIVER} />
+            <LinkColumn title="What we deliver" links={DELIVER} />
           </div>
           <div className="w-full">
-            <LinkColumn title="Our Services" links={SERVICES} />
+            <LinkColumn title="Our services" links={SERVICES} />
           </div>
 
           <div className="w-full">
-            <ColumnHeading>{OFFICES.length > 1 ? "Our Offices" : "Our Office"}</ColumnHeading>
+            <ColumnHeading>{OFFICES.length > 1 ? "Our offices" : "Our office"}</ColumnHeading>
             {OFFICES.map((office) => (
               <address key={office.id} className="mt-4 text-sm not-italic leading-[1.85] text-white/40">
                 {OFFICES.length > 1 && <span className="block font-medium text-white/70">{office.city}</span>}
@@ -165,6 +167,7 @@ export default function Footer() {
                     {line}
                   </span>
                 ))}
+                {office.hours && <span className="mt-1 block">{office.hours}</span>}
               </address>
             ))}
           </div>
@@ -174,12 +177,18 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>
-          {/* <a
-            href={SITE.url}
-            className="transition-colors hover:text-white"
-          >
-            {SITE.url.replace("https://", "")}
-          </a> */}
+          {LEGAL.length > 0 && (
+            <ul className="flex items-center gap-2">
+              {LEGAL.map(({ label, href }, i) => (
+                <li key={href} className="flex items-center gap-2">
+                  {i > 0 && <span aria-hidden="true">·</span>}
+                  <Link href={href} className="transition-colors hover:text-white">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </footer>

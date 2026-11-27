@@ -1,14 +1,18 @@
 "use server";
 
+import { LOCATION_OPTIONS, PLANNING_OPTIONS } from "@/constants/contact";
 import { SITE } from "@/constants/site";
 import { CONTACT_INBOX, sendMail } from "@/lib/mail";
 import { contactEmail } from "@/lib/emails";
 import { type FormState, isBot, isEmail, readText } from "@/lib/forms";
 
+// One of the form's own choices, or "" for anything else (left blank, or tampered with).
+const choice = (value: string, options: string[]) => (options.includes(value) ? value : "");
+
 export async function sendContactMessage(_prevState: FormState, formData: FormData): Promise<FormState> {
   const sent: FormState = {
     status: "success",
-    message: "Thanks, your message is on its way. Our team will be in touch shortly.",
+    message: "Thanks. We've received your brief and will reply within two working days.",
   };
   // Looks like a success to the bot, but nothing is sent.
   if (isBot(formData)) return sent;
@@ -18,6 +22,9 @@ export async function sendContactMessage(_prevState: FormState, formData: FormDa
     company: readText(formData, "company", 120),
     phone: readText(formData, "phone", 40),
     email: readText(formData, "email", 200),
+    planning: choice(readText(formData, "planning", 60), PLANNING_OPTIONS),
+    location: choice(readText(formData, "location", 60), LOCATION_OPTIONS),
+    timing: readText(formData, "timing", 80),
     project: readText(formData, "project", 5000, true),
   };
 

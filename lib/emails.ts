@@ -141,7 +141,16 @@ function renderEmail({ preheader, eyebrow, title, rows, note, action, footer }: 
 const firstName = (name: string) => name.split(" ")[0];
 const isLink = (value: string) => /^https?:\/\//i.test(value);
 
-export function contactEmail(values: { name: string; company: string; phone: string; email: string; project: string }) {
+export function contactEmail(values: {
+  name: string;
+  company: string;
+  phone: string;
+  email: string;
+  planning: string;
+  location: string;
+  timing: string;
+  project: string;
+}) {
   return renderEmail({
     preheader: `${values.name}${values.company ? ` from ${values.company}` : ""} sent a project enquiry.`,
     eyebrow: "Contact form",
@@ -151,6 +160,10 @@ export function contactEmail(values: { name: string; company: string; phone: str
       { label: "Company", value: values.company },
       { label: "Email", value: values.email, href: `mailto:${values.email}` },
       { label: "Phone", value: values.phone, href: `tel:${values.phone.replace(/[^+\d]/g, "")}` },
+      // The optional answers; rows left blank are dropped from the email.
+      { label: "Planning", value: values.planning },
+      { label: "Where", value: values.location },
+      { label: "When", value: values.timing },
     ],
     note: { label: "Project details", text: values.project },
     action: { label: `Reply to ${firstName(values.name)}`, href: `mailto:${values.email}` },

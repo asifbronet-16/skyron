@@ -1,5 +1,7 @@
 import CapabilityCard from "./CapabilityCard";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
+import { PATHS } from "@/constants/paths";
 import {
   BuildingIcon,
   ClapperboardIcon,
@@ -7,86 +9,96 @@ import {
   DisplayIcon,
   HeadsetIcon,
   PavilionIcon,
+  ProjectorIcon,
+  TouchIcon,
 } from "./CapabilityIcons";
 
+// "What we build" on the home page, in the copy deck's order: content
+// creation first, then the experiences it powers.
 const defaultCapabilities = [
   {
     icon: ClapperboardIcon,
     accent: "violet",
-    title: "Projection Mapping Solutions",
+    title: "Content creation",
     description:
-      "We create immersive projection mapping experiences that transform surfaces, spaces, and objects into dynamic storytelling platforms.",
-    image: "/assets/banners/projection-mapping-solutions/1.webp",
-  },
-  {
-    icon: CubeIcon,
-    accent: "teal",
-    title: "Hologram, HoloBox & Volumetric Display",
-    description:
-      "We create advanced holographic display experiences that present people, products, and digital content as immersive volumetric visuals.",
-    image: "/assets/banners/hologram-holobox-volumetric-display/2.webp",
-  },
-  {
-    icon: HeadsetIcon,
-    accent: "rose",
-    title: "AR VR XR Immersive Technologies",
-    description:
-      "We develop immersive AR, VR, and XR experiences that blend digital content with real environments to enhance visualization and training.",
-    image: "/assets/banners/ar-vr-xr-immersive-technologies/1.webp",
+      "2D and 3D animation, anamorphic 3D, generative AI content, live shoots and visual effects, created for facades, LED walls, holograms, headsets and custom screens.",
+    image: "/assets/cards/3d-animation-motion-graphics/1.webp",
+    link: { label: "Content creation", href: PATHS.creativeSolutions },
   },
   {
     icon: BuildingIcon,
-    accent: "violet",
-    title: "Experience Centre Consulting & Execution",
+    accent: "teal",
+    title: "Experience centres",
     description:
-      "We design and deliver immersive experience centres that communicate ideas, engage audiences, and bring brands and technologies to life.",
+      "Visitor centres, vision galleries and sales pavilions, from the story and the content to the technology that makes a big idea easy to understand.",
     image: "/assets/banners/experience-centre/1.webp",
+    link: { label: "Experience centre design", href: PATHS.experienceCentres },
   },
   {
-    icon: PavilionIcon,
-    accent: "teal",
-    title: "Events, Exhibitions & Brand Activation",
+    icon: ProjectorIcon,
+    accent: "rose",
+    title: "Projection mapping",
     description:
-      "We create immersive events, exhibitions, and brand activations combining storytelling, spatial design, and interactive technology.",
-    image: "/assets/banners/events-exhibitions-brand-activations/2.webp",
+      "Facades, interiors, scale models and stages, with content created for the real geometry of the surface.",
+    image: "/assets/banners/projection-mapping-solutions/1.webp",
+    link: { label: "Projection mapping in Dubai", href: PATHS.projectionMapping },
+  },
+  {
+    icon: CubeIcon,
+    accent: "violet",
+    title: "Holograms and HoloBox",
+    description:
+      "Life-size presenters, floating products and stage holograms, with hologram content made in-house.",
+    image: "/assets/banners/hologram-holobox-volumetric-display/2.webp",
+    link: { label: "Hologram displays in the UAE", href: PATHS.holograms },
+  },
+  {
+    icon: HeadsetIcon,
+    accent: "teal",
+    title: "AR, VR and XR",
+    description:
+      "Configurators, training simulations and virtual tours, with 3D content built to run reliably in public venues.",
+    image: "/assets/banners/ar-vr-xr-immersive-technologies/1.webp",
+    link: { label: "AR and VR experiences", href: PATHS.arVr },
   },
   {
     icon: DisplayIcon,
     accent: "rose",
-    title: "Interactive Technologies",
+    title: "3D anamorphic billboards",
+    description: "Anamorphic 3D content that appears to step out of corner and curved LED screens.",
+    image: "/assets/banners/anamorphic-3d-content-creation/1.webp",
+    link: { label: "3D billboards in Dubai", href: PATHS.anamorphic },
+  },
+  {
+    icon: TouchIcon,
+    accent: "violet",
+    title: "Interactive installations",
     description:
-      "We develop interactive technology solutions that enable users to engage with digital content through intuitive, responsive, and immersive interfaces.",
+      "Touch tables, gesture walls and interactive floors, with content that responds to the person in front of them.",
     image: "/assets/banners/interactive-technologies/2.webp",
+    link: { label: "Interactive installations", href: PATHS.interactive },
+  },
+  {
+    icon: PavilionIcon,
+    accent: "teal",
+    title: "Events and brand activations",
+    description:
+      "Launches, exhibition stands and pop-ups where content, hardware and staging work as one system.",
+    image: "/assets/banners/events-exhibitions-brand-activations/2.webp",
+    link: { label: "Brand activations", href: PATHS.events },
   },
 ];
 
-export default function CapabilitiesSection({ capabilities = defaultCapabilities }) {
+export default function CapabilitiesSection({ capabilities = defaultCapabilities, heading = "What we build" }) {
   return (
     <section className="relative overflow-hidden py-8 sm:py-28">
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <Reveal className="flex flex-col max-w-5xl mx-auto">
-          <div className="">
-            <h2 className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">
-              Interactive Experiences That
-              <br/>
-
-            </h2>
-          </div>
-
-          <div className="">
-            <h2 className="bg-linear-to-r from-fuchsia-500 via-fuchsia-400 to-pink-400 bg-clip-text text-right tracking-tight text-transparent text-2xl font-normal leading-tight sm:text-2xl lg:text-5xl">
-               <span className="text-2xl font-light leading-tight tracking-normal text-white sm:text-2xl lg:text-5xl">People {" "}</span>
-                Don&apos;t Just See — They Feel.
-            </h2>
-          </div>
+        <Reveal>
+          <SectionHeading text={heading} align="center" inline size="md" accentClassName="from-fuchsia-500 via-fuchsia-400 to-pink-400" />
         </Reveal>
 
-        <Reveal as="p" delay={100} className="mt-6 max-w-2xl text-sm leading-relaxed text-white/40 mx-auto">
-          In a world overloaded with content, interaction is the new attention. We help brands move beyond passive visuals into engaging, participatory, and immersive experiences that drive real audience connection.
-        </Reveal>
-
-        <div className="mt-8 sm:mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-14 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {capabilities.map((item, i) => (
             <Reveal key={item.title} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
               <CapabilityCard {...item} />

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 
 /**
  * Full-bleed cross-fading photo background — the same carousel mechanic
@@ -34,7 +35,7 @@ export default function PhotoBackground({ images = [], interval = 6000, classNam
         <Image
           key={src}
           src={src}
-          alt=""
+          alt={altFor(src)}
           fill
           priority={i === 0}
           sizes="100vw"

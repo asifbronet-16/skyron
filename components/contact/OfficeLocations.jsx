@@ -19,15 +19,9 @@ function OfficeCard({ office }) {
     // self-start + lg:min-h-96: a bit shorter than the map (lg:min-h-112) rather
     // than stretched to match it, with the actions pinned to the foot
     <div className="flex flex-col self-start rounded-2xl border border-white/10 bg-linear-to-b from-violet-500/7 to-transparent p-5 sm:p-6 lg:min-h-96">
-      <div className="flex items-center justify-between gap-3">
-        <h3 className="text-lg font-medium text-white">{office.city}</h3>
-        {office.label && (
-          <span className="rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-violet-300">
-            {office.label}
-          </span>
-        )}
-      </div>
+      <h3 className="text-lg font-medium text-white">{office.title ?? office.city}</h3>
       <p className="mt-0.5 text-[11px] uppercase tracking-[0.14em] text-white/40">{office.country}</p>
+      {office.note && <p className="mt-3 text-[13px] leading-relaxed text-white/60">{office.note}</p>}
 
       <address className="mt-4 flex gap-3 text-[13px] not-italic leading-relaxed text-white/70">
         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" strokeWidth={1.8} />
@@ -55,6 +49,12 @@ function OfficeCard({ office }) {
             </a>
           )}
         </div>
+      )}
+
+      {office.hours && (
+        <p className="mt-3 text-[13px] text-white/70">
+          <strong className="font-semibold text-white">Hours:</strong> {office.hours}
+        </p>
       )}
 
       <div className="mt-auto flex flex-wrap gap-2 pt-5">
@@ -94,9 +94,14 @@ function OfficeMap({ office }) {
  * offices further down the page cost nothing until they're scrolled to.
  *
  * <OfficeLocations />
- * <OfficeLocations headingAs="h1" className="pt-28 pb-12 sm:pt-44 sm:pb-16" />  // as the page's opening section
+ * <OfficeLocations headingAs="h1" eyebrow="..." heading="..." className="pt-28 pb-12 sm:pt-44 sm:pb-16" />  // as the page's opening section
  */
-export default function OfficeLocations({ headingAs = "h2", className = "py-12 sm:py-24" }) {
+export default function OfficeLocations({
+  headingAs = "h2",
+  eyebrow,
+  heading,
+  className = "py-12 sm:py-24",
+}) {
   if (OFFICES.length === 0) return null;
 
   const multiple = OFFICES.length > 1;
@@ -110,13 +115,12 @@ export default function OfficeLocations({ headingAs = "h2", className = "py-12 s
           <div className="flex items-center gap-4">
             <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-              {multiple ? "Our Offices" : "Our Office"}
+              {eyebrow ?? (multiple ? "Our offices" : "Our office")}
             </span>
           </div>
           <SectionHeading
             as={headingAs}
-            lead="Come Visit"
-            accent={multiple ? "Our Studios" : "Our Studio"}
+            text={heading ?? (multiple ? "Come visit our studios" : "Come visit our studio")}
             inline
             className="mt-6"
           />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 
 const ACCENTS = {
   violet: {
@@ -74,18 +75,15 @@ export default function ServiceCard({
       {/* background image sits behind the copy at rest and fades out on hover/focus —
           same mechanic as FeatureGrid's cards */}
       {image && (
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0"
-        >
+        <div className="absolute inset-0 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0 group-focus-within:opacity-0">
           <Image
             src={image}
-            alt=""
+            alt={altFor(image)}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
+          <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-[#08060f]/75 via-[#08060f]/48 to-[#08060f]/22" />
         </div>
       )}
 

@@ -1,22 +1,33 @@
 /**
- * Content for the "Creative Solutions" flyout (under What We Do → Creative Solutions).
- * Each entry renders at /creative-solutions/[slug] via app/creative-solutions/[slug]/page.jsx.
+ * The Creative Solutions pages (What We Do → Creative Solutions), one
+ * /creative-solutions/[slug] page each, rendered by
+ * components/content/SolutionPage.jsx. The menu, the hub page and Related
+ * services all read this list, so a new entry shows up everywhere.
  *
- * Add a new sub-page by adding an entry here — the Navbar flyout and the
- * dynamic route both read from this single list.
+ * Copy is the approved text from Skyron-Website-Content-FINAL, word for word.
+ * Don't reword it here: changes go back to Skyron marketing first.
  *
- * `banner.images`: one path renders a static banner, several auto-rotate as
- * a carousel (see components/SolutionBanner.jsx). Leave empty until real
- * photography/renders are dropped into /public for this solution.
+ * `banner.images`: one path renders a static banner, several auto-rotate.
  */
+import { PATHS } from "./paths";
 import type { SolutionItem } from "./types";
+
+const BRIEF = { label: "Send us your brief", href: PATHS.brief };
 
 export const CREATIVE_SOLUTIONS_ITEMS: SolutionItem[] = [
   {
     slug: "3d-content-creation",
-    label: "3D Content Creation",
-    eyebrow: "Creative Solutions",
-    heading: { lead: "3D Content", accent: "Creation" },
+    navLabel: "3D Content Creation",
+    seo: {
+      title: "3D Product Visualization Studio in Dubai | Skyron",
+      description:
+        "3D product visualization, animation, architectural walkthroughs and real-time 3D from our Dubai studio, made for campaigns, LED walls, holograms and AR.",
+    },
+    h1: "3D product visualization and animation in Dubai",
+    intro: [
+      "We provide 3D product visualization services, animation and real-time 3D from our Dubai studio. That includes product films for launches, walkthroughs of buildings that don't exist yet, and real-time scenes for AR, VR and interactive installations. Every asset is built for the format it's for, from a phone screen to a facade.",
+      "Like all our content creation, it is made for interactive and immersive experiences in custom resolutions, not just standard screens.",
+    ],
     banner: {
       images: [
         "/assets/banners/3d-content-creation/1.webp",
@@ -26,74 +37,112 @@ export const CREATIVE_SOLUTIONS_ITEMS: SolutionItem[] = [
         "/assets/banners/3d-content-creation/5.webp",
       ],
     },
-    intro:
-      "Fully modeled, animated, and rendered 3D worlds built to fill a screen, a dome, or an entire building facade.",
-    body: [
-      "From product visualizations to abstract generative environments, our 3D pipeline is built for scale — real-time and pre-rendered content designed to hold up on massive projection surfaces and LED walls.",
+    hub: {
+      title: "3D content and product visualization",
+      text: "Modelled, animated and rendered 3D, from product films to whole worlds for domes and facades.",
+      linkLabel: "3D content creation",
+    },
+    sections: [
+      {
+        type: "cards",
+        heading: "What we create in 3D",
+        cards: [
+          {
+            title: "Product visualization and 3D advertising",
+            body: "Photoreal product renders and animations that show materials, features and how things work, for launches, e-commerce, social and LED campaigns.",
+            image: "/assets/cards/product-visualization-3d-advertising/1.webp",
+          },
+          {
+            title: "3D animation and motion graphics",
+            body: "Cinematic 3D animation for brand films, events, broadcast and experiential screens.",
+            image: "/assets/cards/3d-animation-motion-graphics/1.webp",
+          },
+          {
+            title: "Architectural visualization and walkthroughs",
+            body: "Photoreal stills, flythroughs and interactive masterplans for developers and architects, ready before construction starts.",
+            image: "/assets/cards/architectural-visualization-walkthroughs/1.webp",
+          },
+          {
+            title: "Engineering and technical animation",
+            body: "Clear animations of industrial processes, energy systems and machinery, for training, investors and visitor centres.",
+            image: "/assets/cards/engineering-technical-animations/1.webp",
+          },
+          {
+            title: "Digital twins and simulation visuals",
+            body: "3D models of sites, plants or cities, linked to real data where needed.",
+            image: "/assets/cards/digital-twins-simulation-visuals/1.webp",
+          },
+          {
+            title: "Real-time and interactive 3D",
+            body: "Optimised scenes in Unreal Engine or Unity for AR, VR, touch tables and configurators.",
+            image: "/assets/cards/real-time-interactive-3d-content/1.webp",
+          },
+          {
+            title: "Character design and animation",
+            body: "Mascots, guides and avatars for films, holograms and interactive experiences.",
+            image: "/assets/cards/character-design-animation/1.webp",
+          },
+          {
+            title: "3D asset creation",
+            body: "Clean, optimised models and textures for animation, real-time engines and multi-channel use.",
+            image: "/assets/cards/3d-asset-creation/1.webp",
+          },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Made for where it will play",
+        paragraphs: [
+          "A product film for Instagram and a render for a 12-metre LED wall need different resolutions, frame rates and compositions. We confirm the output format, pixel map and viewing distance at the start, so nothing is upscaled or cropped at the last minute.",
+        ],
+      },
+      {
+        type: "steps",
+        heading: "How a 3D project runs",
+        steps: [
+          "Brief, references and CAD or product files",
+          "Style frames for approval",
+          "Modelling, texturing and lighting",
+          "Animation and camera",
+          "Render, compositing and sound",
+          "Delivery in every format you need",
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Questions",
+        items: [
+          {
+            question: "Can you work from our CAD files?",
+            answer: "Yes. Send STEP, OBJ, FBX or similar, and we'll prepare them for rendering.",
+          },
+          {
+            question: "Do you make product renders for e-commerce?",
+            answer: "Yes: stills, 360° spins and short loops.",
+          },
+        ],
+      },
     ],
-    highlights: [],
-    features: {
-      lead: "Where Imagination",
-      accent: "Becomes Dimension",
-      subtitle:
-        "From cinematic animation to real-time 3D assets, we craft visuals that bring products, characters, and environments to life with precision and depth.",
-      cards: [
-        {
-          title: "3D Animation & Motion Graphics",
-          description:
-            "We craft cinematic 3D animation and motion graphics for digital, broadcast, social, and immersive experiential content that **elevates** brands and engages audiences.",
-          image: "/assets/cards/3d-animation-motion-graphics/1.webp",
-        },
-        {
-          title: "Product Visualization & 3D Advertising",
-          description:
-            "High-impact product visualization and 3D advertising that showcases features, **boosts** desirability, and drives **conversions** across digital and commercial campaigns **globally**.",
-          image: "/assets/cards/product-visualization-3d-advertising/1.webp",
-        },
-        {
-          title: "Architectural Visualization & Walkthroughs",
-          description:
-            "Photoreal architectural walkthroughs and 3D visualizations that bring buildings, interiors, and master plans to life before **ground is broken**.",
-          image: "/assets/cards/architectural-visualization-walkthroughs/1.webp",
-        },
-        {
-          title: "Engineering & Technical Animations",
-          description:
-            "Clear, precise 3D animations that **simplify** complex engineering, industrial **processes**, and technical systems for communication and marketing.",
-          image: "/assets/cards/engineering-technical-animations/1.webp",
-        },
-        {
-          title: "Character Design & Animation",
-          description:
-            "Expressive character design and animation that builds emotional connection, **enhances** storytelling, and strengthens brand **narratives** across media.",
-          image: "/assets/cards/character-design-animation/1.webp",
-        },
-        {
-          title: "3D Asset Creation",
-          description:
-            "High-quality, **optimized** 3D assets built for animation, real-time engines, interactive platforms, and scalable multi-channel production.",
-          image: "/assets/cards/3d-asset-creation/1.webp",
-        },
-        {
-          title: "Digital Twins & Simulation Visuals",
-          description:
-            "Data-driven digital twins and simulation visuals that visualize performance, processes, and environments with **accuracy** and clarity.",
-          image: "/assets/cards/digital-twins-simulation-visuals/1.webp",
-        },
-        {
-          title: "Real-Time & Interactive 3D Content",
-          description:
-            "Real-time and interactive 3D experiences designed for web, AR, VR, and experiential installations that engage users **dynamically**.",
-          image: "/assets/cards/real-time-interactive-3d-content/1.webp",
-        },
-      ],
+    related: [PATHS.holograms, PATHS.arVr, PATHS.anamorphic],
+    cta: {
+      heading: "Have a product or place to visualise?",
+      text: "Send your files and deadline. We reply within two working days.",
+      button: BRIEF,
     },
   },
   {
     slug: "2d-content-creation",
-    label: "2D Content Creation",
-    eyebrow: "Creative Solutions",
-    heading: { lead: "2D Content", accent: "Creation" },
+    navLabel: "2D Content Creation",
+    seo: {
+      title: "2D Motion Graphics & Explainer Videos Dubai | Skyron",
+      description:
+        "2D motion graphics, explainer videos, data animation and brand idents from our Dubai studio, in Arabic and English, for screens, events and experience centres.",
+    },
+    h1: "2D motion graphics and explainer videos",
+    intro: [
+      "Skyron is a motion graphics studio in Dubai. We design and animate 2D content that makes ideas clear: explainers, data stories, brand idents, social content and screen graphics for events and experience centres. It's clean, on-brand and built to the exact screen it will play on.",
+      "Like all our content creation, it is designed for interactive and immersive experiences, from experience centre screens to LED walls.",
+    ],
     banner: {
       images: [
         "/assets/banners/2d-content-creation/1.webp",
@@ -102,168 +151,279 @@ export const CREATIVE_SOLUTIONS_ITEMS: SolutionItem[] = [
         "/assets/banners/2d-content-creation/4.webp",
       ],
     },
-    intro:
-      "Motion graphics, illustration, and animated design systems that carry a brand's visual language across every touchpoint.",
-    body: [
-      "We design and animate flat and layered 2D content for everything from wayfinding screens to broadcast-style brand films — clean, on-brand, and built to move.",
+    hub: {
+      title: "2D motion graphics",
+      text: "Explainers, data animation, brand idents and wayfinding content that carry a brand's visual language.",
+      linkLabel: "2D content creation",
+    },
+    sections: [
+      {
+        type: "cards",
+        heading: "What we create in 2D",
+        cards: [
+          {
+            title: "Explainer and educational videos",
+            body: "Complex services, policies or products explained in 60–120 seconds.",
+            image: "/assets/cards/explainer-educational-videos/1.webp",
+          },
+          {
+            title: "Infographic and data animation",
+            body: "Numbers and processes turned into motion that's easy to follow, for reports, visitor centres and keynotes.",
+            image: "/assets/cards/infographic-data-animations/1.webp",
+          },
+          {
+            title: "2D motion graphics",
+            body: "Titles, transitions, lower thirds and screen content for events and broadcast.",
+            image: "/assets/cards/2d-motion-graphics/1.webp",
+          },
+          {
+            title: "Brand films and visual idents",
+            body: "Logo animations and short films that set a brand's tone.",
+            image: "/assets/cards/brand-films-visual-idents/1.webp",
+          },
+          {
+            title: "Character animation",
+            body: "Friendly guides and mascots that carry a story.",
+            image: "/assets/cards/character-animation/1.webp",
+          },
+          {
+            title: "Social and UI motion",
+            body: "Short loops, stories and interface animation for apps and kiosks.",
+            image: "/assets/cards/social-ui-motion-content/1.webp",
+          },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Motion graphics in Arabic and English",
+        paragraphs: [
+          "We produce motion graphics in Arabic and English, with right-to-left layouts and Arabic typography handled properly, not just translated text boxes.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "How a 2D project runs",
+        paragraphs: [
+          "Script → storyboard and style frames → voice-over → animation → sound and subtitles → delivery in every aspect ratio.",
+        ],
+      },
     ],
-    highlights: [],
-    features: {
-      lead: "Where Motion",
-      accent: "Meets Meaning",
-      subtitle:
-        "From explainer videos to brand films, our 2D pipeline turns ideas into clear, expressive visual stories built for every platform.",
-      cards: [
-        {
-          title: "Explainer & Educational Videos",
-          description:
-            "Engaging explainer and educational videos that **simplify** complex ideas, communicate value clearly, and inform audiences across platforms.",
-          image: "/assets/cards/explainer-educational-videos/1.webp",
-        },
-        {
-          title: "Character Animation",
-          description:
-            "Lively character animation that brings personalities to life, **enhances** storytelling, and creates memorable brand-driven narratives.",
-          image: "/assets/cards/character-animation/1.webp",
-        },
-        {
-          title: "2D Motion Graphics",
-          description:
-            "Clean, dynamic 2D motion graphics designed to communicate messages clearly and **elevate** visual storytelling across media.",
-          image: "/assets/cards/2d-motion-graphics/1.webp",
-        },
-        {
-          title: "Infographic & Data Animations",
-          description:
-            "Visually compelling data and infographic animations that transform information into clear, engaging, and **easy-to-understand** stories.",
-          image: "/assets/cards/infographic-data-animations/1.webp",
-        },
-        {
-          title: "Brand Films & Visual Idents",
-          description:
-            "Cinematic brand films and visual identities that define tone, **build recognition**, and express brand purpose through motion.",
-          image: "/assets/cards/brand-films-visual-idents/1.webp",
-        },
-        {
-          title: "Social & UI Motion Content",
-          description:
-            "Impactful social and UI motion content crafted to enhance usability, **increase engagement**, and strengthen digital brand experiences.",
-          image: "/assets/cards/social-ui-motion-content/1.webp",
-        },
-      ],
+    related: [PATHS.threeD, PATHS.liveAction, PATHS.interactive],
+    cta: {
+      heading: "Need something explained in motion?",
+      text: "Send the topic, length and deadline. We reply within two working days.",
+      button: BRIEF,
     },
   },
   {
     slug: "anamorphic-3d-content-creation",
-    label: "Anamorphic 3D Content Creation",
-    eyebrow: "Creative Solutions",
-    heading: { lead: "Anamorphic 3D", accent: "Content Creation" },
+    navLabel: "Anamorphic 3D",
+    seo: {
+      title: "3D Anamorphic Billboards in Dubai | Skyron",
+      description:
+        "Anamorphic 3D billboard content for corner, curved and flat LED screens in Dubai and the Middle East, created for the exact screen and viewing angle.",
+    },
+    h1: "3D anamorphic billboards for Dubai and the Middle East",
+    intro: [
+      "A 3D billboard, also called an anamorphic or naked-eye 3D billboard, uses forced perspective to make flat LED content look three-dimensional, as if it's stepping out of the screen. We create that content for corner, curved and flat LED screens across Dubai and the Middle East. Anamorphic work lives or dies on the maths, so every frame is built against the exact geometry of the screen and the main viewing position.",
+      "Anamorphic 3D is one part of our wider content creation: the same team also makes 2D and 3D animation, AI content and live-action films.",
+    ],
     banner: {
       images: [
         "/assets/banners/anamorphic-3d-content-creation/1.webp",
         "/assets/banners/anamorphic-3d-content-creation/2.webp",
       ],
     },
-    intro:
-      "Forced-perspective illusions engineered for curved LED corners and billboards — content that appears to break out of the screen from one exact vantage point.",
-    body: [
-      "Anamorphic work lives or dies on the math. We build every scene against the precise geometry of the display and viewing angle, so the illusion holds up in the photo, not just on paper.",
+    hub: {
+      title: "Anamorphic 3D billboards",
+      text: "Forced-perspective content for corner, curved and flat LED that appears to break out of the screen.",
+      linkLabel: "Anamorphic 3D",
+    },
+    sections: [
+      {
+        type: "prose",
+        heading: "How a 3D billboard illusion works",
+        paragraphs: [
+          "The screen doesn't show 3D. The content is distorted in 3D software so that, from one viewing point, the brain reads depth. On a corner screen, the fold between the two faces becomes the edge of a \"box\" that objects can burst out of. The illusion depends on three things: the screen's exact dimensions, its pixel resolution, and where people stand or drive past. Get these wrong and the effect collapses.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Screen types we create anamorphic content for",
+        cards: [
+          {
+            title: "Corner and L-shaped LED",
+            body: "The strongest illusion. Two faces meet at an angle, giving a natural box for depth. Common on mall facades and street corners.",
+            image: "/assets/banners/anamorphic-3d-content-creation/2.webp",
+          },
+          {
+            title: "Curved and wrap-around LED",
+            body: "Content flows around the curve for a wider viewing area. It suits atriums and building facades.",
+            image: "/assets/cards/curved-wrap-around-displays/1.webp",
+          },
+          {
+            title: "Flat and facade LED",
+            body: "Depth comes from shadows, frames and perspective tricks rather than the screen's shape. It works best from a known viewing position, such as a road or plaza.",
+            image: "/assets/cards/flat-facade-led-installations/1.webp",
+          },
+        ],
+      },
+      {
+        type: "list",
+        heading: "What we need from you",
+        items: [
+          "The screen's model, dimensions and pixel resolution (the media owner provides these)",
+          "Photos or video from the main viewing positions",
+          "Your brand assets, product files or campaign idea",
+          "Run length and loop duration (often 10–30 seconds)",
+        ],
+      },
+      {
+        type: "steps",
+        heading: "How we produce a 3D billboard",
+        steps: [
+          "**Screen survey:** we rebuild the screen and its surroundings in 3D.",
+          "**Concept and storyboard:** the idea is planned around the illusion.",
+          "**Previs from real viewing points:** you see how it looks from the street before the final render.",
+          "**Animation and render** at the screen's native resolution.",
+          "**Test on screen** with the media owner, then final adjustments.",
+        ],
+        outro: ["Typical production time: 3–6 weeks, depending on length and complexity."],
+      },
+      {
+        type: "prose",
+        heading: "What a 3D billboard costs in Dubai",
+        paragraphs: [
+          "Cost depends on the run length, screen resolution, how complex the 3D is (liquids, characters and products cost more than graphic shapes), and how many screen versions you need. We give an indicative budget within two working days of your brief.",
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Questions",
+        items: [
+          {
+            question: "Can you book the screen time?",
+            answer:
+              "We create the content; screen time is booked with the media owner. We can coordinate with them for you.",
+          },
+          {
+            question: "Does it work for people outside the sweet spot?",
+            answer:
+              "The effect is strongest from the main viewing position. We design so it still reads as good content from other angles.",
+          },
+          {
+            question: "Can the same content run on different screens?",
+            answer:
+              "It has to be adapted to each screen's geometry. We plan versions from the start if you have several sites.",
+          },
+        ],
+      },
+      // "Our work" (2–3 frames labelled "Concept render") is added once
+      // Skyron supplies the renders.
     ],
-    highlights: [],
-    features: {
-      lead: "Illusions That",
-      accent: "Break The Screen",
-      subtitle:
-        "Forced-perspective content engineered for the exact geometry of corner, flat, and curved LED displays — built to stop a crowd.",
-      cards: [
-        {
-          title: "Corner & L-Shape LED Displays",
-          description:
-            "High-impact corner and L-shape LED displays engineered for immersive storytelling, seamless angles, and **maximum visual impact** in architectural and experiential environments.",
-          image: "/assets/banners/anamorphic-3d-content-creation/1.webp",
-        },
-        {
-          title: "Flat & Facade LED Installations",
-          description:
-            "Large-scale flat and facade LED installations delivering bold visuals, structural integration, and **captivating** brand presence across commercial buildings and public-facing spaces.",
-          image: "/assets/cards/flat-facade-led-installations/1.webp",
-        },
-        {
-          title: "Curved & Wrap-Around Displays",
-          description:
-            "Curved and wrap-around LED displays designed to envelop audiences with fluid visuals, dynamic perspectives, and **immersive** spatial brand experiences.",
-          image: "/assets/cards/curved-wrap-around-displays/1.webp",
-        },
-      ],
+    related: [PATHS.threeD, PATHS.events, PATHS.projectionMapping],
+    cta: {
+      heading: "Have a screen and a campaign?",
+      text: "Send us the screen details and your date. We reply within two working days.",
+      button: BRIEF,
     },
   },
   {
     slug: "live-action-content-production",
-    label: "Live Action Content Production",
-    eyebrow: "Creative Solutions",
-    heading: { lead: "Live Action", accent: "Content Production" },
+    navLabel: "Live Action",
+    seo: {
+      title: "Brand Film & Video Production in Dubai | Skyron",
+      description:
+        "Brand films, commercials, corporate films and drone filming from concept to post, made in-house in Dubai and planned to combine with CGI and LED content.",
+    },
+    h1: "Brand film and video production in Dubai",
+    intro: [
+      "We script, shoot and finish live-action content in-house: commercials, corporate and brand films, documentaries, launch films and drone footage. Because the same team also makes our 3D and motion content, live footage and CGI fit together cleanly, whether the result plays on a phone, a stage screen or a facade.",
+      "Live shoots and visual effects are one part of our wider content creation for interactive and immersive experiences.",
+    ],
     banner: {
       images: [
         "/assets/banners/live-action-content-production/1.webp",
         "/assets/banners/live-action-content-production/2.webp",
       ],
     },
-    intro:
-      "Full-service filming — from concept and script through shoot and post — for brand films, campaign content, and experiential backdrops.",
-    body: [
-      "Our production team handles pre-production, filming, and post entirely in-house, so live-action footage integrates seamlessly with the CG and motion content it sits alongside.",
+    hub: {
+      title: "Live action production",
+      text: "Brand films, commercials, documentaries and drone footage, filmed and finished in-house.",
+      linkLabel: "Live action",
+    },
+    sections: [
+      {
+        type: "cards",
+        heading: "What we film",
+        cards: [
+          {
+            title: "Advertising and commercial films",
+            body: "TV, digital and cinema spots, from idea to final grade.",
+            image: "/assets/cards/advertising-commercial-films/1.webp",
+          },
+          {
+            title: "Corporate and brand films",
+            body: "Company stories, vision films and recruitment films for websites, events and visitor centres.",
+            image: "/assets/cards/corporate-branded-films/1.webp",
+          },
+          {
+            title: "Documentary and narrative content",
+            body: "Real people and real places, filmed with care.",
+            image: "/assets/cards/documentary-narrative-content/1.webp",
+          },
+          {
+            title: "Product and launch films",
+            body: "Product reveals for launch events, social media and retail screens.",
+            image: "/assets/cards/product-launch-films/1.webp",
+          },
+          {
+            title: "Live action with VFX",
+            body: "Shoots planned for CGI, compositing and screen replacement.",
+            image: "/assets/cards/live-shoot-visual-effects/1.webp",
+          },
+          {
+            title: "Drone filming",
+            body: "Aerials of sites, buildings and landscapes. We arrange the required GCAA and local permits.",
+            image: "/assets/cards/drone-shoot/1.webp",
+          },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Filmed for experiential screens",
+        paragraphs: [
+          "A film for a 270° immersive room or an LED backdrop needs different framing, resolution and camera planning than a 16:9 video. We plan the shoot around the final screen, so the footage fits without stretching or cropping.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "How a shoot runs",
+        paragraphs: [
+          "Concept and script → pre-production (locations, casting, permits, schedule) → shoot → edit → VFX, grade and sound → delivery in all formats.",
+        ],
+      },
     ],
-    highlights: [],
-    features: {
-      lead: "Stories Captured",
-      accent: "In The Real World",
-      subtitle:
-        "From commercial films to documentary storytelling, we produce live-action content that captures real moments with cinematic craft.",
-      cards: [
-        {
-          title: "Advertising & Commercial Films",
-          description:
-            "High-impact advertising and commercial films crafted to capture attention, tell compelling stories, and **drive measurable** brand results.",
-          image: "/assets/cards/advertising-commercial-films/1.webp",
-        },
-        {
-          title: "Corporate & Branded Films",
-          description:
-            "Professionally crafted corporate and branded films that clearly communicate organizational values, **reinforce credibility**, and support consistent brand presence across internal and external channels.",
-          image: "/assets/cards/corporate-branded-films/1.webp",
-        },
-        {
-          title: "Documentary & Narrative Content",
-          description:
-            "Authentic documentary and narrative content that tells meaningful stories, builds **emotional connection**, and resonates with audiences.",
-          image: "/assets/cards/documentary-narrative-content/1.webp",
-        },
-        {
-          title: "Product & Launch Films",
-          description:
-            "Strategic product and launch films designed to showcase innovation, **generate excitement**, and support successful market introductions.",
-          image: "/assets/cards/product-launch-films/1.webp",
-        },
-        {
-          title: "Live Shoot & Visual Effects",
-          description:
-            "We produce cinematic live-action content enhanced with visual effects, seamlessly blending cinematography, CGI, and post-production to **elevate** storytelling and visual impact.",
-          image: "/assets/cards/live-shoot-visual-effects/1.webp",
-        },
-        {
-          title: "Drone Shoot",
-          description:
-            "We capture dynamic aerial visuals using professional drone cinematography, delivering **striking perspectives** that enhance storytelling for brands, spaces, and experiences.",
-          image: "/assets/cards/drone-shoot/1.webp",
-        },
-      ],
+    related: [PATHS.threeD, PATHS.twoD, PATHS.experienceCentres],
+    cta: {
+      heading: "Planning a shoot?",
+      text: "Send the idea, locations and deadline. We reply within two working days.",
+      button: BRIEF,
     },
   },
   {
     slug: "ai-driven-generative-content",
-    label: "AI Driven Generative Content",
-    eyebrow: "Creative Solutions",
-    heading: { lead: "AI Driven", accent: "Generative Content" },
+    navLabel: "AI Content",
+    seo: {
+      title: "AI Video & Generative Content Studio Dubai | Skyron",
+      description:
+        "AI-assisted video, avatars and generative visuals from a Dubai studio that art-directs every frame. Faster concepts, more versions, clear rights and labels.",
+    },
+    h1: "AI-assisted video and generative content, art-directed by people",
+    intro: [
+      "Skyron offers AI video production in Dubai with a human art director on every frame. We use generative AI where it helps: exploring more ideas early, making textures and backgrounds, producing language versions and building avatar presenters. Every output is reviewed and finished by our artists before it reaches a screen.",
+      "Generative AI is one part of our wider content creation, alongside 2D and 3D animation, anamorphic 3D, live shoots and visual effects.",
+    ],
     banner: {
       images: [
         "/assets/banners/ai-driven-generative-content/1.webp",
@@ -273,43 +433,71 @@ export const CREATIVE_SOLUTIONS_ITEMS: SolutionItem[] = [
         "/assets/banners/ai-driven-generative-content/5.webp",
       ],
     },
-    intro:
-      "Generative tools woven into the creative pipeline to explore more ideas, faster — without losing the art direction that makes content feel intentional.",
-    body: [
-      "We use AI-assisted workflows for concepting, texture and asset generation, and rapid iteration, always finished and art-directed by hand before anything reaches a screen.",
+    hub: {
+      title: "AI-assisted content",
+      text: "Generative tools for faster concepting and asset creation, always art-directed by hand.",
+      linkLabel: "AI-driven content",
+    },
+    sections: [
+      {
+        type: "cards",
+        heading: "Where AI helps in our pipeline",
+        cards: [
+          {
+            title: "Concept and mood exploration",
+            body: "Dozens of visual directions in days, so decisions happen early.",
+            image: "/assets/cards/creative-storytelling/1.webp",
+          },
+          {
+            title: "Asset and texture generation",
+            body: "Environments, textures and backgrounds for 3D and motion work.",
+            image: "/assets/cards/marketing-brand-content/1.webp",
+          },
+          {
+            title: "AI avatars and presenters",
+            body: "Multilingual presenter videos for training, explainers and HoloBox content.",
+            image: "/assets/cards/education-learning/1.webp",
+          },
+          {
+            title: "Versioning",
+            body: "Cut-downs, aspect ratios and language versions of a finished film.",
+            image: "/assets/cards/corporate-communication/1.webp",
+          },
+          {
+            title: "Generative visuals for immersive rooms",
+            body: "Evolving, data-driven or audience-reactive visuals for LED and projection.",
+            image: "/assets/cards/data-driven-ai-powered-interaction/1.webp",
+          },
+        ],
+      },
+      {
+        type: "list",
+        heading: "How we use AI responsibly",
+        variant: "tiles",
+        items: [
+          "**Labelled:** AI-generated concepts are marked as concepts. We tell you which parts of a deliverable used AI.",
+          "**Rights-aware:** we use tools with commercial licences and don't imitate real people or living artists without permission.",
+          "**Brand-safe:** every output passes human review for accuracy, cultural fit and brand guidelines.",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Good fits for AI-assisted content",
+        variant: "chips",
+        items: [
+          "Internal training and onboarding",
+          "Multilingual explainers",
+          "Fast campaign variations",
+          "Early concept visuals for pitches",
+          "Ambient visuals for immersive spaces",
+        ],
+      },
     ],
-    highlights: [],
-    features: {
-      lead: "Ideas, Accelerated",
-      accent: "By Intelligent Tools",
-      subtitle:
-        "AI-assisted workflows woven into the creative pipeline — expanding what's possible across marketing, communication, and storytelling content.",
-      cards: [
-        {
-          title: "Marketing & Brand Content",
-          description:
-            "Strategic marketing and brand content crafted to build awareness, shape perception, and deliver **consistent storytelling** across campaigns, platforms, and audience touchpoints globally.",
-          image: "/assets/cards/marketing-brand-content/3.webp",
-        },
-        {
-          title: "Corporate Communication",
-          description:
-            "Clear corporate communication films designed to align stakeholders, convey messaging effectively, and support internal and external communication objectives with **clarity and confidence**.",
-          image: "/assets/cards/corporate-communication/1.webp",
-        },
-        {
-          title: "Education & Learning",
-          description:
-            "Engaging education and learning content that simplifies complex topics, **enhances retention**, and supports training, onboarding, and knowledge sharing across industries.",
-          image: "/assets/cards/education-learning/1.webp",
-        },
-        {
-          title: "Creative Storytelling",
-          description:
-            "Creative storytelling that blends narrative, visuals, and emotion to connect audiences with ideas, brands, and experiences in **meaningful ways**.",
-          image: "/assets/cards/creative-storytelling/1.webp",
-        },
-      ],
+    related: [PATHS.twoD, PATHS.threeD, PATHS.holograms],
+    cta: {
+      heading: "Want to see what AI can speed up for you?",
+      text: "Send your brief. We reply within two working days.",
+      button: BRIEF,
     },
   },
 ];

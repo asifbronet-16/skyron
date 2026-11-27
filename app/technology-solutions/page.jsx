@@ -1,24 +1,40 @@
-import Link from "next/link";
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
-import ServiceCard from "@/components/home/ServiceCard";
 import Reveal from "@/components/Reveal";
-import { TECHNOLOGY_SOLUTIONS_ITEMS } from "@/constants/technologySolutions";
+import Blocks, { CardGrid } from "@/components/content/Blocks";
+import { PATHS } from "@/constants/paths";
+import { ALL_SOLUTIONS, TECHNOLOGY_SECTION } from "@/lib/solutions";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Technology Solutions — Skyron",
+  title: "Immersive Technology Solutions in the UAE | Skyron",
   description:
-    "Events & activations, interactive technologies, hologram & volumetric display, AR/VR/XR, and projection mapping — the systems behind every Skyron experience.",
-  path: "/technology-solutions",
+    "Experience centres, projection mapping, holograms, AR/VR, interactive installations and brand activations, integrated by one Dubai team for the Middle East.",
+  path: PATHS.technologySolutions,
 });
 
-// Cycled across cards so a five-item grid still reads as varied, not random —
-// same accent rotation ServiceCard already uses on the Our Approach process grid.
-const ACCENTS = ["violet", "cyan", "rose", "purple"];
+// One card per live Technology Solutions page, from its `hub` copy. Kinetic
+// LED's card appears with its page.
+const SERVICE_CARDS = ALL_SOLUTIONS.filter((item) => item.section === TECHNOLOGY_SECTION).map((item) => ({
+  title: item.hub.title,
+  body: item.hub.text,
+  image: item.banner.images[0],
+  link: { label: item.hub.linkLabel, href: item.href },
+}));
+
+const SECTIONS = [
+  {
+    type: "prose",
+    heading: "One integrated build, one accountable team",
+    paragraphs: [
+      "Most immersive projects use several technologies at once: a projection-mapped model, an LED wall, a hologram presenter and a touch table in one room. We design them as one system, with one content pipeline and one show control, so they start, sync and recover together. You deal with one team instead of five vendors.",
+    ],
+  },
+];
 
 export default function TechnologySolutionsPage() {
   return (
@@ -45,7 +61,7 @@ export default function TechnologySolutionsPage() {
         <section className="relative flex min-h-[70vh] items-center overflow-hidden px-6 pt-24 pb-8 sm:min-h-[80vh] sm:pt-44 sm:pb-24">
           <Image
             src="/assets/banners/technology-solutions.webp"
-            alt="Technology Solutions"
+            alt={altFor("/assets/banners/technology-solutions.webp")}
             fill
             preload
             sizes="100vw"
@@ -72,45 +88,46 @@ export default function TechnologySolutionsPage() {
               <Reveal className="flex items-center gap-4">
                 <span className="h-0.5 w-16 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-                  What We Do
+                  What we do
                 </span>
               </Reveal>
 
               <Reveal delay={100}>
-                <SectionHeading lead="Technology" accent="Solutions" className="mt-6" />
+                <SectionHeading
+                  as="h1"
+                  lead="Immersive technology solutions,"
+                  accent="integrated as one build"
+                  className="mt-6"
+                />
               </Reveal>
 
               <Reveal as="p" delay={200} className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-                Five systems, one integrated build — events and activations, interactive technologies,
-                hologram and volumetric display, AR/VR/XR, and projection mapping, engineered to run
-                reliably on the day it matters.
+                Skyron is an immersive technology company in Dubai. We design, integrate and run the
+                technology behind immersive spaces across the UAE, Saudi Arabia, the wider Middle East
+                and beyond. Content, hardware, software and show control are planned together, so
+                everything works on the day it matters.
+              </Reveal>
+
+              <Reveal as="p" delay={260} className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+                Every technology we deliver is driven by content we create in-house: 2D and 3D
+                animation, anamorphic 3D, generative AI content, live shoots and visual effects.
               </Reveal>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-2 pb-8 sm:pb-28">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-2 pb-8 sm:pb-16">
           <div className="relative mx-auto max-w-7xl">
-            <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {TECHNOLOGY_SOLUTIONS_ITEMS.map((item, i) => (
-                <Reveal key={item.slug} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
-                  <Link href={`/technology-solutions/${item.slug}`} className="block h-full">
-                    <ServiceCard
-                      number={String(i + 1).padStart(2, "0")}
-                      accent={ACCENTS[i % ACCENTS.length]}
-                      title={item.label}
-                      description={item.intro}
-                      image={item.banner?.images?.[0]}
-                      className="h-full"
-                    />
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
+            <CardGrid cards={SERVICE_CARDS} />
           </div>
         </section>
 
-        <CtaBanner />
+        <Blocks blocks={SECTIONS} />
+
+        <CtaBanner
+          heading="Not sure which technology fits?"
+          text="Tell us what the space needs to do. We'll recommend the right mix within two working days."
+        />
       </div>
 
       <Footer />
