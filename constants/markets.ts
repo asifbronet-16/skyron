@@ -19,7 +19,7 @@ import type { SolutionItem } from "./types";
  * Then set this to true: the page, its sitemap entry and the links to it
  * from other pages all switch on.
  */
-const SAUDI_ARABIA_APPROVED = false;
+const SAUDI_ARABIA_APPROVED = true;
 export const SAUDI_ARABIA_LIVE = SAUDI_ARABIA_APPROVED || SHOW_DRAFTS;
 
 export const MARKETS_SECTION = { label: "Markets", href: "/markets" };
