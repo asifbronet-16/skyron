@@ -3,9 +3,9 @@
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Info, Send } from "@/components/icons";
-import { submitApplication } from "@/app/careers/actions";
 import { SITE } from "@/constants/site";
 import { CV_ACCEPT, CV_MAX_BYTES, CV_MAX_MB, JOB_OPENINGS } from "@/constants/careers";
+import { postForm } from "@/lib/forms";
 import {
   Field,
   FormCard,
@@ -16,6 +16,9 @@ import {
   inputBase,
   useFormAction,
 } from "@/components/forms";
+
+// Validated and emailed, CV attached, by public/api/careers.php.
+const submitApplication = postForm("/api/careers.php");
 
 const fileClass =
   `${inputBase} cursor-pointer py-2.5 text-white/60 file:mr-4 file:cursor-pointer file:rounded-full file:border-0 ` +
@@ -45,8 +48,7 @@ export default function ApplicationForm() {
   const role = bind("role");
 
   // Catch an oversized or wrong-type CV before it's uploaded: the browser
-  // blocks the submit, and a too-large request never reaches the server
-  // action's body limit.
+  // blocks the submit, so a too-large request never hits PHP's upload limit.
   const checkCv = (e) => {
     const input = e.currentTarget;
     const file = input.files?.[0];

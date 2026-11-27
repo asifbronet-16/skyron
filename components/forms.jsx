@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import { HONEYPOT_FIELD, INITIAL_FORM_STATE } from "@/lib/forms";
 
 // Building blocks for the site's forms (ContactForm, ApplicationForm), so
-// both share one look and one way of talking to their server action.
+// both share one look and one way of talking to their PHP handler.
 
 export const inputBase =
   "w-full rounded-lg border border-white/8 bg-white/[0.03] px-4 py-3 text-sm text-white " +
@@ -14,10 +14,10 @@ export const inputBase =
   "aria-invalid:border-rose-400/60";
 
 /**
- * useActionState for a server action, with a safety net: a network drop or
- * a stale action ID after a redeploy makes the action throw, which would
- * otherwise crash the page. That becomes a retryable message instead, with
- * the typed text kept.
+ * useActionState for a form action (see postForm in lib/forms.ts), with a
+ * safety net: a network drop or a broken reply from the server makes the
+ * action throw, which would otherwise crash the page. That becomes a
+ * retryable message instead, with the typed text kept.
  */
 export function useFormAction(action, failureMessage) {
   return useActionState(async (prevState, formData) => {
@@ -66,7 +66,7 @@ export function Field({ label, required, hint, error, name, children }) {
   );
 }
 
-/** Off-screen field only bots fill in; the server action drops any submission that has it. */
+/** Off-screen field only bots fill in; the PHP handler drops any submission that has it. */
 export function Honeypot() {
   return (
     <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">

@@ -4,6 +4,9 @@ import { BLOG_POSTS, BLOG_POST_PAGES_LIVE } from "@/constants/blogs";
 import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
 import { TECHNOLOGY_SOLUTIONS_ITEMS } from "@/constants/technologySolutions";
 
+// Written to out/sitemap.xml at build time (the site is a static export).
+export const dynamic = "force-static";
+
 // Every static page.jsx under app/. Add new top-level pages here.
 const STATIC_ROUTES = [
   "/",

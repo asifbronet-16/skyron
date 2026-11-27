@@ -7,7 +7,7 @@ import type { BlogPost } from "./types";
 
 /**
  * There is no app/blogs/[slug] route yet, so /blogs/<slug> 404s. The sitemap
- * (app/sitemap.ts) and the legacy redirects (next.config.ts) both read this:
+ * (app/sitemap.ts) and the legacy redirects (scripts/cwp-release.mts) both read this:
  * flip it to `true` once post pages exist, and every post is added to the
  * sitemap and old WordPress post URLs point at the post instead of /blogs.
  */

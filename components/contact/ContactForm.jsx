@@ -1,8 +1,8 @@
 "use client";
 
 import { Send } from "@/components/icons";
-import { sendContactMessage } from "@/app/contact/actions";
 import { SITE } from "@/constants/site";
+import { postForm } from "@/lib/forms";
 import {
   Field,
   FormCard,
@@ -13,6 +13,9 @@ import {
   inputBase,
   useFormAction,
 } from "@/components/forms";
+
+// Validated and emailed by public/api/contact.php.
+const sendContactMessage = postForm("/api/contact.php");
 
 export default function ContactForm() {
   const [state, formAction, pending] = useFormAction(

@@ -1,7 +1,7 @@
 /**
- * Plumbing shared by the site's forms (contact, careers): the state shape a
- * server action hands back to useActionState, plus the input helpers the
- * actions validate with. Safe to import from client and server.
+ * Plumbing shared by the site's forms (contact, careers): the state shape the
+ * PHP form handlers in public/api/ reply with, and the client-side action that
+ * posts to them. The handlers validate and send; see public/api/_lib/.
  */
 
 export type FormState = {
@@ -16,29 +16,27 @@ export type FormState = {
 export const INITIAL_FORM_STATE: FormState = { status: "idle", message: "" };
 
 // Hidden input every form renders (see <Honeypot />). People never see it;
-// spam bots fill in every field they find.
+// spam bots fill in every field they find. Same name as HONEYPOT_FIELD in
+// public/api/_lib/forms.php.
 export const HONEYPOT_FIELD = "website";
 
-export const isBot = (formData: FormData) => Boolean(formData.get(HONEYPOT_FIELD));
-
-export const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
 /**
- * Trimmed value of a text field, capped at `max` characters. Single-line
- * fields also have newlines collapsed, since they end up in email subjects.
+ * Action for useFormAction that posts the form to a PHP handler, e.g.
+ * postForm("/api/contact.php"), and returns the FormState it replies with.
+ * A network drop, or a reply that isn't one (PHP not running, as under
+ * `next dev`), throws, which useFormAction turns into a retryable message.
  */
-export function readText(formData: FormData, name: string, max: number, multiline = false) {
-  const raw = formData.get(name);
-  if (typeof raw !== "string") return "";
-  return (multiline ? raw.trim() : raw.replace(/\s+/g, " ").trim()).slice(0, max);
-}
-
-/** http(s) URL with the scheme filled in if it was left off, or null if it isn't one. */
-export function normalizeUrl(value: string) {
-  try {
-    const url = new URL(/^https?:\/\//i.test(value) ? value : `https://${value}`);
-    return url.hostname.includes(".") ? url.href : null;
-  } catch {
-    return null;
-  }
+export function postForm(url: string) {
+  return async (_prevState: FormState, formData: FormData): Promise<FormState> => {
+    const res = await fetch(url, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+    const state = await res.json();
+    if (typeof state?.status !== "string" || typeof state?.message !== "string") {
+      throw new Error(`Unexpected reply from ${url}`);
+    }
+    return state as FormState;
+  };
 }
