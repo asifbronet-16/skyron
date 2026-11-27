@@ -75,6 +75,29 @@ export function DisplayIcon(props) {
   );
 }
 
+export function ProjectorIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M2.5 13.2 10.2 9.6v5.2l-7.7-.9a.85.85 0 0 1 0-.7Z" fillOpacity="0.55" />
+      <path
+        fillRule="evenodd"
+        d="M10 9h9.5A2.5 2.5 0 0 1 22 11.5v3a2.5 2.5 0 0 1-2.5 2.5H10V9Zm6.5 2.2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Z"
+      />
+      <rect x="11.5" y="17" width="1.6" height="2.6" rx="0.6" />
+      <rect x="18" y="17" width="1.6" height="2.6" rx="0.6" />
+    </svg>
+  );
+}
+
+export function TouchIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M10.2 3.2a1.7 1.7 0 0 1 1.7 1.7v5.6l4.6.9a2.2 2.2 0 0 1 1.8 2.5l-.8 5a3 3 0 0 1-3 2.6h-3.9a3 3 0 0 1-2.4-1.2l-3.4-4.6a1.5 1.5 0 0 1 2.2-2l1.5 1.3V4.9a1.7 1.7 0 0 1 1.7-1.7Z" />
+      <path d="M5.2 6.6a5 5 0 0 1 10 0h-1.6a3.4 3.4 0 0 0-6.8 0Z" fillOpacity="0.5" />
+    </svg>
+  );
+}
+
 /* --- Process-stage icons (Our Approach) — same solid style as the set above --- */
 
 export function SearchIcon(props) {

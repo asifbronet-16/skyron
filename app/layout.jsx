@@ -1,6 +1,9 @@
 import { Poppins, Orbitron } from "next/font/google";
 import Script from "next/script";
-import { SITE, SOCIALS } from "@/constants/site";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
+import JsonLd from "@/components/JsonLd";
+import { SITE } from "@/constants/site";
+import { siteGraph } from "@/lib/schema";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -27,29 +30,6 @@ export const metadata = {
   description: SITE.description,
 };
 
-// Organization markup so search engines tie the site, the office, and the
-// social profiles to one entity. `sameAs` is the list they read to confirm
-// a profile is officially ours.
-const ORGANIZATION_LD = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: SITE.name,
-  legalName: SITE.legalName,
-  url: SITE.url,
-  logo: `${SITE.url}/assets/image-2.png`,
-  description: SITE.description,
-  email: SITE.email,
-  telephone: SITE.phone,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.locality,
-    addressRegion: SITE.address.region,
-    addressCountry: SITE.address.country,
-  },
-  sameAs: SOCIALS.map((social) => social.href),
-};
-
 // Google Analytics 4. Production only, so local dev traffic stays out of the reports.
 const GA_MEASUREMENT_ID = "G-BX89E4FXS6";
 const LOAD_ANALYTICS = process.env.NODE_ENV === "production";
@@ -62,10 +42,9 @@ export default function RootLayout({ children }) {
       >
         {children}
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_LD) }}
-        />
+        {/* Organization, Dubai studio and WebSite, tying the site, the office and
+            the social profiles to one entity (lib/schema.ts). */}
+        <JsonLd data={siteGraph()} />
 
         {LOAD_ANALYTICS && (
           <>
@@ -79,6 +58,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_MEASUREMENT_ID}');`}
             </Script>
+            <AnalyticsEvents />
           </>
         )}
       </body>

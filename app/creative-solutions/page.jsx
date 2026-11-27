@@ -1,24 +1,39 @@
-import Link from "next/link";
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import SectionHeading from "@/components/SectionHeading";
-import ServiceCard from "@/components/home/ServiceCard";
 import Reveal from "@/components/Reveal";
-import { CREATIVE_SOLUTIONS_ITEMS } from "@/constants/creativeSolutions";
+import Blocks, { CardGrid, RelatedServices } from "@/components/content/Blocks";
+import { PATHS } from "@/constants/paths";
+import { ALL_SOLUTIONS, CREATIVE_SECTION } from "@/lib/solutions";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Creative Solutions — Skyron",
+  title: "Creative Content Studio in Dubai: 3D, 2D & Film | Skyron",
   description:
-    "3D and 2D content, anamorphic LED, live-action production, and AI-driven generative content — the creative disciplines behind every Skyron experience.",
-  path: "/creative-solutions",
+    "Content creation in Dubai: 2D/3D animation, anamorphic 3D, AI content, live shoots and VFX for LED walls, facades, holograms and experience centres.",
+  path: PATHS.creativeSolutions,
 });
 
-// Cycled across cards so a five-item grid still reads as varied, not random —
-// same accent rotation ServiceCard already uses on the Our Approach process grid.
-const ACCENTS = ["violet", "cyan", "rose", "purple"];
+// One card per Creative Solutions page, from its `hub` copy.
+const SERVICE_CARDS = ALL_SOLUTIONS.filter((item) => item.section === CREATIVE_SECTION).map((item) => ({
+  title: item.hub.title,
+  body: item.hub.text,
+  image: item.banner.images[0],
+  link: { label: item.hub.linkLabel, href: item.href },
+}));
+
+const SECTIONS = [
+  {
+    type: "prose",
+    heading: "Why in-house content matters",
+    paragraphs: [
+      "When the content team and the technology team are the same team, the content fits the hardware. Resolution, frame rate, colour and timing are planned together, so there are no surprises at the first test on site. It also means one point of contact and one schedule.",
+    ],
+  },
+];
 
 export default function CreativeSolutionsPage() {
   return (
@@ -45,7 +60,7 @@ export default function CreativeSolutionsPage() {
         <section className="relative flex min-h-[70vh] items-center overflow-hidden px-6 pt-24 pb-8 sm:min-h-[80vh] sm:pt-44 sm:pb-24">
           <Image
             src="/assets/banners/creative-solutions.webp"
-            alt="Creative Solutions"
+            alt={altFor("/assets/banners/creative-solutions.webp")}
             fill
             preload
             sizes="100vw"
@@ -72,45 +87,48 @@ export default function CreativeSolutionsPage() {
               <Reveal className="flex items-center gap-4">
                 <span className="h-0.5 w-16 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-                  What We Do
+                  What we do
                 </span>
               </Reveal>
 
               <Reveal delay={100}>
-                <SectionHeading lead="Creative" accent="Solutions" className="mt-6" />
+                <SectionHeading
+                  as="h1"
+                  lead="Creative solutions:"
+                  accent="content made for spaces, not just screens"
+                  className="mt-6"
+                />
               </Reveal>
 
               <Reveal as="p" delay={200} className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-                Five disciplines, one creative pipeline — 3D and 2D content, anamorphic LED, live-action
-                production, and AI-assisted workflows, all built to move audiences across screens,
-                facades, and spatial installations.
+                Skyron is a creative content studio in Dubai. Our in-house team produces 3D, 2D motion,
+                anamorphic, live-action and AI-assisted content, and every piece is built for where it
+                will play: a 20-metre facade, a corner LED screen, a HoloBox or a headset. Pixel maps,
+                viewing distances and brightness are part of the brief from day one.
+              </Reveal>
+
+              <Reveal as="p" delay={260} className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+                Content creation and creative storytelling are our core capability, and they power
+                every experience we build, from experience centres to holograms.
               </Reveal>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-2 pb-8 sm:pb-28">
+        <section className="relative overflow-hidden bg-[#08060f] px-6 pt-2 pb-8 sm:pb-16">
           <div className="relative mx-auto max-w-7xl">
-            <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {CREATIVE_SOLUTIONS_ITEMS.map((item, i) => (
-                <Reveal key={item.slug} delay={Math.min(i, 5) * 90} distance={28} className="h-full">
-                  <Link href={`/creative-solutions/${item.slug}`} className="block h-full">
-                    <ServiceCard
-                      number={String(i + 1).padStart(2, "0")}
-                      accent={ACCENTS[i % ACCENTS.length]}
-                      title={item.label}
-                      description={item.intro}
-                      image={item.banner?.images?.[0]}
-                      className="h-full"
-                    />
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
+            <CardGrid cards={SERVICE_CARDS} />
           </div>
         </section>
 
-        <CtaBanner />
+        <Blocks blocks={SECTIONS} />
+
+        <RelatedServices paths={[PATHS.projectionMapping, PATHS.holograms, PATHS.experienceCentres]} />
+
+        <CtaBanner
+          heading="Need content for a screen, facade or space?"
+          text="Tell us the format and the date. We reply within two working days."
+        />
       </div>
 
       <Footer />

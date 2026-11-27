@@ -3,16 +3,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/contact/ContactForm";
+import PrivacyNote from "@/components/PrivacyNote";
 import OfficeLocations from "@/components/contact/OfficeLocations";
 import { ChevronRight, Mail, MapPin, Phone, Whatsapp } from "@/components/icons";
+import { PATHS } from "@/constants/paths";
 import { OFFICES, SITE, whatsappUrl } from "@/constants/site";
 import { pageMetadata } from "@/lib/metadata";
+import { webPageGraph } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata = pageMetadata({
-  title: "Contact — Skyron",
+  title: "Contact Skyron | Dubai Immersive Experience Studio",
   description:
-    "Start a project with Skyron. Send us your brief, chat with the team on WhatsApp, or visit our studio in Dubai.",
-  path: "/contact",
+    "Send Skyron your brief. We reply within two working days with a concept direction, scope and indicative budget. Office in Al Khabeesi, Deira, Dubai.",
+  path: PATHS.contact,
 });
 
 const DETAILS = [
@@ -46,35 +50,34 @@ export default function ContactPage() {
         />
 
         <Navbar active="Contact" />
+        <JsonLd data={webPageGraph({ type: "ContactPage", path: PATHS.contact, name: metadata.title })} />
 
         {/* the studio leads the page, so its heading is the page's h1 */}
-        <OfficeLocations headingAs="h1" className="pt-28 pb-12 sm:pt-44 sm:pb-16" />
+        <OfficeLocations
+          headingAs="h1"
+          eyebrow="Come visit our studio"
+          heading="Contact Skyron in Dubai"
+          className="pt-28 pb-12 sm:pt-44 sm:pb-16"
+        />
 
-        <section className="relative overflow-hidden bg-[#08060f] px-6 py-12 sm:py-24">
+        {/* #brief: where every "Send us your brief" button on the site lands */}
+        <section id="brief" className="relative scroll-mt-24 overflow-hidden bg-[#08060f] px-6 py-12 sm:py-24 lg:scroll-mt-32">
           <div className="pointer-events-none absolute inset-0 [background:radial-gradient(50%_45%_at_75%_45%,rgba(56,189,248,.07),transparent_70%)]" />
 
           <div className="relative mx-auto grid max-w-296 gap-14 lg:grid-cols-2 lg:gap-16">
             {/* ── left column ── */}
             <Reveal as="div">
-              <div className="flex items-center gap-4">
-                <span className="h-0.5 w-16 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]" />
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-                  Get in touch
-                </span>
-              </div>
-
-              <h2 className="mt-6 text-3xl leading-[1.1] tracking-normal text-white sm:text-4xl lg:text-5xl">
-                Let&rsquo;s start a project
+              <h2 className="text-3xl leading-[1.1] tracking-normal text-white sm:text-4xl lg:text-5xl">
+                Let&rsquo;s start a project{" "}
                 <br />
                 <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                  together!
+                  together
                 </span>
               </h2>
 
               <p className="mt-5 max-w-md text-base leading-relaxed text-white/55">
-                Great experiences begin with bold ideas. Share your project details
-                with us. Our team will connect with you to explore how we can bring
-                your vision to life.
+                Send us your brief. We reply within two working days with a concept direction, an
+                outline scope and an indicative budget.
               </p>
 
               <ul className="mt-8 space-y-3">
@@ -107,10 +110,15 @@ export default function ContactPage() {
                 </span>
                 Chat with us on WhatsApp
               </a>
+
+              <p className="mt-8 max-w-md text-sm leading-relaxed text-white/50">
+                We deliver projects across the UAE, Saudi Arabia, the wider Middle East and beyond from
+                our Dubai studio.
+              </p>
             </Reveal>
 
             {/* ── right column: form card ── */}
-            <ContactForm />
+            <ContactForm privacyNote={<PrivacyNote />} />
           </div>
         </section>
 
@@ -124,17 +132,14 @@ export default function ContactPage() {
               className="absolute inset-x-0 top-0 h-0.5 bg-linear-to-r from-transparent via-[#5f30ca] to-[#317890]"
             />
             <div>
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-                Careers
-              </span>
-              <h2 className="mt-3 text-xl font-medium text-white sm:text-2xl">Want to build with us?</h2>
+              <h2 className="text-xl font-medium text-white sm:text-2xl">Want to build with us?</h2>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/55">
                 We&rsquo;re always keen to meet artists, designers and technologists who love
                 turning spaces into stories.
               </p>
             </div>
             <Link
-              href="/careers"
+              href={PATHS.careers}
               className="inline-flex shrink-0 items-center gap-3 rounded-full bg-[linear-gradient(90deg,#9B1FA8_0%,#7B2C9E_35%,#2A7F92_100%)] py-2 pl-7 pr-2 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
             >
               View careers

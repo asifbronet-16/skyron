@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
@@ -15,13 +16,14 @@ import {
   ShieldCheckIcon,
 } from "@/components/home/CapabilityIcons";
 import Reveal from "@/components/Reveal";
+import { PATHS } from "@/constants/paths";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Our Approach — Skyron",
+  title: "How We Work | Experience Design Process | Skyron",
   description:
-    "How Skyron takes an idea from first brief to opening night — discovery, design, build, and on-site delivery under one accountable team.",
-  path: "/our-approach",
+    "Our six-step process for immersive experiences: discovery, concept, design, production, installation and support. Most activations take 6–12 weeks.",
+  path: PATHS.ourApproach,
 });
 
 const STEPS = [
@@ -29,67 +31,67 @@ const STEPS = [
     icon: SearchIcon,
     image: "/assets/cards/our-approach/1.webp",
     accent: "violet",
-    title: "Envision & Discovery",
+    title: "1. Discovery",
     description:
-      "We begin by listening and observing. Through collaborative dialogue, research, and insight-led exploration, we understand your vision, audience, and challenges — establishing clarity, alignment, and a shared strategic direction that guides every experiential decision forward.",
+      "We listen, visit the site or study the drawings, and meet the people who'll use the space. We agree on audience, key messages, constraints and how success will be measured.",
   },
   {
     icon: LightbulbIcon,
     image: "/assets/cards/our-approach/2.webp",
     accent: "teal",
-    title: "Concept Development",
+    title: "2. Concept development",
     description:
-      "Ideas are shaped through creative exploration and strategic intent. We define the narrative, experience flow, and technological direction, assessing feasibility and impact — translating possibilities into a clear concept, structured roadmap, and confident foundation for execution.",
+      "We define the story, the visitor flow and the technology direction, check feasibility and cost, and present a clear concept with renders and a roadmap.",
   },
   {
     icon: BlueprintIcon,
     image: "/assets/cards/our-approach/3.webp",
     accent: "rose",
-    title: "Design & Experience Architecture",
+    title: "3. Design and experience architecture",
     description:
-      "Creative vision meets technical precision as concepts evolve into detailed experience architectures. Interaction logic, visual language, and system frameworks are developed through prototyping and previsualization — ensuring coherence, usability, and design integrity before production begins.",
+      "Concepts become detailed designs: interaction logic, visual language, equipment lists and system diagrams. We prototype and pre-visualise before production, so problems show up on screen, not on site.",
   },
   {
     icon: GearIcon,
     image: "/assets/cards/our-approach/4.webp",
     accent: "violet",
-    title: "Production & Integration",
+    title: "4. Production and integration",
     description:
-      "Our multidisciplinary teams bring experiences to life through content creation, development, and system integration. Structured reviews, demonstrations, and collaborative checkpoints ensure consistency, quality, and alignment — transforming designed concepts into fully realized experiential solutions.",
+      "Our team produces the content, builds the software and integrates the hardware, with reviews and demos at set checkpoints.",
   },
   {
     icon: RocketIcon,
     image: "/assets/cards/our-approach/5.webp",
     accent: "teal",
-    title: "Experience Deployment & Activation",
+    title: "5. Installation and launch",
     description:
-      "We manage on-site implementation, calibration, and final refinements to ensure a seamless activation. Each experience is tested, optimized, and launched with confidence — supported by clear documentation and knowledge transfer for smooth handover.",
+      "We install, calibrate and test on site, rehearse with real scenarios, and hand over with documentation and operator training.",
   },
   {
     icon: ShieldCheckIcon,
     image: "/assets/cards/our-approach/6.webp",
     accent: "rose",
-    title: "Ongoing Support",
+    title: "6. Support after launch",
     description:
-      "Our involvement continues beyond launch. We provide ongoing monitoring, maintenance, and technical support — ensuring stability, performance, and adaptability as experiences evolve, scale, and continue delivering value over time.",
+      "We stay on for run-of-show support, content refreshes and changes as the experience evolves.",
   },
 ];
 
 const PRINCIPLES = [
   {
-    title: "Collaboration First",
-    description: "You're in the room for every major decision — concept reviews, tech walkthroughs, and on-site rehearsals included.",
+    title: "Collaboration first",
+    description: "You're in the room for every major decision: concept reviews, technical walkthroughs and on-site rehearsals.",
   },
   {
-    title: "Iterative by Design",
+    title: "Iterative by design",
     description: "We prototype early and test on real hardware fast, so surprises show up in a rehearsal, not on opening night.",
   },
   {
-    title: "One Accountable Team",
-    description: "Creative, technical, and production sit under one roof — no vendor hand-offs, no dropped context between teams.",
+    title: "One accountable team",
+    description: "Creative, technical and production sit under one roof, with no vendor hand-offs and no lost context between teams.",
   },
   {
-    title: "Built to Scale",
+    title: "Built to scale",
     description: "Every system is designed with the next activation in mind, so what we build together keeps paying off.",
   },
 ];
@@ -98,27 +100,27 @@ const APPROACH_FAQS = [
   {
     question: "How long does a typical project take?",
     answer:
-      "Most activations run 6–12 weeks from signed brief to opening night, depending on scale and fabrication lead times. You'll get a realistic timeline out of the discovery stage, not an optimistic one.",
+      "Most activations take 6–12 weeks from signed brief to opening night, depending on scale and fabrication lead times. Permanent experience centres take longer. You'll get a realistic timeline from the discovery stage, not an optimistic one.",
   },
   {
     question: "Do you work with our internal marketing or ops team?",
     answer:
-      "Yes — we embed with your team rather than working at arm's length. You're in the room for concept reviews, tech walkthroughs, and on-site rehearsals.",
+      "Yes. We work as part of your team rather than at arm's length. You're in the room for concept reviews, technical walkthroughs and on-site rehearsals.",
   },
   {
     question: "What happens after launch?",
     answer:
-      "We stay on for run-of-show support, content refreshes, and iteration as the experience evolves. Launch day is the start of the relationship, not the end of the project.",
+      "We stay on for run-of-show support, content refreshes and changes as the experience evolves. Launch day is the start of the relationship, not the end of the project.",
   },
   {
     question: "Can you take over a project that's already underway?",
     answer:
-      "Sometimes — it depends what's already been locked in. Send us where things stand and we'll tell you honestly whether we can add value.",
+      "Sometimes. It depends on what's already been locked in. Send us where things stand and we'll tell you honestly whether we can add value.",
   },
   {
     question: "How do you handle scope changes mid-project?",
     answer:
-      "Every stage ends with a sign-off, so changes get scoped and priced before they touch the timeline — no surprise invoices at the end.",
+      "Every stage ends with a sign-off, so changes are scoped and priced before they touch the timeline. No surprise invoices at the end.",
   },
 ];
 
@@ -143,7 +145,7 @@ export default function OurApproachPage() {
         <section className="relative flex min-h-screen items-center overflow-hidden px-6 -mt-10 lg:mt-16 py-28 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32">
           <Image
             src="/assets/banners/our-approach/1.webp"
-            alt="Our Approach"
+            alt={altFor("/assets/banners/our-approach/1.webp")}
             fill
             preload
             sizes="100vw"
@@ -170,24 +172,34 @@ export default function OurApproachPage() {
               <Reveal className="flex items-center gap-4">
                 <span className="h-0.5 w-16 bg-linear-to-r from-[#5f30ca] to-[#317890]" />
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#a996f0]">
-                  Our Approach
+                  Our approach
                 </span>
               </Reveal>
 
               <Reveal delay={100}>
-                <SectionHeading lead="We Begin With" accent="Understanding, Not Execution" className="mt-6" />
+                <SectionHeading as="h1" lead="We begin with understanding," accent="not execution" className="mt-6" />
               </Reveal>
 
-              <Reveal as="p" delay={200} className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-                Every SKYRON Interactive project starts by looking closely at the purpose of the
-                space, the people it&apos;s meant for, the message it needs to carry, and the kind
-                of response it should create. From there, we shape the journey — how the audience
-                should enter the experience, how the story should unfold, where moments of
-                interaction should happen, and how content should move through the environment with
-                clarity and impact. Only after that do we determine the most appropriate media,
-                systems, and technologies to support it. This is what allows our work to feel
-                coherent, rather than crowded. Thoughtful, rather than decorative. Tailored, rather
-                than interchangeable.
+              <Reveal as="div" delay={200} className="mt-6 max-w-xl space-y-4 text-sm leading-relaxed text-white/70 sm:text-base">
+                <p>
+                  Every Skyron project starts by looking closely at four things: the purpose of the
+                  space, the people it&apos;s for, the message it has to carry and the response it
+                  should create.
+                </p>
+                <p>
+                  Content creation runs through every stage: we write, design and produce the content
+                  in-house, so the story and the technology are built together.
+                </p>
+                <p>
+                  From there, we shape the journey: how the audience enters the experience, how the
+                  story unfolds, where moments of interaction happen, and how content moves through the
+                  space with clarity and impact. Only after that do we choose the media, systems and
+                  technologies to support it.
+                </p>
+                <p>
+                  This is what lets our work feel coherent rather than crowded, thoughtful rather than
+                  decorative, and tailored rather than interchangeable.
+                </p>
               </Reveal>
             </div>
           </div>
@@ -198,10 +210,10 @@ export default function OurApproachPage() {
             <div className="relative mx-auto max-w-6xl">
               <Reveal>
                 <SectionHeading
-                  lead="Our"
-                  accent="Process"
+                  text="Our experience design process"
                   inline
                   align="center"
+                  size="md"
                   accentClassName="from-violet-500 via-fuchsia-500 to-pink-500"
                 />
               </Reveal>
@@ -217,8 +229,7 @@ export default function OurApproachPage() {
           </section>
 
           <FeatureGrid
-            lead="Principles We"
-            accent="Don't Bend On"
+            heading="Principles we don't bend on"
             subtitle="The process only works if the team behind it holds to the same standards on every project."
             cards={PRINCIPLES}
             className="pt-0 sm:pt-0"
@@ -226,7 +237,10 @@ export default function OurApproachPage() {
           <FaqSection items={APPROACH_FAQS} />
         </div>
 
-      <CtaBanner />
+      <CtaBanner
+        heading="Ready to start with discovery?"
+        text="Send your brief and we'll reply within two working days."
+      />
       </div>
       <Footer />
     </main>

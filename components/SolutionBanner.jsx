@@ -2,22 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 
 /**
  * Full-bleed banner: one background image, or several auto-rotating into a
- * carousel, with the solution's name overlaid on top. Used at the head of
- * a solution detail page (e.g. /creative-solutions/[slug]).
+ * carousel, with the page's H1 overlaid on top and anything passed as
+ * `children` (e.g. breadcrumbs) above it. Used at the head of a solution
+ * detail page (e.g. /creative-solutions/[slug]).
  *
  * No images yet? It falls back to the site's dark gradient-orb background
  * so a page still looks intentional before real photography is dropped in.
  *
- * <SolutionBanner label="2D Content Creation" eyebrow="Creative Solutions" images={["/assets/banners/2d-content-creation/1.webp"]} />
- * <SolutionBanner label="3D Content Creation" images={[img1, img2, img3]} interval={7000} />
+ * <SolutionBanner title="2D motion graphics and explainer videos" images={["/assets/banners/2d-content-creation/1.webp"]}>
+ *   <Breadcrumbs items={...} />
+ * </SolutionBanner>
  */
 export default function SolutionBanner({
   images = [],
-  label,
-  eyebrow,
+  title,
+  children,
   interval = 6000,
   className = "",
 }) {
@@ -36,14 +39,14 @@ export default function SolutionBanner({
 
   return (
     <section
-      className={`relative isolate flex h-[280px] w-full items-center justify-center overflow-hidden bg-[#08060f] sm:h-[380px] lg:h-165 ${className}`}
+      className={`relative isolate flex min-h-80 w-full items-center justify-center overflow-hidden bg-[#08060f] py-14 sm:min-h-95 lg:min-h-165 ${className}`}
     >
       {slides.length > 0 ? (
         slides.map((src, i) => (
           <Image
             key={src}
             src={src}
-            alt=""
+            alt={altFor(src)}
             fill
             preload={i === 0}
             sizes="100vw"
@@ -69,15 +72,11 @@ export default function SolutionBanner({
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,6,15,0.5)_0%,rgba(8,6,15,0.2)_40%,rgba(8,6,15,0.75)_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f]/70 via-transparent to-[#08060f]/70" />
 
-      <div className="relative z-10 px-6 text-center">
-        {eyebrow && (
-          <span className="mb-4 block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#8b7bd8]">
-            {eyebrow}
-          </span>
-        )}
-        {label && (
-          <h1 className="text-2xl font-semibold tracking-[0.06em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-5xl border-2 text-transparent bg-clip-text bg-[linear-gradient(110deg,rgba(255,255,255,0.25)_30%,#fff_50%,rgba(255,255,255,0.25)_70%)] bg-size-[200%_100%] animate-shine">
-            {label}
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        {children}
+        {title && (
+          <h1 className="mt-5 text-2xl font-semibold leading-tight tracking-[0.02em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-5xl text-transparent bg-clip-text bg-[linear-gradient(110deg,rgba(255,255,255,0.55)_30%,#fff_50%,rgba(255,255,255,0.55)_70%)] bg-size-[200%_100%] animate-shine">
+            {title}
           </h1>
         )}
       </div>

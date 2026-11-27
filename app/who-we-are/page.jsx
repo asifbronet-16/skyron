@@ -1,72 +1,76 @@
 import Image from "next/image";
+import { altFor } from "@/constants/imageAlt";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
 import FeatureGrid from "@/components/FeatureGrid";
+import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/home/ServiceCard";
 import TrustedBySection from "@/components/home/TrustedBySection";
+import { Mail, MapPin, Phone } from "@/components/icons";
+import { PATHS } from "@/constants/paths";
+import { SITE } from "@/constants/site";
 import { pageMetadata } from "@/lib/metadata";
+import { webPageGraph } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata = pageMetadata({
-  title: "Who We Are — Skyron",
+  title: "About Skyron | Spatial Experience Studio in Dubai",
   description:
-    "Skyron is a creative technology studio blending storytelling, spatial design, motion graphics, and emerging technology into unforgettable brand experiences.",
-  path: "/who-we-are",
+    "Skyron is a Dubai spatial experience studio: content creation, creative storytelling and immersive technology for clients across the Middle East and beyond.",
+  path: PATHS.whoWeAre,
 });
-
-// Floating capability pills — same treatment as the homepage hero (Hero.jsx),
-// reusing the float-a/b/c keyframes + .pill-float class from globals.css.
-
 
 const STORY_PROCESS = [
   {
     number: "01",
     accent: "violet",
-    title: "Pre-Production",
-    description: "A strong creative foundation — concept development, scripting, storyboarding, and mood boards.",
+    title: "Pre-production",
+    description: "Concept development, scripting, storyboarding and mood boards.",
     image: "/assets/cards/pre-production/1.webp",
   },
   {
     number: "02",
     accent: "cyan",
     title: "Production",
-    description: "A tailored pipeline for the story at hand — 2D/3D animation, live-action, VFX, or AI-driven content, whichever serves it best.",
+    description: "2D and 3D animation, live action, VFX or AI-assisted content, whichever serves the story best.",
     image: "/assets/cards/production/1.webp",
   },
   {
     number: "03",
     accent: "purple",
-    title: "Post-Production",
-    description: "Editing, sound design, visual effects, and color grading, polished into one immersive final output.",
+    title: "Post-production",
+    description: "Editing, sound design, visual effects and colour grading, polished into one final output.",
     image: "/assets/cards/post-production/1.webp",
   },
 ];
 
 const VALUES = [
   {
-    title: "Design-First",
-    description: "Every engagement starts with human emotion, not the technology stack — the medium is chosen to serve the idea, never the other way round.",
+    title: "Design-first",
+    description: "Every engagement starts with how people should feel, not the technology stack.",
   },
   {
-    title: "Story-Driven",
-    description: "Projection mapping, holograms, and AR are only as good as the narrative running through them. Tech always serves the story.",
+    title: "Story-driven",
+    description: "Projection, holograms and AR are only as good as the story running through them.",
   },
   {
-    title: "Future-Ready",
-    description: "We build on platforms and pipelines that keep evolving, so the experiences we ship today still hold up as displays and devices change.",
+    title: "Future-ready",
+    description: "Platforms and pipelines chosen so the experience still works as displays and devices change.",
   },
   {
-    title: "End-to-End",
-    description: "Concept, content, hardware, and on-site execution sit under one roof — one team accountable from first sketch to opening night.",
+    title: "End-to-end",
+    description:
+      "Concept, content, hardware and on-site delivery under one roof, with one team accountable from first sketch to opening night.",
   },
   {
-    title: "Craft Obsessed",
-    description: "Motion, sound, and spatial detail are tuned frame by frame. We sweat the details most studios ship past.",
+    title: "Craft obsessed",
+    description: "Motion, sound and spatial detail, tuned frame by frame.",
   },
   {
-    title: "Partnership Minded",
-    description: "We work embedded with marketing, ops, and venue teams — not as an outside vendor dropping off a delivery.",
+    title: "Partnership minded",
+    description: "We work inside your marketing, operations and venue teams, not as an outside vendor.",
   },
 ];
 
@@ -84,11 +88,12 @@ export default function WhoWeArePage() {
         />
 
         <Navbar active="Our Story" />
+        <JsonLd data={webPageGraph({ type: "AboutPage", path: PATHS.whoWeAre, name: metadata.title })} />
 
         <section className="relative isolate flex min-h-[60vh] items-center overflow-hidden px-6 pt-16 pb-16 sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-28">
           <Image
             src="/assets/banners/who-we-are/1.webp"
-            alt="Who we are"
+            alt={altFor("/assets/banners/who-we-are/1.webp")}
             fill
             preload
             sizes="100vw"
@@ -102,46 +107,69 @@ export default function WhoWeArePage() {
 
           <div className="relative mx-auto w-full max-w-7xl">
             <div className="relative max-w-xl">
-              <Reveal as="span" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
-                About US
+              <Reveal as="p" className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
+                About us
               </Reveal>
 
-              <Reveal as="h1" delay={120} className="mt-6 text-xl font-semibold leading-snug tracking-tight text-white sm:text-2xl lg:text-3xl">
-                We Craft Interactive Spatial Experiences Through{" "}
+              <Reveal as="h1" delay={120} className="mt-6 text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl lg:text-4xl">
+                A spatial experience{" "}
                 <span className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent">
-                  Premium Content and Intelligent Technology
+                  studio in Dubai
                 </span>
               </Reveal>
 
               <Reveal as="p" delay={240} className="mt-6 text-base leading-normal text-white/85 sm:text-lg lg:text-lg">
-                SKYRON Interactive Technologies LLC is an experiential design consultancy and
-                content production studio crafting immersive, spatial experiences through premium
-                content and intelligent technology — translating ideas into environments that
-                invite exploration, emotion, and discovery. From digital narratives to
-                large-scale installations, our work turns spaces into living stories, where
-                interaction becomes meaning, technology becomes invisible, and experiences leave a
-                lasting impact.
+                Skyron is an experiential design consultancy and immersive content production studio.
+                We design and build spaces that explain an idea and make people feel it, combining
+                storytelling, in-house content and technology such as projection mapping, holograms and
+                AR/VR. We&apos;re based in Dubai and work with brands, developers, cultural institutions
+                and government entities across the UAE, Saudi Arabia, the wider Middle East and beyond.
+              </Reveal>
+
+              <Reveal as="p" delay={320} className="mt-4 text-base leading-normal text-white/70">
+                Content creation and creative storytelling sit at the core of everything we do, from 2D
+                and 3D animation and anamorphic 3D to generative AI content, live shoots and visual
+                effects.
               </Reveal>
             </div>
           </div>
         </section>
 
         <div className="relative bg-[#08060f]">
-          <section className="relative px-6 pt-8 pb-8 sm:pt-24 sm:pb-28">
+          <section className="relative min-h-130 overflow-hidden sm:min-h-155">
+            <Image
+              src="/assets/our-story/galaxy.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover -scale-x-100"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/75 to-transparent sm:via-[#08060f]/60" />
 
-            <div className="relative mx-auto mt-16 max-w-3xl text-center">
-              <Reveal as="h2" className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-                We Are{" "}
-                <span className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent">
-                  Creative Story-Tellers
-                </span>
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_14%,transparent_86%,#08060f_100%)]" />
+
+            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-start px-6 pt-16 pb-16 text-left sm:min-h-[70vh] sm:justify-center sm:pt-24 sm:pb-24 lg:px-0">
+              <Reveal>
+                <SectionHeading text="What we believe" size="md" inline />
+              </Reveal>
+
+              <Reveal as="p" delay={120} className=" mt-6 max-w-md text-sm leading-relaxed text-white/70 sm:text-base">
+                Technology is the last decision, not the first. We start with the purpose of the space,
+                the audience and the message, then choose the media that serves them. The result feels
+                coherent rather than crowded, and it still makes sense to visitors a year after opening.
+              </Reveal>
+            </div>
+          </section>
+
+          <section className="relative px-6 pt-8 pb-8 sm:pt-16 sm:pb-24">
+            <div className="relative mx-auto max-w-3xl text-center">
+              <Reveal>
+                <SectionHeading text="We are storytellers first" align="center" size="md" inline />
               </Reveal>
 
               <Reveal as="p" delay={120} className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
-                At Skyron, storytelling sits at the heart of everything we create. We work with
-                clients from the first conversation to understand their vision, objectives, and
-                audience — then carry that understanding through a complete cinematic workflow,
-                built for clarity, quality, and impact at every stage.
+                Every project runs through a complete cinematic workflow, from the first conversation to
+                the final grade:
               </Reveal>
             </div>
 
@@ -154,52 +182,44 @@ export default function WhoWeArePage() {
             </div>
 
             <Reveal as="p" className="relative mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-white/55 sm:text-base">
-              Structured production married to creative storytelling — so every experience is as
-              meaningful as it is visually compelling.
+              Then we put that content into the room: on facades, LED, holograms, headsets and
+              interactive surfaces.
             </Reveal>
           </section>
 
-          <section className="relative min-h-130 overflow-hidden sm:min-h-155">
-            <Image
-              src="/assets/our-story/galaxy.webp"
-              alt="Skyron — spatial experiences powered by intelligent technology"
-              fill
-              sizes="100vw"
-              className="object-cover -scale-x-100"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#08060f] via-[#08060f]/75 to-transparent sm:via-[#08060f]/60" />
+          <FeatureGrid heading="What drives every project" cards={VALUES} />
 
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#08060f_0%,transparent_14%,transparent_86%,#08060f_100%)]" />
-
-            <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-start px-6 pt-16 pb-16 text-left sm:min-h-[85vh] sm:pt-40 sm:pb-32 lg:px-0">
-              <Reveal as="h2" className="mt-6 max-w-lg text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
-                We Craft Interactive Spatial Experiences Through{" "}
-                <span className="bg-linear-to-r from-violet-500 via-indigo-400 to-sky-400 bg-clip-text text-transparent">
-                  Premium Content and Intelligent Technology
-                </span>
-              </Reveal>
-
-              <Reveal as="p" delay={120} className=" mt-6 max-w-md text-sm leading-relaxed text-white/70 sm:text-base">
-                Skyron Interactive Technologies is an experiential design consultancy and
-                interactive content production studio, crafting immersive spatial experiences
-                through premium content and intelligent technology. We combine holographic
-                embodiments, AR, VR, and Extended Reality (XR) so brands and organizations can
-                create experiences that are engaging, intuitive, and memorable.
-              </Reveal>
-            </div>
+          <section className="relative px-6 py-8 sm:py-16">
+            <Reveal className="relative mx-auto max-w-4xl rounded-2xl border border-white/10 bg-white/3 p-6 sm:p-10">
+              <SectionHeading text="Company details" size="md" inline />
+              <p className="mt-6 text-base font-medium text-white">{SITE.legalName}</p>
+              <ul className="mt-4 space-y-3 text-sm text-white/70 sm:text-base">
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-4.5 w-4.5 shrink-0 text-violet-400" strokeWidth={1.8} />
+                  1st Floor, Office 101-14, Banat Abdullah Al Marzooqi Building, Al Khabeesi, Deira, Dubai, UAE
+                </li>
+                <li className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-3 transition hover:text-violet-300">
+                    <Mail className="h-4.5 w-4.5 shrink-0 text-violet-400" strokeWidth={1.8} />
+                    {SITE.email}
+                  </a>
+                  <a href={`tel:${SITE.phone}`} className="inline-flex items-center gap-3 transition hover:text-violet-300">
+                    <Phone className="h-4.5 w-4.5 shrink-0 text-violet-400" strokeWidth={1.8} />
+                    {SITE.phoneDisplay}
+                  </a>
+                </li>
+              </ul>
+            </Reveal>
           </section>
 
-          <FeatureGrid
-            lead="What Drives"
-            accent="Every Project"
-            subtitle="A studio is only as good as the principles it won't compromise on — these are ours."
-            cards={VALUES}
-          />
+          <TrustedBySection marquee />
+        </div>
 
-        <TrustedBySection marquee />
-      </div>
-
-        <CtaBanner />
+        <CtaBanner
+          heading="Let's talk about your space"
+          text="Send your brief and we'll reply within two working days."
+          button={{ label: "Get in touch", href: PATHS.brief }}
+        />
       </div>
       <div className="">
         <Footer />
