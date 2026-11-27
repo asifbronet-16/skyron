@@ -121,6 +121,8 @@ export default function NavbarMenu({ links, active = "Home" }) {
             alt="Skyron"
             width={160}
             height={45}
+            loading="eager"
+            unoptimized
             className="h-10 w-auto lg:h-16"
           />
         </Link>
